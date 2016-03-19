@@ -7,6 +7,9 @@ use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Request;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
@@ -69,4 +72,27 @@ class AuthController extends Controller
             'password' => bcrypt($data['password']),
         ]);
     }
+
+    protected function getlogin(){
+        return view('backend.layout.login');
+    }
+    protected function postLogin(Request $request) {
+        $data = Input::all();
+        $email = $data['email'];
+        $password = $data['password'];
+        $remember = (isset($data['remember']))?$data['remember']:'';
+
+        if (Auth::attempt(['email' => $email, 'password' => $password], $remember)) {
+            // Authentication passed...
+            Auth::user()->last_login = \Carbon\Carbon::now()->toDateTimeString();
+            Auth::user()->save();
+            return \Redirect::to('/backend/dashboard/');
+        } else {
+            return redirect()->back();
+        }
+
+    }
+
+
+
 }
