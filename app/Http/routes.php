@@ -27,5 +27,6 @@ Route::get('/', function () {
 */
 
 Route::group(['middleware' => ['web']], function () {
-    //
+    route::get('login',['as'=>'loginBackend','uses'=>'Auth\AuthController@getLogin']);
+    route::post('login',['as'=>'loginBackend','uses'=>'Auth\AuthController@postLogin']);
 });
