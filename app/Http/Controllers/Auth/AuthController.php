@@ -74,6 +74,7 @@ class AuthController extends Controller
     }
 
     protected function getlogin(){
+       
         return view('backend.layout.login');
     }
     protected function postLogin(Request $request) {
