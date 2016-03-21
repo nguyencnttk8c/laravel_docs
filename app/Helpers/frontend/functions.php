@@ -1,5 +1,5 @@
 <?php
-namespace Helpers\Backend;
+namespace Helpers\Frontend;
 class functions{
 	public static function test(){
 		dd(123);
