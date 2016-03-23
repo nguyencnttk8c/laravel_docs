@@ -14,6 +14,9 @@ class CreateUserFinanceTable extends Migration
     {
         Schema::create('user_finance', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('user_id');
+            $table->integer('income');
+            $table->integer('balance');
             $table->timestamps();
         });
     }

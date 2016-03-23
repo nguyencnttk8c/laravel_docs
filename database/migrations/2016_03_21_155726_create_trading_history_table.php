@@ -14,6 +14,14 @@ class CreateTradingHistoryTable extends Migration
     {
         Schema::create('trading_history', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('trading_code', 20);
+            $table->char('trading_type', 15);
+            $table->timestamp('trading_date');
+            $table->char('trading_status', 10);
+            $table->string('trading_name', 50);
+            $table->integer('amount_money');
+            $table->integer('order_id');
+            $table->integer('owner_id');
             $table->timestamps();
         });
     }

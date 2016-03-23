@@ -14,6 +14,8 @@ class CreateDocKeywordsTable extends Migration
     {
         Schema::create('doc_keywords', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('doc_id');
+            $table->string('key_word');
             $table->timestamps();
         });
     }

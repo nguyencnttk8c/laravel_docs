@@ -14,6 +14,10 @@ class CreateDocMetaTable extends Migration
     {
         Schema::create('doc_meta', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('doc_id');
+            $table->integer('num_viewed');
+            $table->integer('num_downloaded');
+            $table->timestamp('date_sold');
             $table->timestamps();
         });
     }
