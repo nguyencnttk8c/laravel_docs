@@ -4,6 +4,9 @@ use App\Http\Controllers\Controller;
 class DashboardController extends Controller
 {
 	protected function getIndex(){
-		return view('backend.layout.dashboard');
+		$data = [
+			'title'=>'Trang tổng quan',
+		];
+		return view('backend.layout.main',['data'=>$data]);
 	}
 }	

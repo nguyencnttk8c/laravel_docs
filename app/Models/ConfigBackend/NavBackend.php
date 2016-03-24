@@ -1,13 +1,16 @@
 <?php
 namespace App\Models\ConfigBackend;
 use Illuminate\Database\Eloquent\Model;
-class Config extends Model
+class NavBackend extends Model
 {
-	protected $table = 'config';
-
+	protected $table = 'nav_backend';
     protected $primaryKey = 'ID';
-
+    
+    public function scopeListItem(){
+    	 return $this->Publish()->orderBy('position','ASC')->get();
+    }
     public function scopePublish() {
         return $this->where('status','1');
     }
+    
 }	
