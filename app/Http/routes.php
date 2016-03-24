@@ -17,4 +17,5 @@ Route::group(['middleware' => ['web']], function () {
     	route::get('dashboard',['as'=>'Backend::dashboard','uses'=>'Backend\DashboardController@getIndex']);
     	route::get('config',['as'=>'Backend::config','uses'=>'Backend\ConfigController@getIndex']);
 	});
+    Route::controller('thong-tin-ca-nhan', 'Account\PersonalInformation');
 });
