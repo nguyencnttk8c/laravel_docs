@@ -50,12 +50,19 @@ class AuthCustomerController extends Controller
     }
 
     protected function postRegister(FrontendRegisterRequest $request) {
+        // Add new customer into Customers table
+
         $newCustomer = new Customer();
         $newCustomer->name = $request->username;
         $newCustomer->email = $request->useremail;
         $newCustomer->password = \Hash::make($request->password);
-        $newCustomer->role = 1;
+        $newCustomer->role = 1;   // set user's role is customer
+        $newCustomer->status = 0; // set user's status is inactive
         $newCustomer->save();
+
+        // Send activate email
+
+        // Redirect to login page
 
         return \Redirect::to('dang-nhap');
     }
@@ -68,7 +75,7 @@ class AuthCustomerController extends Controller
         $auth = [
             'email'    => $request->useremail,
             'password' => $request->password,
-            'role'     => 1
+            'status'     => 1
         ];
 
         if (Auth::attempt($auth)) {
