@@ -25,6 +25,7 @@
 
 		<!-- ace settings handler -->
 		<script src="{{asset('backend/js/ace-extra.min.js')}}"></script>
+		<script type="text/javascript" src="{{ URL::asset('backend/tinymce/tinymce.min.js') }}"></script>
 
 		<!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
 
@@ -65,7 +66,7 @@
 
 						<li class="light-blue">
 							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
-								<img class="nav-user-photo" src="{{asset('backend/images/avatars/user.jpg')}}" alt="Jason's Photo" />
+								
 								<span class="user-info">
 									<small>Xin chào,</small>
 									{{(Auth::check())? Auth::user()->name:''  }}
@@ -286,7 +287,7 @@
 
 		<!-- inline scripts related to this page -->
 		<script type="text/javascript">
-			
+			 @yield('javascripts')
 		</script>
 	</body>
 </html>

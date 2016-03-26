@@ -5,7 +5,7 @@ foreach($ListItems as $value){
     $menuData['items'][$value->ID] = $value;
     $menuData['parent'][$value->parent][] = $value->ID;
 
- }
+}
  function multiLevel($value,$menuData){
  	$html = '';
  	$currentRoute = \Request::route()->getName();
