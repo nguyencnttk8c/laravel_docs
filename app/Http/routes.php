@@ -18,4 +18,15 @@ Route::group(['middleware' => ['web']], function () {
     	route::get('config',['as'=>'Backend::config','uses'=>'Backend\ConfigController@getIndex']);
 	});
     Route::controller('thong-tin-ca-nhan', 'Account\PersonalInformation');
+
+    Route::group(['prefix' => '/'], function(){
+        Route::get('/', function(){
+            return view('frontend.index');
+        });
+    	Route::get('dang-ky', ['as' => 'getRegister', 'uses' => 'Frontend\AuthCustomerController@getRegister']);
+    	Route::post('dang-ky', ['as' => 'postRegister', 'uses' => 'Frontend\AuthCustomerController@postRegister']);
+    	Route::get('dang-nhap', ['as' => 'getLogin', 'uses' => 'Frontend\AuthCustomerController@getLogin']);
+    	Route::post('dang-nhap', ['as' => 'postLogin', 'uses' => 'Frontend\AuthCustomerController@postLogin']);
+        Route::get('dang-xuat', 'Frontend\AuthCustomerController@getLogout');
+    });
 });

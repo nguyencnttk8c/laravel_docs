@@ -32,7 +32,7 @@ class User extends Authenticatable
      * The name of table in DB
      * @var string
      */
-    protected $table = 'users';
+    protected $table = 'customers';
 
     /**
      * Get the finance information of user from User class
