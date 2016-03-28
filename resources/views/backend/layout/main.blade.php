@@ -36,6 +36,7 @@
 	</head>
 
 	<body class="no-skin">
+		<input id="larvel_token" type="hidden" value="{{csrf_token()}}"/>
 		<div id="navbar" class="navbar navbar-default">
 			<script type="text/javascript">
 				try{ace.settings.check('navbar' , 'fixed')}catch(e){}
@@ -207,6 +208,7 @@
 		<!-- ace scripts -->
 		<script src="{{asset('backend/js/ace-elements.min.js')}}"></script>
 		<script src="{{asset('backend/js/ace.min.js')}}"></script>
+		<script src="{{asset('backend/js/scripts.js')}}"></script>
 
 		<!-- inline scripts related to this page -->
 		<script type="text/javascript">

@@ -9,6 +9,7 @@
           <span class="lbl"></span>
         </label>
       </th>
+      <th>ID</th>
       <th>Tên danh mục</th>
       <th>Danh mục cha</th>
       <th class="hidden-480">Hình ảnh</th>
@@ -27,11 +28,13 @@
         <tr>
         <td class="center">
           <label class="pos-rel">
-            <input type="checkbox" class="ace" />
+            <input type="checkbox" value="{{$record->id}}" class="ace" />
             <span class="lbl"></span>
           </label>
         </td>
-
+        <td>
+          {{$record->id}}
+        </td>
         <td>
           {{$record->tax_name}}
         </td>
@@ -53,11 +56,11 @@
                 <i class="ace-icon fa fa-pencil bigger-120"></i>
               </button>
             </a>
-             <a href="#">
+            <a href="javascript:void(0)" onclick="deleteRecord({{$record->id}},'taxonomy')" >
             <button class="btn btn-xs btn-danger">
               <i class="ace-icon fa fa-trash-o bigger-120"></i>
             </button>
-             </a>
+            </a>
           </div>
         </td>
       </tr>

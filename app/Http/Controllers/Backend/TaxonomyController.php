@@ -9,7 +9,7 @@ class TaxonomyController extends Controller
 	public function getIndex(){
 		$data = [
 			'title'=>'Quản lý danh mục',
-			'list'=>Taxonomy::paginate(10),
+			'list'=>Taxonomy::orderBy('created_at','DESC')->paginate(10),
 			'url'=>'taxonomy/new',
 		];
 		return view('backend.taxonomy.gird',['data'=>$data]);
