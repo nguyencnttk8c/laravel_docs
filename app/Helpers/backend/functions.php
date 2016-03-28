@@ -1,6 +1,31 @@
 <?php
 namespace App\Helpes\Backend;
 class Functions{
+    
+    public static function displaySearchCounter($current_page = '', $item_per_page = '' , $total_page = ''){
+        if($current_page>1){
+            $start = ($current_page -1 ) * $item_per_page + 1;
+            if($item_per_page * $current_page > $total_page){
+                $end = $total_page;
+            }else{
+                $end = $item_per_page * $current_page;
+            }
+        }else{
+            if($item_per_page * $current_page > $total_page){
+                $end = $total_page;
+            }else{
+                $end = $item_per_page * $current_page;
+            }
+            if($total_page){
+                $start = 1;
+            }else{
+                $start = 0;
+            }
+
+        }
+        return $start.' - '. $end;
+    }
+
 	public static function IUD($params){
         extract($params);
         if($status){
