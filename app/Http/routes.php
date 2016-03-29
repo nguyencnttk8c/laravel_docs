@@ -16,6 +16,13 @@ Route::group(['middleware' => ['web']], function () {
     	route::post('login',['as'=>'loginBackend','uses'=>'Auth\AuthController@postLogin']);
     	route::get('dashboard',['as'=>'Backend::dashboard','uses'=>'Backend\DashboardController@getIndex']);
     	route::get('config',['as'=>'Backend::config','uses'=>'Backend\ConfigController@getIndex']);
+    	route::post('config',['as'=>'Backend::config','uses'=>'Backend\ConfigController@postIndex']);
+        route::controller('ajax','Backend\AjaxController');
+    	route::controller('taxonomy','Backend\TaxonomyController',[
+    		'getIndex' => 'Backend::taxonomy',
+            'getEdit' => 'Backend::taxonomyEdit',
+            'getNew' => 'Backend::taxonomyNew',
+    	]);
 	});
     Route::controller('thong-tin-ca-nhan', 'Account\PersonalInformation');
 

@@ -27,6 +27,7 @@ class HelperServiceProvider extends ServiceProvider {
 
   function listFolderFiles($dir){
       $ffs = scandir($dir);
+
       foreach($ffs as $ff){
           if($ff != '.' && $ff != '..'){
               if(strpos($ff,'.php')){
