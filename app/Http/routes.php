@@ -18,11 +18,18 @@ Route::group(['middleware' => ['web']], function () {
     	route::get('config',['as'=>'Backend::config','uses'=>'Backend\ConfigController@getIndex']);
     	route::post('config',['as'=>'Backend::config','uses'=>'Backend\ConfigController@postIndex']);
         route::controller('ajax','Backend\AjaxController');
+        
     	route::controller('taxonomy','Backend\TaxonomyController',[
     		'getIndex' => 'Backend::taxonomy',
             'getEdit' => 'Backend::taxonomyEdit',
             'getNew' => 'Backend::taxonomyNew',
     	]);
+
+        route::controller('customers','Backend\CustomersController',[
+            'getIndex' => 'Backend::customers',
+            'getEdit' => 'Backend::customersEdit',
+            'getNew' => 'Backend::customersNew',
+        ]);
 	});
     Route::controller('thong-tin-ca-nhan', 'Account\PersonalInformation');
 

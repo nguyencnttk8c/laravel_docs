@@ -19,5 +19,30 @@ function deleteRecord(id,table){
 			}
 		})
 	}
-
 }
+
+var rulesData = [];
+$('.form-validate input').each(function(e){
+	var rulesValidate = $(this).data('validate');
+	var $this = this;
+	if(rulesValidate){
+		var properties = rulesValidate.replace('}','').replace('{','').split(',');
+		var obj = {};
+		properties.forEach(function(property) {
+		    var tup = property.split(':');
+		    obj[tup[0]] = (tup[1] == "true")?true:tup[1];
+		});
+		rulesData[$($this).attr("name")] = obj;
+	}
+	
+})
+var rules = $.extend({}, rulesData);
+$(".form-validate").validate({
+	rules: rules
+});
+$('#navigate-submit').on('click',function(){
+	$('#submit').click();
+})
+$('#navigate-reset').on('click',function(){
+	$('#reset').click();
+})

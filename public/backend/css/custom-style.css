@@ -1,0 +1,20 @@
+input.error{
+	border-color: rgb(228, 35, 0);
+    color: rgb(228, 35, 0);
+}
+label.error{
+    color: rgb(228, 35, 0);
+    font-size: 12px;
+}
+input.error:focus{
+	color: rgb(228, 35, 0);
+    border-color: rgb(228, 35, 0);
+    background-color: #fef9f8;
+}
+b.require{
+	color:rgb(228, 35, 0);
+}
+label.error .fa-reply{
+    transform: rotate(87deg);
+    padding-top: 6px;
+}
