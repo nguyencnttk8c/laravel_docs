@@ -69,10 +69,10 @@
         <div class="container">
             <div class="col-sm-6 pull-right" style="text-align:right;margin-right:8px;">
                 Vui lòng 
-                <a href="#" data-toggle="modal" data-target="#signin" class="link-title-info">
+                <a href="/dang-nhap/" data-toggle="modal" data-target="#signin" class="link-title-info">
                     <span style="color:#f00;"><i class="fa fa-sign-in"></i>Đăng nhập</span>
                 </a> để download hoặc 
-                <a href="dangky.html">đăng ký</a> tài khoản mới
+                <a href="/dang-ky/">đăng ký</a> tài khoản mới
             </div>
         </div>
     </div>

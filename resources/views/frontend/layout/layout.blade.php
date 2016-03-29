@@ -4,9 +4,9 @@
 	<div class="row">
 		@yield('sidebar')
 		@yield('content')
-		<div class="container">
-			@yield('generalDoc')
-		</div>
+	</div>
+	<div class="container">
+		@yield('generalDoc')
 	</div>
 </div>
 

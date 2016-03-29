@@ -24,25 +24,33 @@ class FrontendRegisterRequest extends Request
     public function rules()
     {
         return [
-            'username'   => 'required|between:6,20',
-            'useremail'  => 'required|email|unique:customers,email',
-            'password'   => 'required|between:6,20',
-            'repassword' => 'required|between:6,20|same:password',
+            'ctrlhotentxt'   => 'required|between:6,20',
+            'ctrlphonetxt'   => 'required|numeric|between:10,11',
+            'ctrlemailtxt'  => 'required|email|unique:customers,email',
+            'ctrlpasstxt'   => 'required|between:6,20',
+            'ctrlrepasstxt' => 'required|between:6,20|same:password',
         ];
     }
 
     public function messages() {
         return [
-            'username.required'   => 'Vui lòng nhập họ tên!',
-            'username.between'    => 'Vui lòng nhập tên từ 6 - 20 ký tự',
-            'useremail.required'  => 'Vui lòng nhập Email!',
-            'useremail.unique'    => 'Email đã tồn tại!',
-            'useremail.email'     => 'Vui lòng nhập Email theo dạng abc@xyz.com',
-            'password.required'   => 'Vui lòng nhập mật khẩu!',
-            'password.between'    => 'Vui lòng nhập mật khẩu từ 6 - 20 ký tự',
-            'repassword.between'  => 'Vui lòng nhập mật khẩu từ 6 - 20 ký tự',
-            'repassword.required' => 'Vui lòng nhập xác nhận mật khẩu!',
-            'repassword.same'     => 'Vui lòng nhập đúng mật khẩu xác nhận',
+            'ctrlhotentxt.required'   => 'Vui lòng nhập họ tên!',
+            'ctrlhotentxt.between'    => 'Vui lòng nhập tên từ 6 - 20 ký tự',
+
+            'ctrlphonetxt.required'   => 'Vui lòng nhập số điện thoại',
+            'ctrlphonetxt.numeric'   => 'Vui lòng nhập theo dạng 09xx xxx xxx hoặc 01xxx xxx xxx',
+            'ctrlphonetxt.between'   => 'Vui lòng nhập theo dạng 09xx xxx xxx hoặc 01xxx xxx xxx',
+
+            'ctrlemailtxt.required'  => 'Vui lòng nhập Email!',
+            'ctrlemailtxt.unique'    => 'Email đã tồn tại!',
+            'ctrlemailtxt.email'     => 'Vui lòng nhập Email theo dạng abc@xyz.com',
+
+            'ctrlpasstxt.required'   => 'Vui lòng nhập mật khẩu!',
+            'ctrlpasstxt.between'    => 'Vui lòng nhập mật khẩu từ 6 - 20 ký tự',
+            
+            'ctrlrepasstxt.between'  => 'Vui lòng nhập mật khẩu từ 6 - 20 ký tự',
+            'ctrlrepasstxt.required' => 'Vui lòng nhập xác nhận mật khẩu!',
+            'ctrlrepasstxt.same'     => 'Vui lòng nhập đúng mật khẩu xác nhận',
         ];
     }
 }

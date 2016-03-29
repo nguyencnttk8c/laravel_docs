@@ -27,9 +27,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::controller('thong-tin-ca-nhan', 'Account\PersonalInformation');
 
     Route::group(['prefix' => '/'], function(){
-        Route::get('/', function(){
-            return view('frontend.index');
-        });
+        Route::get('/', 'Frontend\HomeController@getIndex');
     	Route::get('dang-ky', ['as' => 'getRegister', 'uses' => 'Frontend\AuthCustomerController@getRegister']);
     	Route::post('dang-ky', ['as' => 'postRegister', 'uses' => 'Frontend\AuthCustomerController@postRegister']);
     	Route::get('dang-nhap', ['as' => 'getLogin', 'uses' => 'Frontend\AuthCustomerController@getLogin']);
