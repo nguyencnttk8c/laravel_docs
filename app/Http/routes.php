@@ -36,4 +36,7 @@ Route::group(['middleware' => ['web']], function () {
     	Route::post('dang-nhap', ['as' => 'postLogin', 'uses' => 'Frontend\AuthCustomerController@postLogin']);
         Route::get('dang-xuat', 'Frontend\AuthCustomerController@getLogout');
     });
+
+    Route::get('upload-tai-lieu', 'Account\Upload@getUpload');
+    Route::post('/dropzone/uploadFiles', 'Account\Upload@uploadFiles');
 });
