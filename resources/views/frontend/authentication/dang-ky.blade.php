@@ -47,6 +47,7 @@
 		        </div>
 		        <div class="form-group">
 		            <label class="control-label" for="ValidateCode">&nbsp;</label>
+		           <?php echo Captcha::img(); ?>
 		            <img alt="Nhấp vào ảnh để đổi ảnh khác" title="Nhấp vào ảnh để đổi ảnh khác" src="/User/ValidateCode" style="cursor: pointer;"
 		                 onclick="RefreshValidateCode(this);" />
 		        </div>        
