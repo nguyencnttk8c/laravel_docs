@@ -40,7 +40,7 @@
             <div class="col-md-2">
                 <div><a class="naptien" href="#">Nạp tiền</a></div>
                 
-                <div><a class="tailen" href="uploadtailieu.html">Tải lên</a></div>
+                <div><a class="tailen" href="/upload-tai-lieu">Tải lên</a></div>
             </div>
 		</div>
 	</div>
