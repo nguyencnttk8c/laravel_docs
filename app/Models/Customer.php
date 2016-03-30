@@ -23,4 +23,7 @@ class Customer extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    public function CustomerFinance() {
+        return $this->hasOne('App\Models\CustomerFinance', 'user_id');
+    }
 }

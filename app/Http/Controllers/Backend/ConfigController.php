@@ -64,7 +64,7 @@ class ConfigController extends Controller
 	protected function _eEditor($config){
 		$html = "<div class=\"form-group\">
 			<label class=\"col-sm-2 control-label no-padding-right\" for=\"form-field-1\">".$config->label."</label>
-			<div class=\"col-sm-10\">
+			<div class=\"col-sm-9\">
 				<textarea class=\"content-editor\" name=\"config[".$config->name."]\"
 				type=\"text\" >".$config->value_vi."</textarea>
 			</div>
@@ -76,7 +76,7 @@ class ConfigController extends Controller
 	protected function _eFile($config){
 		$html = "<div class=\"form-group\">
 		<label class=\"col-sm-2 control-label no-padding-right\" for=\"form-field-1\">".$config->label."</label>
-			<div class=\"col-sm-10\">
+			<div class=\"col-sm-9\">
 				<label class=\"ace-file-input\">
 				  <input type=\"file\" name=\"".$config->name."\" class=\"ace-input-file\">
 				  <span class=\"ace-file-container\" data-title=\"Lựa chọn\">
@@ -100,7 +100,7 @@ class ConfigController extends Controller
 
 		$html = "<div class=\"form-group\">
 			<label class=\"col-sm-2 control-label no-padding-right\" for=\"form-field-1\">".$config->label."</label>
-			<div class=\"col-sm-10\">
+			<div class=\"col-sm-9\">
 				<textarea class=\"col-sm-12\" name=\"config[".$config->name."]\"
 				type=\"text\" >".$config->value_vi."</textarea>
 			</div>
@@ -115,7 +115,7 @@ class ConfigController extends Controller
 		);
 		$html = "<div class=\"form-group\">
 			<label class=\"col-sm-2 control-label no-padding-right\" for=\"form-field-1\">".$config->label."</label>
-			<div class=\"col-sm-10\">
+			<div class=\"col-sm-9\">
 				<input name=\"config[".$config->name."]\"
 				type=\"text\" class=\"col-xs-12 col-sm-12\"  
 				".(($placeholder)?'placeholder="'.$placeholder.'"':NULL)."
