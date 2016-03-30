@@ -3,7 +3,7 @@
 <div class="form-group">
   <label class="col-sm-2 control-label no-padding-right" for="form-field-1-1"> Tên danh mục <b class='require'>*</b>
   </label>
-  <div class="col-sm-10">
+  <div class="col-sm-9">
     <input name="data[tax_name]" data-validate="{required:true}" type="text" value="{{$data['current']->tax_name or ''}}" class="form-control">
    
   </div>
@@ -11,7 +11,7 @@
 <div class="form-group">
   <label class="col-sm-2 control-label no-padding-right" for="form-field-1-1"> Alias
   </label>
-  <div class="col-sm-10">
+  <div class="col-sm-9">
     <input name="data[slug]" type="text" value="{{$data['current']->slug or ''}}" class="form-control">
   </div>
   <span class="col-md-offset-2 col-md-10">
@@ -21,7 +21,7 @@
 <div class="form-group">
   <label class="col-sm-2 control-label no-padding-right" for="form-field-1-1"> Danh mục cha
   </label>
-  <div class="col-sm-10">
+  <div class="col-sm-9">
     <select name="data[parent]" class="col-sm-12">
     	<option value="0"> Chọn danh mục</option>
     	{!!$data['optionsCategory']!!}

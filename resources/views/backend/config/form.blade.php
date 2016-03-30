@@ -1,6 +1,12 @@
 @extends('backend.layout.main')
 @section('title', 'Page Title')
 @section('content')
+<div class="page-content">
+	<div class="page-header" style="overflow:hidden">
+		<h1>
+			{{$data['title'] or ''}}
+		</h1>
+	</div>
     <div class="col-xs-12">
 		<!-- PAGE CONTENT BEGINS -->
 		{!!$data['messElemnt'] or ''!!}
@@ -21,7 +27,8 @@
 				</div>
 			</div>
 		</form>
-	</div>											
+	</div>	
+</div>										
 @stop
 @section('javascripts')
     tinymce.init({

@@ -12,11 +12,15 @@
 
       <th>ID</th>
       <th>Tên người dùng</th>
+     
       <th>Email</th>
       <th>Ngày sinh</th>
       <th>Địa chỉ</th>
 
       <th>Hình ảnh</th>
+      <th>Số dư</th>
+      <th>Doanh thu</th>
+
       <th>
         <i class="ace-icon fa fa-clock-o bigger-110"></i>
         Ngày tạo
@@ -43,12 +47,16 @@
         <td>
           {{$record->name}}
         </td>
+
         <td>{{$record->email}}</td>
+
         <td>{{$record->birth_day}}</td>
-          <td>{{$record->address}}</td>
+          <td style="max-width:200px">{{str_limit($record->address)}}</td>
         <td class="hidden-480">
           <span style="display:block;width:40px;height:20px;background:#fff;border:solid 1px #ccc"></span>
         </td>
+        <td>{{$record->CustomerFinance->balance or 0}}</td>
+        <td>{{$record->CustomerFinance->income or 0}}</td>
         <td>{{$record->created_at}}</td>
 
         <td class="hidden-480">
