@@ -7,6 +7,7 @@ class PersonalInformation extends Controller{
 
     public function  getIndex () {
         $user = User::find(1);
+        //dd($user);
         \Auth::login($user, true);
         $user = '';
         if (!\Auth::check()) {
