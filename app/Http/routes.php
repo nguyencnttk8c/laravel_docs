@@ -18,18 +18,23 @@ Route::group(['middleware' => ['web']], function () {
     	route::get('config',['as'=>'Backend::config','uses'=>'Backend\ConfigController@getIndex']);
     	route::post('config',['as'=>'Backend::config','uses'=>'Backend\ConfigController@postIndex']);
         route::controller('ajax','Backend\AjaxController');
+        
     	route::controller('taxonomy','Backend\TaxonomyController',[
     		'getIndex' => 'Backend::taxonomy',
             'getEdit' => 'Backend::taxonomyEdit',
             'getNew' => 'Backend::taxonomyNew',
     	]);
+
+        route::controller('customers','Backend\CustomersController',[
+            'getIndex' => 'Backend::customers',
+            'getEdit' => 'Backend::customersEdit',
+            'getNew' => 'Backend::customersNew',
+        ]);
 	});
     Route::controller('thong-tin-ca-nhan', 'Account\PersonalInformation');
 
     Route::group(['prefix' => '/'], function(){
-        Route::get('/', function(){
-            return view('frontend.index');
-        });
+        Route::get('/', 'Frontend\HomeController@getIndex');
     	Route::get('dang-ky', ['as' => 'getRegister', 'uses' => 'Frontend\AuthCustomerController@getRegister']);
     	Route::post('dang-ky', ['as' => 'postRegister', 'uses' => 'Frontend\AuthCustomerController@postRegister']);
     	Route::get('dang-nhap', ['as' => 'getLogin', 'uses' => 'Frontend\AuthCustomerController@getLogin']);

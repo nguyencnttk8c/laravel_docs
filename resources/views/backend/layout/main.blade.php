@@ -12,6 +12,8 @@
 		<link rel="stylesheet" href="{{asset('backend/fonts/fonts.googleapis.com.css')}}" />
 		<!-- ace styles -->
 		<link rel="stylesheet" href="{{asset('backend/css/ace.min.css')}}" />
+		<link rel="stylesheet" href="{{asset('backend/css/datepicker.min.css')}}" />
+		<link rel="stylesheet" href="{{asset('backend/css/custom-style.css')}}" />
 
 		<!--[if lte IE 9]>
 			<link rel="stylesheet" href="assets/css/ace-part2.min.css" class="ace-main-stylesheet" />
@@ -25,6 +27,7 @@
 
 		<!-- ace settings handler -->
 		<script src="{{asset('backend/js/ace-extra.min.js')}}"></script>
+
 		<script type="text/javascript" src="{{ URL::asset('backend/tinymce/tinymce.min.js') }}"></script>
 
 		<!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
@@ -204,7 +207,8 @@
 			if('ontouchstart' in document.documentElement) document.write("<script src='{{asset('backend/js/jquery.mobile.custom.min.js')}}'>"+"<"+"/script>");
 		</script>
 		<script src="{{asset('backend/js/bootstrap.min.js')}}"></script>
-
+		<script src="{{asset('backend/js/bootstrap-datepicker.min.js')}}"></script>
+		<script src="{{asset('backend/js/jquery.validate.min.js')}}"></script>
 		<!-- ace scripts -->
 		<script src="{{asset('backend/js/ace-elements.min.js')}}"></script>
 		<script src="{{asset('backend/js/ace.min.js')}}"></script>

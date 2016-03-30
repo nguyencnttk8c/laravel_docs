@@ -1,10 +1,11 @@
 @extends('backend.templates.form')
 @section('element')
 <div class="form-group">
-  <label class="col-sm-2 control-label no-padding-right" for="form-field-1-1"> Tên danh mục 
+  <label class="col-sm-2 control-label no-padding-right" for="form-field-1-1"> Tên danh mục <b class='require'>*</b>
   </label>
   <div class="col-sm-10">
-    <input name="data[tax_name]" required type="text" value="{{$data['current']->tax_name or ''}}" class="form-control">
+    <input name="data[tax_name]" data-validate="{required:true}" type="text" value="{{$data['current']->tax_name or ''}}" class="form-control">
+   
   </div>
 </div>
 <div class="form-group">

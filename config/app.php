@@ -156,6 +156,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         'App\Providers\HelperServiceProvider',
+        // Mews\Captcha\CaptchaServiceProvider::class,
 
     ],
 
@@ -204,6 +205,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'FuncFrontend' => Helpers\Frontend\Functions::class,
         'FuncCommon' => Helpers\Common\Functions::class,
+        // 'Captcha' => Mews\Captcha\Facades\Captcha::class,
     ],
 
 ];

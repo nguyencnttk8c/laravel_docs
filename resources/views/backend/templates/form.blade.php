@@ -13,6 +13,20 @@
 					Quay lại
 				</button>
 			</a>
+
+			<a id="navigate-reset" href="javascript:void(0)">
+				<button class="btn btn-warning" type="submit">
+					<i class="ace-icon fa fa-undo bigger-110"></i>
+					Làm mới
+				</button>
+			</a>
+
+			<a id="navigate-submit" href="javascript:void(0)">
+				<button class="btn btn-success" type="submit">
+					<i class="ace-icon fa fa-check bigger-110"></i>
+					Cập nhật
+				</button>
+			</a>
 			
 		</div>
 	</div><!-- /.page-header -->
@@ -21,17 +35,17 @@
 		  <div class="col-xs-12">
 			<!-- PAGE CONTENT BEGINS -->
 			{!!\Session::get('messElemnt')!!}
-			<form class="form-horizontal" role="form" action="" method="POST">
+			<form class="form-horizontal form-validate" role="form" action="" method="POST">
 				@yield('element')
 				<input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
 				<div class="clearfix form-actions">
-					<div class="col-md-offset-2 col-md-10">
-						<button style="margin-left: -22px;"class="btn btn-info" type="submit">
+					<div class="col-md-offset-2 col-md-10 hidden">
+						<button id="submit" style="margin-left: -22px;"class="btn btn-info" type="submit">
 							<i class="ace-icon fa fa-check bigger-110"></i>
 							Cập nhật
 						</button>
 						&nbsp;&nbsp;&nbsp;
-						<button class="btn" type="reset">
+						<button id="reset" class="btn" type="reset">
 							<i class="ace-icon fa fa-undo bigger-110"></i>
 							Reset
 						</button>
@@ -42,4 +56,11 @@
 	</div><!-- /.row -->
 </div>												
 @stop
+@section('javascripts')
+$('.date-picker').datepicker({
+	autoclose: true,
+	todayHighlight: true
+})
+@stop
+
 
