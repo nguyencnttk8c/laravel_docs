@@ -44,4 +44,5 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::get('upload-tai-lieu', 'Account\Upload@getUpload');
     Route::post('/dropzone/uploadFiles', 'Account\Upload@uploadFiles');
+    Route::post('/dropzone/deleteFiles', 'Account\Upload@deleteFiles');
 });
