@@ -9,10 +9,10 @@
                         liệu</a>
                 </li>
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Quản lý tài chính</a>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="/account/quan-ly-tai-chinh">Quản lý tài chính</a>
                 </li>
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Thông tin cá nhân</a>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="/account/thong-tin-ca-nhan">Thông tin cá nhân</a>
                 </li>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Thống kê</a>
