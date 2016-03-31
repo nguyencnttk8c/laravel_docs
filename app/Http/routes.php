@@ -50,7 +50,9 @@ Route::group(['middleware' => ['web']], function () {
     Route::controller('thong-tin-ca-nhan', 'Account\PersonalInformation');
     Route::get('upload-tai-lieu', 'Account\Upload@getUpload');
     Route::group(['prefix' => '/account/'], function(){
+        Route::controller('thong-tin-ca-nhan', 'Account\PersonalInformation');
         Route::get('quan-ly-tai-lieu', 'Account\DocumentController@getIndex');
+        Route::get('quan-ly-tai-chinh', 'Account\FinanceController@getIndex');
     });
     Route::post('/dropzone/uploadFiles', 'Account\Upload@uploadFiles');
     Route::post('/dropzone/deleteFiles', 'Account\Upload@deleteFiles');
