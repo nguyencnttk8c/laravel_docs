@@ -5,7 +5,7 @@
         <div class="listcategory">
             <ul class="listParentCate">
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" title="Giáo dục đào tạo" data-toggle="dropdown">Quản lý tài
+                    <a href="/account/quan-ly-tai-lieu" class="dropdown-toggle" title="Giáo dục đào tạo" data-toggle="dropdown">Quản lý tài
                         liệu</a>
                 </li>
                 <li class="dropdown">

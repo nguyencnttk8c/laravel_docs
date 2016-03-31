@@ -37,7 +37,6 @@ Route::group(['middleware' => ['web']], function () {
             'getNew' => 'Backend::customersNew',
         ]);
 	});
-    Route::controller('thong-tin-ca-nhan', 'Account\PersonalInformation');
 
     Route::group(['prefix' => '/'], function(){
         Route::get('/', 'Frontend\HomeController@getIndex');
@@ -47,8 +46,11 @@ Route::group(['middleware' => ['web']], function () {
     	Route::post('dang-nhap', ['as' => 'postLogin', 'uses' => 'Frontend\AuthCustomerController@postLogin']);
         Route::get('dang-xuat', 'Frontend\AuthCustomerController@getLogout');
     });
-
+    Route::controller('thong-tin-ca-nhan', 'Account\PersonalInformation');
     Route::get('upload-tai-lieu', 'Account\Upload@getUpload');
+    Route::group(['prefix' => '/account/'], function(){
+        Route::get('quan-ly-tai-lieu', 'Account\DocumentController@getIndex');
+    });
     Route::post('/dropzone/uploadFiles', 'Account\Upload@uploadFiles');
     Route::post('/dropzone/deleteFiles', 'Account\Upload@deleteFiles');
 });
