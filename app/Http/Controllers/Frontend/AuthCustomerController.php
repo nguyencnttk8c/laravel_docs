@@ -50,21 +50,23 @@ class AuthCustomerController extends Controller
     }
 
     protected function postRegister(FrontendRegisterRequest $request) {
+        \Session::forget('error');
         // Add new customer into Customers table
 
         $newCustomer = new Customer();
-        $newCustomer->name = $request->username;
-        $newCustomer->email = $request->useremail;
-        $newCustomer->password = \Hash::make($request->password);
+        $newCustomer->name = $request->ctrlhotentxt;
+        $newCustomer->email = $request->ctrlemailtxt;
+        $newCustomer->password = \Hash::make($request->ctrlpasstxt);
+        $newCustomer->phone = $request->ctrlphonetxt;
         $newCustomer->role = 1;   // set user's role is customer
-        $newCustomer->status = 0; // set user's status is inactive
+        $newCustomer->status = 1; // set user's status is inactive
         $newCustomer->save();
 
         // Send activate email
 
         // Redirect to login page
 
-        return \Redirect::to('dang-nhap');
+        return \Redirect::to('/');
     }
 
     protected function getLogin() {
@@ -75,18 +77,27 @@ class AuthCustomerController extends Controller
         $auth = [
             'email'    => $request->useremail,
             'password' => $request->password,
-            'status'     => 1
+            'status'   => 1
         ];
 
         if (Auth::attempt($auth)) {
+            \Session::forget('error');
             return \Redirect::to('/');
         } else {
-            return \Redirect::to('/dang-nhap/')->with(['error' => 'Email hoặc mật khẩu không chính xác!']);
+            return \Redirect::to('/')->with(['error' => 'Email, mật khẩu không chính xác hoặc tài khoản chưa kích hoạt!']);
         }
     }
 
     protected function getLogout() {
         Auth::logout();
         return redirect()->back();
+    }
+
+    public function reInitCaptcha(){
+        $response['img'] = '';
+
+        $response['img'] = \Captcha::img();
+
+        echo json_encode($response);
     }
 }

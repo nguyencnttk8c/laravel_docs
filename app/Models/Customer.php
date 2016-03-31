@@ -7,10 +7,19 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class Customer extends Authenticatable
 {
     /**
+     * The name of table in DB
+     *
+     * @var string
+     */
+    protected $table = 'customers';
+
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
+
     protected $fillable = [
         'name', 'email', 'password',
     ];

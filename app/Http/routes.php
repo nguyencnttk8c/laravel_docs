@@ -45,6 +45,7 @@ Route::group(['middleware' => ['web']], function () {
     	Route::get('dang-nhap', ['as' => 'getLogin', 'uses' => 'Frontend\AuthCustomerController@getLogin']);
     	Route::post('dang-nhap', ['as' => 'postLogin', 'uses' => 'Frontend\AuthCustomerController@postLogin']);
         Route::get('dang-xuat', 'Frontend\AuthCustomerController@getLogout');
+        Route::get('reInitCaptcha', ['uses' => 'Frontend\AuthCustomerController@reInitCaptcha']);
     });
     Route::controller('thong-tin-ca-nhan', 'Account\PersonalInformation');
     Route::get('upload-tai-lieu', 'Account\Upload@getUpload');

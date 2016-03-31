@@ -5,6 +5,7 @@ return [
         'width'     => 120,
         'height'    => 36,
         'quality'   => 90,
+        'characters' => '0123456789',
     ],
     // ...
 ];

@@ -1,3 +1,18 @@
+<?php 
+    global $in, $display;
+
+    if (Session::has('error') || strlen($errors->first('useremail')) > 0 || strlen($errors->first('password')) > 0) {
+        $modalOpen = 'modal-open';
+        $style = 'padding-right: 17px;';
+        $in = 'in';
+        $display = 'display:block;';
+    } else {
+        $modalOpen = '';
+        $style = '';
+        $in = '';
+        $display = '';
+    }
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -14,7 +29,7 @@
 
 <script src="{{ URL::asset('common/js/bootstrap-datepicker.js') }}"></script>
 </head>
-<body>
+<body class="{{$modalOpen}}" style="{{$style}}">
 <header>
 	<div class="container">
 		<div class="row">
@@ -68,11 +83,15 @@
     <div class="navbar-login">
         <div class="container">
             <div class="col-sm-6 pull-right" style="text-align:right;margin-right:8px;">
+                @if (\Auth::check())
+                <p>Xin chào {{\Auth::user()->name}}</p><a href="{{URL('/')}}/dang-xuat/">Đăng xuất</a>
+                @else
                 Vui lòng 
                 <a href="/dang-nhap/" data-toggle="modal" data-target="#signin" class="link-title-info">
                     <span style="color:#f00;"><i class="fa fa-sign-in"></i>Đăng nhập</span>
                 </a> để download hoặc 
                 <a href="/dang-ky/">đăng ký</a> tài khoản mới
+                @endif
             </div>
         </div>
     </div>

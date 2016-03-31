@@ -25,10 +25,11 @@ class FrontendRegisterRequest extends Request
     {
         return [
             'ctrlhotentxt'   => 'required|between:6,20',
-            'ctrlphonetxt'   => 'required|numeric|between:10,11',
-            'ctrlemailtxt'  => 'required|email|unique:customers,email',
-            'ctrlpasstxt'   => 'required|between:6,20',
-            'ctrlrepasstxt' => 'required|between:6,20|same:password',
+            'ctrlphonetxt'   => 'required|numeric|digits_between:10,12',
+            'ctrlemailtxt'   => 'required|email|unique:customers,email',
+            'ctrlpasstxt'    => 'required|between:6,20',
+            'ctrlrepasstxt'  => 'required|between:6,20|same:ctrlpasstxt',
+            // 'captcha'        => 'required|captcha'
         ];
     }
 
@@ -38,19 +39,21 @@ class FrontendRegisterRequest extends Request
             'ctrlhotentxt.between'    => 'Vui lòng nhập tên từ 6 - 20 ký tự',
 
             'ctrlphonetxt.required'   => 'Vui lòng nhập số điện thoại',
-            'ctrlphonetxt.numeric'   => 'Vui lòng nhập theo dạng 09xx xxx xxx hoặc 01xxx xxx xxx',
-            'ctrlphonetxt.between'   => 'Vui lòng nhập theo dạng 09xx xxx xxx hoặc 01xxx xxx xxx',
+            'ctrlphonetxt.numeric'    => 'Vui lòng nhập theo dạng 09xx xxx xxx hoặc 01xxx xxx xxx',
+            'ctrlphonetxt.between'    => 'Vui lòng nhập theo dạng 09xx xxx xxx hoặc 01xxx xxx xxx',
 
-            'ctrlemailtxt.required'  => 'Vui lòng nhập Email!',
-            'ctrlemailtxt.unique'    => 'Email đã tồn tại!',
-            'ctrlemailtxt.email'     => 'Vui lòng nhập Email theo dạng abc@xyz.com',
+            'ctrlemailtxt.required'   => 'Vui lòng nhập Email!',
+            'ctrlemailtxt.unique'     => 'Email đã tồn tại!',
+            'ctrlemailtxt.email'      => 'Vui lòng nhập Email theo dạng abc@xyz.com',
 
-            'ctrlpasstxt.required'   => 'Vui lòng nhập mật khẩu!',
-            'ctrlpasstxt.between'    => 'Vui lòng nhập mật khẩu từ 6 - 20 ký tự',
+            'ctrlpasstxt.required'    => 'Vui lòng nhập mật khẩu!',
+            'ctrlpasstxt.between'     => 'Vui lòng nhập mật khẩu từ 6 - 20 ký tự',
             
-            'ctrlrepasstxt.between'  => 'Vui lòng nhập mật khẩu từ 6 - 20 ký tự',
-            'ctrlrepasstxt.required' => 'Vui lòng nhập xác nhận mật khẩu!',
-            'ctrlrepasstxt.same'     => 'Vui lòng nhập đúng mật khẩu xác nhận',
+            'ctrlrepasstxt.between'   => 'Vui lòng nhập mật khẩu từ 6 - 20 ký tự',
+            'ctrlrepasstxt.required'  => 'Vui lòng nhập xác nhận mật khẩu!',
+            'ctrlrepasstxt.same'      => 'Vui lòng nhập đúng mật khẩu xác nhận',
+            // 'captcha.required'        => 'Vui lòng nhập mã Captcha',
+            // 'captcha.captcha'         => 'Mã Captcha không chính xác'
         ];
     }
 }

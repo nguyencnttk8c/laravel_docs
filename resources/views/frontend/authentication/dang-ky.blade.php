@@ -7,7 +7,7 @@
    	<h2 class="page_titel">Đăng ký tài khoản</h2>
 
 	<div class="panel panel-default">
-		<form action="" method="post" name="frmTransaction" id="frmTransaction">
+		<form action="{{ route('postRegister') }}" method="post" name="frmTransaction" id="frmTransaction">
 	    	<div class="panel-body">
 	        	<input type="hidden" name="_token" value="{{ csrf_token() }}">
 
@@ -41,17 +41,16 @@
 		        <div class="form-group">
 		            <div class="col-sm-12">
 		                <label class="control-label" for="ValidateCode">Nhập mã kiểm tra<span class="asterisk_input"></span></label>
-		                <input maxlength="40" class="form-control" autocomplete="off" data-val="true" placeholder="Nhập mã kiểm tra" data-val-required="Vui lòng điền mã xác nhận" id="ValidateCode" name="ValidateCode" type="text" value="" tabindex="6">
-		                
+		                <input maxlength="40" class="form-control" autocomplete="off" data-val="true" placeholder="Nhập mã kiểm tra" data-val-required="Vui lòng điền mã xác nhận" id="ValidateCode" name="captcha" type="text" value="" tabindex="6">
+		            	{!! $errors->first('ValidateCode') !!}
 		            </div>
 		        </div>
 		        <div class="form-group">
 		            <label class="control-label" for="ValidateCode">&nbsp;</label>
-		           <?php echo Captcha::img(); ?>
-		            <img alt="Nhấp vào ảnh để đổi ảnh khác" title="Nhấp vào ảnh để đổi ảnh khác" src="/User/ValidateCode" style="cursor: pointer;"
-		                 onclick="RefreshValidateCode(this);" />
+		           	<p id="codeImg"><?php echo Captcha::img(); ?></p>
+		            <p id="GetNewCode" style="cursor:pointer">Đổi ảnh</p>
 		        </div>        
-		    </div>
+		    </div>	
 		    <div class="form-group">        
 		        
 		        
@@ -69,4 +68,18 @@
         </form>
 	</div>
 </div>
+<script>
+	$('#GetNewCode').on('click', function(){
+        $.ajax({
+            url: "{{URL('/')}}/reInitCaptcha",
+            method: "GET",
+            success: function(data){
+                if (data.img != ''){
+                    $('#codeImg').html(data.img);
+                }
+            },
+            dataType: "json"
+        });
+    });
+</script>
 @endsection

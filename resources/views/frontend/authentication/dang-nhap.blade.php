@@ -1,6 +1,3 @@
-@if (Session::has('error'))
-<p>{{Session::get('error')}}</p>
-@endif
 <h2>Đăng nhập</h2>
 <form action="" method="post">
 	<input type="hidden" name="_token" value="{{ csrf_token() }}">
