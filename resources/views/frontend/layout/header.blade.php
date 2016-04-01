@@ -21,13 +21,16 @@
         {{$data['title']}}
     @endif
 </title>
-<link href="{{ URL::asset('common/css/bootstrap.css') }}" type="text/css" rel="stylesheet"></link>
-<link href="{{ URL::asset('frontend/css/style.css') }}" type="text/css" rel="stylesheet"></link>
+<link href="{{ URL::asset('common/css/bootstrap.css') }}" type="text/css" rel="stylesheet">
+<link href="{{ URL::asset('frontend/css/style.css') }}" type="text/css" rel="stylesheet">
 <script src="{{ URL::asset('common/js/jquery-1.9.1.js') }}"></script>
-
 <script src="{{ URL::asset('common/js/bootstrap.min.js') }}"></script>
-
 <script src="{{ URL::asset('common/js/bootstrap-datepicker.js') }}"></script>
+<script type="text/javascript" src="{{asset('common/js/moment.min.js')}}"></script>
+
+<script type="text/javascript" src="{{asset('common/js/daterangepicker.js')}}"></script>
+<link rel="stylesheet" type="text/css" href="{{asset('common/css/daterangepicker.css')}}" />
+<link rel="stylesheet" type="text/css" href="{{asset('common/font-awesome/4.2.0/css/font-awesome.min.css')}}" />
 </head>
 <body class="{{$modalOpen}}" style="{{$style}}">
 <header>
