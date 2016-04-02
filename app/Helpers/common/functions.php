@@ -1,6 +1,7 @@
 <?php
 namespace Helpers\Common;
 
+use App\Models\Taxonomy;
 
 class Functions {
 
@@ -80,4 +81,67 @@ class Functions {
         return ob_get_clean();
     }
 
+    public static function getAllTaxonomy() {
+        $cats = Taxonomy::all();
+
+        if (count($cats) == 0) {
+            return false;
+        } else {
+            return $cats;
+        }
+    }
+
+    public static function makeMenu($data, $id) {
+        $check = false;
+        foreach ($data as $cat) {
+            if ($cat->parent == $id) {
+                $check = true;
+                break;
+            }
+        }
+
+        if ($check) {
+            echo '<ul class="dropdown-menu theme_nav_dropdown">';
+
+            foreach ($data as $cat) {
+                if ($cat->parent == $id) {
+                    echo '<li><a href="#">'.$cat->tax_name.'</a>';
+                    self::makeMenu($data, $cat->id); 
+                    echo '</li>';
+                }
+            }
+
+            echo '</ul>';
+        }
+    }
+
+    public static function getMenu () {
+        $cats = self::getAllTaxonomy();
+        
+        if ($cats) {
+    ?>
+            <div class="col-md-3 col-sx-4">
+                <div class="well">
+                    <h3 class="titel">Danh mục tài liệu</h3>
+                    <div class="listcategory" >
+                        <ul class="listParentCate">
+                        <?php
+                            foreach ($cats as $cat) {
+                                if ($cat->parent == 0) {
+                        ?>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" title="<?php echo $cat->tax_name; ?>" data-toggle="dropdown"><?php echo $cat->tax_name; ?></a>
+                                        <?php echo self::makeMenu($cats, $cat->id) ?>
+                                    </li>
+                        <?php
+                                }
+                            }
+                        ?>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    <?php
+        }
+    }
 } 

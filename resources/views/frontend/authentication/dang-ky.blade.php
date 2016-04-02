@@ -42,7 +42,7 @@
 		            <div class="col-sm-12">
 		                <label class="control-label" for="ValidateCode">Nhập mã kiểm tra<span class="asterisk_input"></span></label>
 		                <input maxlength="40" class="form-control" autocomplete="off" data-val="true" placeholder="Nhập mã kiểm tra" data-val-required="Vui lòng điền mã xác nhận" id="ValidateCode" name="captcha" type="text" value="" tabindex="6">
-		            	{!! $errors->first('ValidateCode') !!}
+		            	{!! $errors->first('captcha') !!}
 		            </div>
 		        </div>
 		        <div class="form-group">
