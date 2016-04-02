@@ -58,7 +58,7 @@ class AuthCustomerController extends Controller
         $newCustomer->email = $request->ctrlemailtxt;
         $newCustomer->password = \Hash::make($request->ctrlpasstxt);
         $newCustomer->phone = $request->ctrlphonetxt;
-        $newCustomer->role = 1;   // set user's role is customer
+        $newCustomer->role = 'user';   // set user's role is customer
         $newCustomer->status = 1; // set user's status is inactive
         $newCustomer->save();
 
