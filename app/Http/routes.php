@@ -46,6 +46,11 @@ Route::group(['middleware' => ['web']], function () {
     	Route::post('dang-nhap', ['as' => 'postLogin', 'uses' => 'Frontend\AuthCustomerController@postLogin']);
         Route::get('dang-xuat', 'Frontend\AuthCustomerController@getLogout');
         Route::get('reInitCaptcha', ['uses' => 'Frontend\AuthCustomerController@reInitCaptcha']);
+        
+        Route::get('facebooklogin', ['uses' => 'Frontend\AuthCustomerController@redirectToProviderFacebook']);
+        Route::get('callbackfacebook', ['uses' => 'Frontend\AuthCustomerController@handleProviderCallbackFacebook']);
+        Route::get('googlelogin', ['uses' => 'Frontend\AuthCustomerController@redirectToProviderGoogle']);
+        Route::get('callbackgoogle', ['uses' => 'Frontend\AuthCustomerController@handleProviderCallbackGoogle']);
     });
     Route::controller('thong-tin-ca-nhan', 'Account\PersonalInformation');
     Route::get('upload-tai-lieu', 'Account\Upload@getUpload');

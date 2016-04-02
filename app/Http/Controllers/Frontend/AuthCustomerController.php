@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Models\Customer;
-use Validator;
+use Validator, Socialize;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
@@ -99,5 +99,75 @@ class AuthCustomerController extends Controller
         $response['img'] = \Captcha::img();
 
         echo json_encode($response);
+    }
+
+    public function redirectToProviderFacebook()
+    {
+        return Socialize::with('facebook')->redirect();
+    }
+
+    public function handleProviderCallbackFacebook()
+    {
+        if (isset($_GET['error'])) {
+            if (Session::get('isRegister'))
+                return redirect('/dang-ky/');
+            return redirect('/dang-nhap/');
+        }
+        try {
+            $user = Socialize::with('facebook')->stateless()->user();
+        } catch (Exception $e) {
+            return redirect('/dang-ky/');
+        }
+
+        $authUser = $this->findOrCreateUser($user, 'FB');
+
+        Auth::login($authUser, true);
+
+        //redirect after login
+        $redirect_to = \Session::get('redirect_to');
+        \Session::set('redirect_to', ''); \Session::forget('redirect_to');
+        if($redirect_to && $redirect_to != '' && !\Session::get('nologin')){
+            return \Redirect::to($redirect_to);
+        } else {
+            if (Auth::user()->role == 'admin')
+                return \Redirect::to('/backend/');
+            else
+                return redirect('/');
+        }
+
+    }
+
+    public function redirectToProviderGoogle()
+    {
+        return Socialize::with('google')->redirect();
+    }
+
+    public function handleProviderCallbackGoogle()
+    {
+        if (isset($_GET['error'])) {
+            if (Session::get('isRegister'))
+                return redirect('/dang-ky/');
+            return redirect('/dang-nhap/');
+        }
+
+        try {
+            $user = Socialize::with('google')->stateless()->user();
+        } catch (Exception $e) {
+            return redirect('/dang-nhap/');
+        }
+        $authUser = $this->findOrCreateUser($user, 'GG+');
+
+        //redirect after login
+        $redirect_to = \Session::get('redirect_to');
+        \Session::set('redirect_to', ''); \Session::forget('redirect_to');
+        if($redirect_to && $redirect_to != '' && !\Session::get('nologin')){
+            return \Redirect::to($redirect_to);
+        } else {
+            if (Auth::user()->role == 'admin')
+                return \Redirect::to('/backend/');
+            else
+                return redirect('/');
+        }
+
     }
 }

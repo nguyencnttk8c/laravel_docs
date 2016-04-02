@@ -157,6 +157,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         'App\Providers\HelperServiceProvider',
         Mews\Captcha\CaptchaServiceProvider::class,
+        Laravel\Socialite\SocialiteServiceProvider::class,
 
     ],
 
@@ -206,6 +207,7 @@ return [
         'FuncFrontend' => Helpers\Frontend\Functions::class,
         'FuncCommon' => Helpers\Common\Functions::class,
         // 'Captcha' => Mews\Captcha\Facades\Captcha::class,
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
     ],
 
 ];
