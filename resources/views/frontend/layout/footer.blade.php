@@ -64,12 +64,12 @@
                         
                     </div>  
                     <div class="form-group">
-                        <a href="#" class="fa-google-plus-square">Đăng nhập bằng google</a>
-                        <a href="#" class="fa-facebook-square">Đăng nhập bằng facebook</a>
+                        <a href="{{URL('/')}}/googlelogin" class="fa-google-plus-square">Đăng nhập bằng google</a>
+                        <a href="{{URL('/')}}/facebooklogin" class="fa-facebook-square">Đăng nhập bằng facebook</a>
                     </div>                      
                 </div>
                 <div class="panel-footer">
-                    <a class="pull-right" href="{{URL('/')}}/dang-ky/"><i class="fa fa-share-square-o"></i> Bạn chưa có tài khoản? Đăng ký ngay</a>
+                    <a class="pull-right" href="/dang-ky/"><i class="fa fa-share-square-o"></i> Bạn chưa có tài khoản? Đăng ký ngay</a>
                     <div class="clearfix"></div>
                 </div>
             </form>

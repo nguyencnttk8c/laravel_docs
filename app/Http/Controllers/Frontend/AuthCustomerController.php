@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Models\Customer;
-use Validator, Socialize;
+use Validator, Socialite;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
@@ -103,7 +103,7 @@ class AuthCustomerController extends Controller
 
     public function redirectToProviderFacebook()
     {
-        return Socialize::with('facebook')->redirect();
+        return Socialite::with('facebook')->redirect();
     }
 
     public function handleProviderCallbackFacebook()
@@ -114,7 +114,7 @@ class AuthCustomerController extends Controller
             return redirect('/dang-nhap/');
         }
         try {
-            $user = Socialize::with('facebook')->stateless()->user();
+            $user = Socialite::with('facebook')->stateless()->user();
         } catch (Exception $e) {
             return redirect('/dang-ky/');
         }
@@ -139,7 +139,7 @@ class AuthCustomerController extends Controller
 
     public function redirectToProviderGoogle()
     {
-        return Socialize::with('google')->redirect();
+        return Socialite::with('google')->redirect();
     }
 
     public function handleProviderCallbackGoogle()
@@ -151,7 +151,7 @@ class AuthCustomerController extends Controller
         }
 
         try {
-            $user = Socialize::with('google')->stateless()->user();
+            $user = Socialite::with('google')->stateless()->user();
         } catch (Exception $e) {
             return redirect('/dang-nhap/');
         }
