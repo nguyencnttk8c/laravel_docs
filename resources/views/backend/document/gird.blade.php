@@ -18,6 +18,8 @@
       <th>Giá</th>
       <th>Hình ảnh</th>
       <th>Link file</th>
+      <th>Số lượt xem</th>
+      <th>Số lượt tải</th>
       <th><i class="ace-icon fa fa-clock-o bigger-110"></i>Ngày tạo</th>
       <th>Thao tác</th>
       
@@ -52,17 +54,18 @@
         </td>
        
         <td><a href="{{$record->link_file}}">Tải xuống</a></td>
+        <td>{{($record->DocumentMeta)?$record->DocumentMeta->num_viewed: 0}}</td>
+        <td>{{($record->DocumentMeta)?$record->DocumentMeta->num_downloaded: 0}}</td>
         <td>{{$record->created_at}}</td>
-
-
+        
         <td>
           <div class="hidden-sm hidden-xs btn-group">
-            <a href="/backend/customers/edit/{{$record->id}}">
+            <a href="/backend/document/edit/{{$record->id}}">
               <button class="btn btn-xs btn-info">
                 <i class="ace-icon fa fa-pencil bigger-120"></i>
               </button>
             </a>
-            <a href="javascript:void(0)" onclick="deleteRecord({{$record->id}},'customers')" >
+            <a href="javascript:void(0)" onclick="deleteRecord({{$record->id}},'document')" >
             <button class="btn btn-xs btn-danger">
               <i class="ace-icon fa fa-trash-o bigger-120"></i>
             </button>

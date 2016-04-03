@@ -37,6 +37,10 @@ class ResoureController extends Controller
 		if($id){
 			$data['current'] = $this->_model->find($id);
 		}
+		if(method_exists($this, "dataProvider")){
+			$data = array_merge($this->dataProvider($id),$data);
+		}
+		
 		return view('backend.'.$this->_urlAndFormView.'.form',['data'=>$data]);
 	}
 }

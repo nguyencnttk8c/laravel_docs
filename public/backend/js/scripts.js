@@ -22,8 +22,9 @@ function deleteRecord(id,table){
 }
 
 var rulesData = [];
-$('.form-validate input').each(function(e){
+$('.form-validate input,.form-validate select').each(function(e){
 	var rulesValidate = $(this).data('validate');
+
 	var $this = this;
 	if(rulesValidate){
 		var properties = rulesValidate.replace('}','').replace('{','').split(',');
@@ -37,6 +38,7 @@ $('.form-validate input').each(function(e){
 	
 })
 var rules = $.extend({}, rulesData);
+
 $(".form-validate").validate({
 	rules: rules
 });
