@@ -82,6 +82,7 @@ div.listcategory ul.listParentCate li ul.dropdown-menu
     left:180px !important;
     top:0px;
     padding-left:10px;
+    min-width: 195px;
 }
 div.listcategory ul.listParentCate li ul li ul,div.listcategory ul.listParentCate li ul li ul li ul,div.listcategory ul.listParentCate li ul li:hover ul li ul
 {
