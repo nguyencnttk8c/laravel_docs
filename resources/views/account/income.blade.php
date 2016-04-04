@@ -1,7 +1,5 @@
 @extends('frontend.layout.layout')
-@section('sidebar')
-@include('account.layout.sidebar')
-@endsection
+@section('sidebar', view('account.layout.sidebar')->with('current', 'inc'))
 @section('content')
 <div class="col-md-9 col-sx-8">
     <h3>Thống Kê</h3>

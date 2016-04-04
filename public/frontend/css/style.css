@@ -1,8 +1,10 @@
-﻿body{
+﻿@charset "UTF-8";
+body{
     color: #333;
     background-color: #fff;
     text-align: justify;
     line-height: 20px;
+    font-family: 'Roboto', 'sans-serif' !important;
 }
 div.divlogo{
     padding: 10px 0px;
@@ -27,92 +29,6 @@ div.listthongbao ul li a{
 header, footer, hgroup,
 nav, section {
     display: block;
-}
-div.col-md-4 .titel
-{
-    margin:0px;line-height:25px;background-color:#0098DB;
-    padding:6px 0px 6px 15px;
-    color:#fff;
-    border-radius:5px;
-    -webkit-border-radius:5px;
-    -moz-border-radius: 5px;
-}
-div.listcategory ul
-{
-    padding:14px 0px 0px 0px;
-    margin-left:13px;
-    margin-bottom:0px;
-}
-div.listcategory ul.listParentCate li
-{
-    list-style-type:none;
-    color:#0098DB;
-    display:block;
-    padding:7px 0px;
-
-}
-div.listcategory ul.listParentCate li a
-{
-    font-size:15px;
-    display:block;
-    line-height:25px;
-    padding-left:3px;
-    height:25px;
-    border-left:4px solid #0AA888;
-}
-div.listcategory ul.listParentCate li.active a.active
-{
-    color:#ff0000;
-}
-div.listcategory ul.listParentCate > li:nth-child(4n+2) > a
-{
-    border-left:4px solid #6D9EBC;
-}
-div.listcategory ul.listParentCate > li:nth-child(4n+3) > a
-{
-    border-left:4px solid #057AB0;
-}
-div.listcategory ul.listParentCate > li:nth-child(4n+4) > a
-{
-    border-left:4px solid #7FB39B;
-}
-div.listcategory ul.listParentCate > li:nth-child(4n+5) > a
-{
-    border-left:4px solid #C67466
-}
-div.listcategory ul.listParentCate > li:nth-child(4n+6) > a
-{
-    border-left:4px solid #0AA888
-}
-div.listcategory ul.listParentCate li ul.dropdown-menu
-{
-    left:180px !important;
-    top:0px;
-    padding-left:10px;
-}
-div.listcategory ul.listParentCate li ul li ul,div.listcategory ul.listParentCate li ul li ul li ul,div.listcategory ul.listParentCate li ul li:hover ul li ul
-{
-    display:none;
-}
-div.listcategory ul.listParentCate li ul li:hover ul
-{
-    display:block;position:absolute;top:0px;left:180px;
-    width:190px;
-    background-color:#FFF;
-    border:1px solid #ccc;
-    border-radius:4px;
-    -webkit-border-radius:4px;
-    -moz-border-radius:4px;
-}
-div.listcategory ul.listParentCate li ul li ul li:hover ul
-{
-    display:block;position:absolute;top:0px;left:170px;
-    width:190px;
-    background-color:#FFF;
-    border:1px solid #ccc;
-    border-radius:4px;
-    -webkit-border-radius:4px;
-    -moz-border-radius:4px;
 }
 div.col-md-2 .tailen
 {
@@ -158,39 +74,7 @@ div.info_user_cnt div.user_result
     font-size:18px;
     padding:10px 0px 10px 50px;
 }
-div.account_balance .title_bal
-{
-    font-size: 13px;
-    color: #999;
-    padding: 20px 0px 6px 18px;
-    position: relative;
-    text-transform:uppercase;
-    display: inline-block;
-}
-div.account_balance .number_money_bal {
-    font-size: 25px;
-    color: #FB0;
-    display: inline-block;
-    padding: 0px 0px 0px 18px;
-}
-div.account_balance .send_bal {
-    color: #00A888;
-    font-size: 11px;
-    border: 1px solid #00A888;
-    display: inline-block;
-    float: right;
-    padding: 5px 10px;
-    border-radius: 3px;
-    margin: 5px 20px 0px 0px;
-}
-div.titsearch
-{
-    border-radius:4px;
-    -moz-border-radius:4px;
-    -webkit-border-radius:4px;
-    border:1px solid #ccc;
-    padding:7px;
-}
+
 div.titsearch span
 {
     padding:3px 7px;
@@ -375,7 +259,6 @@ div.row_footer .col-md-4
 ----------------------------------------------------------*/
 .site-title {
     color: #c8c8c8;
-    font-family: Rockwell, Consolas, "Courier New", Courier, monospace;
     font-size: 2.3em;
     margin: 0;
 }
@@ -1173,9 +1056,7 @@ tr.pager td {
 
 
 }
-body {
-    font-family: Arial, Helvetica, sans-serif;
-}
+
 
 header {
     border-bottom: 1px solid #f4f4f4;
@@ -1870,10 +1751,6 @@ div.uploadtailieu
 a:hover, a:focus {
     color: #23527c;
     text-decoration: none;
-}
-
-h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-    font-family: Arial, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .copyrightft {
@@ -2872,30 +2749,6 @@ ul.tuvan-ol li img {
 .TCoin .input-group[class*="col-"] {
     padding-left: 15px;
     padding-right: 15px;
-}
-
-.bankInfo {
-    border: 1px solid #395587;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
-    padding: 20px 20px;
-    text-align: left !important;
-    margin: 0 15px;
-    margin-bottom: 10px;
-}
-
-.bankInfo p.title {
-    font-size: 16px;
-    font-style: italic;
-    color: #0696D6;
-    font-weight: bold;
-}
-
-.bankInfo p {
-    color: #363435;
-    font-size: 15px;
-    font-weight: normal;
 }
 
 .supportsky img {

@@ -1,7 +1,5 @@
 @extends('frontend.layout.layout')
-@section('sidebar')
-@include('frontend.layout.sidebar')
-@endsection
+@section('sidebar', view('account.layout.sidebar')->with('current', 'up'))
 @section('content')
 <div class="col-md-9">
     <h2 class="page_titel">Đăng tải tài liệu</h2>
