@@ -1,10 +1,10 @@
 @extends('frontend.layout.layout')
 @section('sidebar', view('account.layout.sidebar')->with('current', 'inc'))
 @section('content')
-<div class="col-md-9 col-sx-8">
-    <h3>Thống Kê</h3>
-    <div>
-        <form class="row">
+<section class="col-md-9 statistic-page" id="content-account">
+    <h1 class="title">Thống Kê</h1>
+    <div class="row" id="statistic-filter">
+        <form action="" method="post">
             <div class="col-md-2">
                 <label for="sale">Bán tài liệu</label>
                 <input id="sale" type="checkbox" name="type[]" value="sale">
@@ -28,32 +28,6 @@
     <script type="text/javascript" src="{{asset('common/js/highcharts.js')}}"></script>
     <div id="highcharts" style="height: 300px"></div>
     <script type="text/javascript">
-        $(function () {
-            $('#highcharts').highcharts({
-                title: {
-                    text: 'Fruit Consumption'
-                },
-                xAxis: {
-                    categories: ['Apples', 'Bananas', 'Oranges']
-                },
-                yAxis: {
-                    title: {
-                        text: 'Fruit eaten'
-                    }
-                },
-                series: [
-                    {
-                        name: 'Jane',
-                        data: [1, 0, 4]
-                    },
-                    {
-                        name: 'John',
-                        data: [5, 7, 3]
-                    }
-                ]
-            });
-        });
-
         $('input[name=datefilter]').daterangepicker(
             {
                 "ranges": {
@@ -81,7 +55,32 @@
                 //            $('#reportrange input[name="date_from"]').val(start.format('YYYY-MM-DD'));
                 //            $('#reportrange input[name="date_to"]').val(end.format('YYYY-MM-DD'));
             }
-        )
+        );
+        $(function () {
+            $('#highcharts').highcharts({
+                title: {
+                    text: 'Fruit Consumption'
+                },
+                xAxis: {
+                    categories: ['Apples', 'Bananas', 'Oranges']
+                },
+                yAxis: {
+                    title: {
+                        text: 'Fruit eaten'
+                    }
+                },
+                series: [
+                    {
+                        name: 'Jane',
+                        data: [1, 0, 4]
+                    },
+                    {
+                        name: 'John',
+                        data: [5, 7, 3]
+                    }
+                ]
+            });
+        });
     </script>
-</div>
+</section>
 @endsection

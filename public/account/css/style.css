@@ -131,5 +131,44 @@ div.account_balance .send_bal {
     font-weight: 400;
 }
 #edit-user a:hover, #edit-user a:focus {color: #0098DB;}
+.statistic-page form>div>label, .statistic-page form>div>input {
+    display: inline-block;
+    line-height: 35px;
+}
+.statistic-page form>div>label {
+    margin-right: 10px;
+    margin-bottom:  0;
+    top: 3px;
+}
+.statistic-page form>div {
+    text-align: center;
+}
 
+.statistic-page form input[name=datefilter], .statistic-page form input[type=submit] {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 30px;
+    border-radius: 4px;
+    text-indent: 5px;
+    border: 1px solid #e2e2e2;
+    background: #fff;
+    color: #333;
+    width: 100%;
+    padding: 0;
+    text-align: center;
+}
+.statistic-page form input[name=datefilter]:after{
+    content: "\f073";
+}
+.statistic-page form input[type=submit] {
+    text-indent: 0;
+}
+.statistic-page form input[type=submit]:hover {
+    color: white;
+    font-weight: 500;
+    background-color: #0098DB;
+}
+#statistic-filter {
+    margin: 15px auto;
+}
 

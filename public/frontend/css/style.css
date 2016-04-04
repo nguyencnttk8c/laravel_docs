@@ -30,6 +30,83 @@ header, footer, hgroup,
 nav, section {
     display: block;
 }
+div.listcategory ul
+{
+    padding:14px 0px 0px 0px;
+    margin-left:13px;
+    margin-bottom:0px;
+}
+div.listcategory ul.listParentCate li
+{
+    list-style-type:none;
+    color:#0098DB;
+    display:block;
+    padding:7px 0px;
+
+}
+div.listcategory ul.listParentCate li a
+{
+    font-size:15px;
+    display:block;
+    line-height:25px;
+    padding-left:3px;
+    height:25px;
+    border-left:4px solid #0AA888;
+}
+div.listcategory ul.listParentCate li.active a.active
+{
+    color:#ff0000;
+}
+div.listcategory ul.listParentCate > li:nth-child(4n+2) > a
+{
+    border-left:4px solid #6D9EBC;
+}
+div.listcategory ul.listParentCate > li:nth-child(4n+3) > a
+{
+    border-left:4px solid #057AB0;
+}
+div.listcategory ul.listParentCate > li:nth-child(4n+4) > a
+{
+    border-left:4px solid #7FB39B;
+}
+div.listcategory ul.listParentCate > li:nth-child(4n+5) > a
+{
+    border-left:4px solid #C67466
+}
+div.listcategory ul.listParentCate > li:nth-child(4n+6) > a
+{
+    border-left:4px solid #0AA888
+}
+div.listcategory ul.listParentCate li ul.dropdown-menu
+{
+    left:180px !important;
+    top:0px;
+    padding-left:10px;
+}
+div.listcategory ul.listParentCate li ul li ul,div.listcategory ul.listParentCate li ul li ul li ul,div.listcategory ul.listParentCate li ul li:hover ul li ul
+{
+    display:none;
+}
+div.listcategory ul.listParentCate li ul li:hover ul
+{
+    display:block;position:absolute;top:0px;left:180px;
+    width:190px;
+    background-color:#FFF;
+    border:1px solid #ccc;
+    border-radius:4px;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+}
+div.listcategory ul.listParentCate li ul li ul li:hover ul
+{
+    display:block;position:absolute;top:0px;left:170px;
+    width:190px;
+    background-color:#FFF;
+    border:1px solid #ccc;
+    border-radius:4px;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+}
 div.col-md-2 .tailen
 {
     background-color: #00A888;
