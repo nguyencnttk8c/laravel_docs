@@ -1,77 +1,92 @@
 @extends('backend.templates.form')
 @section('element')
 <div class="form-group">
-  <label class="col-sm-2 control-label no-padding-right" for="form-field-1-1"> Tên người dùng <b class='require'>*</b>
+  <label class="col-sm-2 control-label no-padding-right" for="form-field-1-1"> Tiêu đề <b class='require'>*</b>
   </label>
   <div class="col-sm-9">
-    <input data-validate="{required:true}" name="data[name]"  type="text" value="{{$data['current']->name or ''}}" class="form-control">
+    <input data-validate="{required:true}" name="data[title]"  type="text" value="{{$data['current']->title or ''}}" class="form-control">
   </div>
 </div>
 <div class="form-group">
-  <label class="col-sm-2 control-label no-padding-right" for="form-field-1-1"> Email <b class='require'>*</b>
+  <label class="col-sm-2 control-label no-padding-right" for="form-field-1-1"> Tác giả <b class='require'>*</b>
   </label>
   <div class="col-sm-9">
-    <input data-validate="{required:true,email:true}" name="data[email]" type="text" value="{{$data['current']->email or ''}}" class="form-control">
+     <select data-validate="{required:true}" class="col-sm-12" name="data[author]">
+      <option value=""> -- Chọn tác giả --</option>
+
+      @if($data['authors'])
+        @foreach($data['authors'] as $id => $name)
+          <option {{(isset($data['current']))?($id == $data['current']->author?'selected':NULL):''}} value="{{$id}}">{{$name}}</</option>
+        @endforeach
+      @endif
+    </select>
   </div>
-  
 </div>
+
 <div class="form-group">
-  <label class="col-sm-2 control-label no-padding-right" for="form-field-1-1"> Ngày sinh <b class='require'>*</b>
+  <label class="col-sm-2 control-label no-padding-right" for="form-field-1-1"> Từ khóa <b class='require'>*</b>
   </label>
+  <div class="col-sm-9">
+    <input data-validate="{required:true}" class="col-sm-12" type="text" name="keywords" value="{{$data['keywords'] or ''}}" id="form-field-tags" placeholder="Nhập từ khóa ..." />
+  </div>
+</div>
+
+<div class="form-group">
+   <label class="col-sm-2 control-label no-padding-right" for="form-field-1-1"> Danh mục <b class='require'>*</b>  </label>
    <div class="col-sm-9">
-  <input data-validate="{required:true}" name="data[birth_day]" type="text" data-date-format="yyyy-mm-dd" value="{{$data['current']->birth_day or ''}}" class="form-control date-picker" >
+    <select data-validate="{required:true}" class="col-sm-12" name="data[tax_id]">
+      <option value="">-- Chọn danh mục --</option>
+      @if($data['terms'])
+        @foreach($data['terms'] as $id => $name)
+          <option {{(isset($data['current']))?($id == $data['current']->tax_id?'selected':NULL):''}} value="{{$id}}">{{$name}}</</option>
+        @endforeach
+      @endif
+    </select>
   </div>
 </div>	
 <div class="form-group">
-  <label class="col-sm-2 control-label no-padding-right" for="form-field-1-1"> Địa chỉ <b class='require'>*</b>
+  <label class="col-sm-2 control-label no-padding-right" for="form-field-1-1"> Giá <b class='require'>*</b>
   </label>
    <div class="col-sm-9">
-  <input data-validate="{required:true}" name="data[address]" type="text" value="{{$data['current']->address or ''}}" class="form-control">
+  <input data-validate="{required:true,number:true}" name="data[price]" type="text" value="{{$data['current']->price or ''}}" class="form-control">
   </div>
 </div> 
 <div class="form-group">
-  <label class="col-sm-2 control-label no-padding-right" for="form-field-1-1"> Mật khẩu <b class='require'>*</b>
+  <label class="col-sm-2 control-label no-padding-right" for="form-field-1-1"> Chọn file tài liệu <b class='require'>*</b>
   </label>
    <div class="col-sm-9">
-  <input 
-   @if(!isset($data['current']) || !$data['current']->password)
-   data-validate="{required:true,minlength:5}"
-   @else 
-   data-validate="{minlength:5,equalTo:#password}"
-   @endif 
-   id="password"
-   name="data[password]"
-   type="password" value="" class="form-control">
+  <input data-validate="{required:true}" name="data[link_file]" type="file" value="{{$data['current']->address or ''}}" class="form-control">
   </div>
 </div> 
 <div class="form-group">
-  <label class="col-sm-2 control-label no-padding-right" for="form-field-1-1"> Nhập lại mật khẩu <b class='require'>*</b>
+  <label class="col-sm-2 control-label no-padding-right" for="form-field-1-1"> Ảnh đại diện <b class='require'>*</b>
   </label>
    <div class="col-sm-9">
-  <input
-  @if(!isset($data['current']) || !$data['current']->password)
-   data-validate="{required:true,minlength:5,equalTo:#password}"
-  @else 
-   data-validate="{minlength:5,equalTo:#password}"
-   @endif 
-   name="pasword_match" type="password" value="" class="form-control">
+    <span class="profile-picture">
+      
+    </span>
   </div>
-</div> 
-<div class="form-group">
-  <label  class="col-sm-2 control-label no-padding-right" for="form-field-1-1"> Số dư
-  </label>
-   <div class="col-sm-9">
-  <input data-validate="{number:true}" name="meta[balance]" type="text" value="{{$data['current']->CustomerFinance->balance or ''}}" class="form-control">
-  </div>
-</div> 
-<div class="form-group">
-  <label  class="col-sm-2 control-label no-padding-right" for="form-field-1-1"> Trạng thái
-  </label>
-   <div class="col-sm-9">
-    <select class="col-sm-12" name="data[status]">
-      <option value="1">-- Hoạt động --</option>
-      <option value="0">-- Không hoạt động --</</option>
-    </select>
-  </div>
-</div>  									
+</div> 								
+@stop
+@section('javascripts')
+jQuery(function($) {
+  var tag_input = $('#form-field-tags');
+    try{
+      tag_input.tag(
+        {
+        placeholder:tag_input.attr('placeholder'),
+       
+        }
+      )
+  
+      //programmatically add a new
+      var $tag_obj = $('#form-field-tags').data('tag');
+    
+    }
+    catch(e) {
+      //display a textarea for old IE, because it doesn't support this plugin or another one I tried!
+      tag_input.after('<textarea id="'+tag_input.attr('id')+'" name="'+tag_input.attr('name')+'" rows="3">'+tag_input.val()+'</textarea>').remove();
+      //$('#form-field-tags').autosize({append: "\n"});
+    }
+})    
 @stop

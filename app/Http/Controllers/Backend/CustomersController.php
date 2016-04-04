@@ -20,11 +20,13 @@ class CustomersController extends ResoureController
 	public function postEdit(\Request $request = null, $id = null){
 		if(isset(\Request::input()['data'])){
 			$postForm = \Request::input()['data'];
+			
 			if(isset($postForm['password']) && $postForm['password']){
 				$postForm['password'] = bcrypt($postForm['password']);
 			}else{
 				unset($postForm['password']);
 			}
+			
 			$params = [
 				'status'=>($id)?'update':'insert',
 				'datas'=>$postForm,

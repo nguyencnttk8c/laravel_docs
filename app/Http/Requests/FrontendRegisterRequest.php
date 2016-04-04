@@ -29,7 +29,7 @@ class FrontendRegisterRequest extends Request
             'ctrlemailtxt'   => 'required|email|unique:customers,email',
             'ctrlpasstxt'    => 'required|between:6,20',
             'ctrlrepasstxt'  => 'required|between:6,20|same:ctrlpasstxt',
-            // 'captcha'        => 'required|captcha'
+            'captcha'        => 'required|captcha'
         ];
     }
 
@@ -52,8 +52,8 @@ class FrontendRegisterRequest extends Request
             'ctrlrepasstxt.between'   => 'Vui lòng nhập mật khẩu từ 6 - 20 ký tự',
             'ctrlrepasstxt.required'  => 'Vui lòng nhập xác nhận mật khẩu!',
             'ctrlrepasstxt.same'      => 'Vui lòng nhập đúng mật khẩu xác nhận',
-            // 'captcha.required'        => 'Vui lòng nhập mã Captcha',
-            // 'captcha.captcha'         => 'Mã Captcha không chính xác'
+            'captcha.required'        => 'Vui lòng nhập mã Captcha',
+            'captcha.captcha'         => 'Mã Captcha không chính xác'
         ];
     }
 }

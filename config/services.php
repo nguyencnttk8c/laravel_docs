@@ -35,4 +35,15 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
 
+    'facebook' => [
+        'client_id' => '1550541271911560',
+        'client_secret' => 'd8624f0048c9bcfdb224d23e9268deeb',
+        'redirect' => 'http://123doc.local/callbackfacebook',
+    ],
+
+    'google' => [
+        'client_id' => '346165023593-eqv9nmsmkli79rhjs8bmt1pep11lbski.apps.googleusercontent.com',
+        'client_secret' => 'BzGffzmKzyB87rDCa0KhmCJs',
+        'redirect' => 'http://123doc.local/callbackgoogle',
+    ],
 ];

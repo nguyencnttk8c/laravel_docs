@@ -1,4 +1,4 @@
-input.error{
+input.error,select.error{
 	border-color: rgb(228, 35, 0);
     color: rgb(228, 35, 0);
 }

@@ -199,6 +199,7 @@
 		<script src="{{asset('backend/js/bootstrap-datepicker.min.js')}}"></script>
 		<script src="{{asset('backend/js/jquery.validate.min.js')}}"></script>
 		<!-- ace scripts -->
+		<script src="{{asset('backend/js/bootstrap-tag.min.js')}}"></script>
 		<script src="{{asset('backend/js/ace-elements.min.js')}}"></script>
 		<script src="{{asset('backend/js/ace.min.js')}}"></script>
 		<script src="{{asset('backend/js/scripts.js')}}"></script>

@@ -2,7 +2,7 @@
 namespace App;
 use Illuminate\Database\Eloquent\Model;
 
-class DocKeyword extends Model{
+class DocKeywords extends Model{
     /**
      * The name of table in DB
      *
