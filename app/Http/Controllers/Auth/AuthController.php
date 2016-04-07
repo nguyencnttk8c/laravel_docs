@@ -75,7 +75,6 @@ class AuthController extends Controller
     }
 
     protected function getlogin(){
-       
         return view('backend.layout.login');
     }
     protected function postLogin(Request $request) {
@@ -93,6 +92,13 @@ class AuthController extends Controller
             return redirect()->back();
         }
 
+    }
+
+    public function LogoutUser(){
+         die;
+        Auth::logout();
+
+        return \Redirect::to('/backend/login/');
     }
 
 

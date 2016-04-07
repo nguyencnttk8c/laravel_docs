@@ -4,34 +4,20 @@ use App\Http\Controllers\Controller;
 use App\Helpes\Backend\Functions;
 use App\Helpes\Backend\MessageElements as MessageElements;
 
-class DocumentController extends ResoureController
+class TransactionController extends ResoureController
 {
-	protected $_titleIndex = 'Quản lý tài liệu';
-	protected $_urlAndFormView = 'document';
-	protected $_routeEdit = 'Backend::ducumentEdit';
-	protected $_titleEdit = 'Cập nhật tài liệu ID = ';
-	protected $_titleNew = 'Thêm mới tài liệu';
+	protected $_titleIndex = 'Quản lý giao dịch';
+	protected $_urlAndFormView = 'transaction';
+	protected $_routeEdit = 'Backend::transactionEdit';
+	protected $_titleEdit = 'Cập nhật giao dịch ID = ';
+	protected $_titleNew = 'Thêm mới giao dịch';
 
-	public function __construct(\App\Document $model){
+	public function __construct(\App\Models\Transaction $model){
 		 $this->_model = $model;
 
 	}
 	
 	
-	public function dataProvider($id){
-		$keywords = '';
-		if($id){
-			$keywords = $this->_model->find($id)->DocKeywords->lists('key_word');
-			if($keywords){
-				$keywords = implode(',',$keywords->toArray());
-			}
-		}
-		return [
-			"authors" => \App\Models\Customer::where('status',1)->where('role','!=','admin')->lists('name','id'),
-			"terms" => \App\Models\Taxonomy::lists('tax_name','id'),
-			"keywords" => $keywords,
-		];
-	}
 
 	public function postEdit(\Request $request = null, $id = null){
 

@@ -21,6 +21,12 @@ class Authenticate
             if ($request->ajax() || $request->wantsJson()) {
                 return response('Unauthorized.', 401);
             } else {
+                $route = \Request::route()->getName();
+                if(strpos($route,'Backend') !==False && $route !='loginBackend'){
+                    return redirect()->guest('backend/login');
+                }elseif ($route =='loginBackend' || $route =='getLogin') {
+                      return $next($request);
+                }
                 return redirect()->guest('login');
             }
         }

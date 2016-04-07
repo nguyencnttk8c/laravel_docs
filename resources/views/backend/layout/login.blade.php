@@ -29,14 +29,7 @@
 				<div class="row">
 					<div class="col-sm-10 col-sm-offset-1">
 						<div class="login-container">
-							<div class="center">
-								<h1>
-									<i class="ace-icon fa fa-leaf green"></i>
-									<span class="red">Ace</span>
-									<span class="white" id="id-text2">Application</span>
-								</h1>
-								<h4 class="blue" id="id-company-text">&copy; Company Name</h4>
-							</div>
+							
 							<div class="space-6"></div>
 
 							<div class="position-relative">
@@ -114,12 +107,6 @@
 												</a>
 											</div>
 
-											<div>
-												<a href="#" data-target="#signup-box" class="user-signup-link">
-													I want to register
-													<i class="ace-icon fa fa-arrow-right"></i>
-												</a>
-											</div>
 										</div>
 									</div><!-- /.widget-body -->
 								</div><!-- /.login-box -->

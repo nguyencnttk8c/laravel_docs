@@ -10,14 +10,22 @@
 |
 */
 
-Route::group(['middleware' => ['web']], function () {
+Route::group(['middleware' => ['web','auth']], function () {
     Route::group(['prefix' => 'backend'], function () {
     	route::get('login',['as'=>'loginBackend','uses'=>'Auth\AuthController@getLogin']);
+        route::get('logout',['as'=>'logoutBackend','uses'=>'Auth\AuthController@LogoutUser']);
     	route::post('login',['as'=>'loginBackend','uses'=>'Auth\AuthController@postLogin']);
     	route::get('dashboard',['as'=>'Backend::dashboard','uses'=>'Backend\DashboardController@getIndex']);
     	route::get('config',['as'=>'Backend::config','uses'=>'Backend\ConfigController@getIndex']);
     	route::post('config',['as'=>'Backend::config','uses'=>'Backend\ConfigController@postIndex']);
         route::controller('ajax','Backend\AjaxController');
+
+        route::controller('transaction','Backend\TransactionController',[
+            'getIndex' => 'Backend::transaction',
+            'getEdit' => 'Backend::transactionEdit',
+            'getNew' => 'Backend::transactionNew',
+        ]);
+
 
         route::controller('document','Backend\DocumentController',[
             'getIndex' => 'Backend::document',
