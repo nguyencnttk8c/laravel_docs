@@ -3,6 +3,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Models\Taxonomy;
 use App\Models\Customer;
+use App\Document;
 class AjaxController extends Controller
 {
 	public function postDeleteRecord(){
@@ -15,7 +16,10 @@ class AjaxController extends Controller
 					break;
 				case 'customers':
 					$model = new Customer;
-					break;	
+					break;
+				case 'document':
+					$model = new Document;
+					break;		
 			}
 			if($model && $id){
 				$model->find($id)->delete();
