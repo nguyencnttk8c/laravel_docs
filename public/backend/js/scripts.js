@@ -38,7 +38,6 @@ $('.form-validate input,.form-validate select').each(function(e){
 	
 })
 var rules = $.extend({}, rulesData);
-
 $(".form-validate").validate({
 	rules: rules
 });
@@ -47,4 +46,10 @@ $('#navigate-submit').on('click',function(){
 })
 $('#navigate-reset').on('click',function(){
 	$('#reset').click();
+})
+$(document).ready(function(){
+
+	$('body').delegate('.tags .tag .close','click',function(){
+		alert(1);
+	})
 })

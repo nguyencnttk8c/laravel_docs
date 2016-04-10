@@ -53,7 +53,7 @@
           <span style="display:block;width:40px;height:20px;background:#fff;border:solid 1px #ccc"></span>
         </td>
        
-        <td><a href="{{$record->link_file}}">Tải xuống</a></td>
+        <td><a target="_blank" href="{{asset('uploads/documents/'.$record->link_file)}}">Tải xuống</a></td>
         <td>{{($record->DocumentMeta)?$record->DocumentMeta->num_viewed: 0}}</td>
         <td>{{($record->DocumentMeta)?$record->DocumentMeta->num_downloaded: 0}}</td>
         <td>{{$record->created_at}}</td>

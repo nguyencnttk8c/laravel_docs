@@ -35,7 +35,7 @@
 		  <div class="col-xs-12">
 			<!-- PAGE CONTENT BEGINS -->
 			{!!\Session::get('messElemnt')!!}
-			<form class="form-horizontal form-validate" role="form" action="" method="POST">
+			<form class="form-horizontal form-validate" role="form" action="" method="POST" enctype="multipart/form-data">
 				@yield('element')
 				<input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
 				<div class="clearfix form-actions">

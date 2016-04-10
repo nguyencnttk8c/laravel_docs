@@ -51,13 +51,15 @@
   <input data-validate="{required:true,number:true}" name="data[price]" type="text" value="{{$data['current']->price or ''}}" class="form-control">
   </div>
 </div> 
+@if(!$data['edit'])
 <div class="form-group">
   <label class="col-sm-2 control-label no-padding-right" for="form-field-1-1"> Chọn file tài liệu <b class='require'>*</b>
   </label>
    <div class="col-sm-9">
-  <input data-validate="{required:true}" name="data[link_file]" type="file" value="{{$data['current']->address or ''}}" class="form-control">
+  <input data-validate="{required:true}" name="file" type="file" value="{{$data['current']->address or ''}}" class="form-control">
   </div>
 </div> 
+@endif
 <div class="form-group">
   <label class="col-sm-2 control-label no-padding-right" for="form-field-1-1"> Ảnh đại diện <b class='require'>*</b>
   </label>

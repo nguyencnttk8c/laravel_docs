@@ -10,8 +10,8 @@
 |
 */
 
-Route::group(['middleware' => ['web','auth']], function () {
-    Route::group(['prefix' => 'backend'], function () {
+Route::group(['middleware' => ['web']], function () {
+    Route::group(['prefix' => 'backend','middleware'=>['auth']], function () {
     	route::get('login',['as'=>'loginBackend','uses'=>'Auth\AuthController@getLogin']);
         route::get('logout',['as'=>'logoutBackend','uses'=>'Auth\AuthController@LogoutUser']);
     	route::post('login',['as'=>'loginBackend','uses'=>'Auth\AuthController@postLogin']);
