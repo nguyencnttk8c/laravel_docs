@@ -575,8 +575,13 @@ div.listtailieu ul.products li.product div.doc-list .doc-title .icon-doc-title
     background-repeat: no-repeat;
     display: inline-block;
     vertical-align: text-top;
-    background-position: 0px -360px;
+    
 }
+div.listtailieu .type-doc {background-position: 0px -360px;}
+div.listtailieu .type-pdf {background-position: 0px -378px;}
+div.listtailieu .type-ppt {background-position: 0px -396px;}
+div.listtailieu .type-excel {background-position: 0px -435px;}
+
 div.listtailieu ul.products li.product div.doc-list .doc-author
 {
     margin: 0px 15px;
@@ -643,12 +648,24 @@ div.total_doc_item_common a .i_type_doc
     height: 18px;
 
 }
+div.total_doc_item_common a .i_type_doc1 {
+    background-position: 0px -360px;
+}
 div.total_doc_item_common a .i_type_doc2
 {
     background-position: 0px -378px;
 }
-div.total_doc_item_common a .i_type_doc1 {
-    background-position: 0px -360px;
+div.total_doc_item_common a .i_type_doc3
+{
+    background-position: 0px -396px;
+}
+div.total_doc_item_common a .i_type_doc4
+{
+    background-position: 0px -415px;
+}
+div.total_doc_item_common a .i_type_doc5
+{
+    background-position: 0px -435px;
 }
 div.item_common .doc_tk_cnt {
     margin: 5px 15px 0px;padding:0px;display:block;overflow:hidden;
