@@ -59,7 +59,10 @@ class DocumentController extends ResoureController
         $fileName =  md5(md5($file->getClientOriginalName())) . '.' . $extension;
         // MOVE THE UPLOADED FILES TO THE DESTINATION DIRECTORY
         $upload_success = $file->move($destinationPath, $fileName);
-        return $fileName;
+        return [
+        	'filename'=>$fileName,
+        	'extension'=>$extension,
+        ];
 	}
 
 	public function postEdit(\Request $request = null, $id = null){
@@ -69,8 +72,9 @@ class DocumentController extends ResoureController
 			$file = array_get($input,'file');
 			$postForm = \Request::input()['data'];
 			if($file){
-				$fileName = $this->uploadDoc($file);
-				$postForm['link_file'] = $fileName;
+				$fileInfo = $this->uploadDoc($file);
+				$postForm['link_file'] = $fileInfo['filename'];
+				$postForm['format'] = $fileInfo['extension'];
 			}
 			
 			$params = [

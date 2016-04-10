@@ -84,8 +84,6 @@ class AuthController extends Controller
         $remember = (isset($data['remember']))?$data['remember']:'';
 
         if (Auth::attempt(['email' => $email, 'password' => $password], $remember)) {
-            // Authentication passed...
-            Auth::user()->save();
             return \Redirect::to('/backend/dashboard/');
         } else {
             return redirect()->back();
