@@ -85,7 +85,6 @@ class AuthController extends Controller
 
         if (Auth::attempt(['email' => $email, 'password' => $password], $remember)) {
             // Authentication passed...
-            Auth::user()->last_login = \Carbon\Carbon::now()->toDateTimeString();
             Auth::user()->save();
             return \Redirect::to('/backend/dashboard/');
         } else {
