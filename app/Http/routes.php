@@ -20,6 +20,12 @@ Route::group(['middleware' => ['web']], function () {
     	route::post('config',['as'=>'Backend::config','uses'=>'Backend\ConfigController@postIndex']);
         route::controller('ajax','Backend\AjaxController');
 
+        route::controller('articles','Backend\ArticlesController',[
+            'getIndex' => 'Backend::articles',
+            'getEdit' => 'Backend::Backend::articlesEdit',
+            'getNew' => 'Backend::Backend::articlesNew',
+        ]);
+
         route::controller('transaction','Backend\TransactionController',[
             'getIndex' => 'Backend::transaction',
             'getEdit' => 'Backend::transactionEdit',

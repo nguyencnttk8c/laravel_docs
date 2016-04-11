@@ -19,7 +19,10 @@ class AjaxController extends Controller
 					break;
 				case 'document':
 					$model = new Document;
-					break;		
+					break;
+				case 'articles':
+					$model = new Articles;
+					break;			
 			}
 			if($model && $id){
 				$model->find($id)->delete();
