@@ -24,6 +24,9 @@ class PersonalInformation extends Controller{
                 $data['gender'] = 'nu';
             }
         }
+        if (isset($data['password'])) {
+            $data['password'] = bcrypt($data['password']);
+        }
         $id = \Auth::id();
         $result = User::where('id', $id)->update($data);
         return redirect()->back();
