@@ -27,7 +27,7 @@ class Authenticate
                 }elseif ($route =='loginBackend' || $route =='getLogin') {
                       return $next($request);
                 }
-                return redirect()->guest('login');
+                return redirect()->guest('/');
             }
         }
 

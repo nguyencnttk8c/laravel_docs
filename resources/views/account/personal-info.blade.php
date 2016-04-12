@@ -38,8 +38,8 @@
                             <span>Ngày Sinh</span>
                         </div>
                         <div class="col-md-6">
-                            <input type="text" class="form-control edit-field" id="birth_day" name="birth_day" required value="">
-                            <span class="show-field" id="show-birth_day">{{$user->birth_day}}</span>
+                            <input type="date" class="form-control edit-field" id="birth_day" name="birth_day" required value="">
+                            <span class="show-field" id="show-birth_day">{{$user->birth_day->format('d/m/Y')}}</span>
                         </div>
                     </div>
                     <div class="row edit">
@@ -48,7 +48,7 @@
                         </div>
                         <div class="col-md-6">
                             <input type="text" class="form-control edit-field" id="gender" name="gender" required value="">
-                            <span class="show-field" id="show-gender">{{($user->gender == 'nam')? 'Nam' : 'Nu'}}</span>
+                            <span class="show-field" id="show-gender">{{($user->gender == 'nam') ? 'Nam' : (($user->gender == 'nu') ? 'Nữ' : '')}}</span>
                         </div>
                     </div>
                     <div class="row edit">
@@ -89,7 +89,8 @@
                             <span>Tên tài khoản</span>
                         </div>
                         <div class="col-md-6">
-                            <input class="form-control edit-field" type="text" value="">
+                            <input type="text" class="form-control edit-field" id="bank_account" name="bank_account" value="">
+                            <span class="show-field" id="show-bank_account">{{$user->bank_account}}</span>
                         </div>
                     </div>
                     <div class="row edit">
@@ -97,7 +98,8 @@
                             <span>Số tài khoản</span>
                         </div>
                         <div class="col-md-6">
-                            <input class="form-control edit-field" type="text" value="">
+                            <input type="text" class="form-control edit-field" id="bank_number" name="bank_number" value="">
+                            <span class="show-field" id="show-bank_number">{{$user->bank_number}}</span>
                         </div>
                     </div>
                     <div class="row edit">
@@ -105,7 +107,8 @@
                             <span>Tên ngân hàng</span>
                         </div>
                         <div class="col-md-6">
-                            <input class="form-control edit-field" type="text" value="">
+                            <input type="text" class="form-control edit-field" id="bank_name" name="bank_name" value="">
+                            <span class="show-field" id="show-bank_name">{{$user->bank_name}}</span>
                         </div>
                     </div>
                 </div>
@@ -130,7 +133,7 @@
                         </div>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-default edit-field">Submit</button>
+                <button type="submit" class="btn btn-default edit-field">Lưu</button>
             </form>
         </div>
     </div>
@@ -142,7 +145,12 @@
             var this_text = $(this).text();
             var edit_id = this_id.split('-')[1];
             $(this).hide();
-            $("#"+edit_id).val(this_text).show();
+            if (edit_id == 'birth_day') {
+                $("#"+edit_id).val("{{$user->birth_day->format('Y-m-d')}}").show();
+            } else {
+                $("#"+edit_id).val(this_text).show();
+            }
+
             $("#password").val('').show();
             $('button.edit-field').show();
         });

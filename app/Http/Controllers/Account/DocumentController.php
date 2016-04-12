@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use App\User;
 use App\Document;
 use App\DocMeta;
+
 class DocumentController extends Controller{
     public function getIndex() {
         $user_id = \Auth::user()->id;
