@@ -2,6 +2,7 @@
 namespace Helpers\Common;
 
 use App\Models\Taxonomy;
+use App\Document, App\DocMeta;
 
 class Functions {
 
@@ -143,5 +144,75 @@ class Functions {
             </div>
     <?php
         }
+    }
+
+    public static function getGeneralDoc() {
+        $allTaxonomy = Taxonomy::all();
+
+        // Lấy tài liệu thuộc danh mục giáo dục - đào tạo
+
+        $gddt = Taxonomy::where('slug', 'giao-duc-dao-tao')->first();
+
+        if ($gddt) {
+            $listID = array($gddt->id);
+
+            foreach ($allTaxonomy as $item) {
+                if (in_array($item->parent, $listID)) {
+                    $listID[] = $item->id;
+                }
+            }
+            
+            $data['gddt'] = Document::whereIn('tax_id', $listID)->take(6)->get();
+        }
+
+        // Lấy tài liệu thuộc danh mục luận văn - báo cáo
+
+        $lvbc = Taxonomy::where('slug', 'luan-van-bao-cao')->first();
+
+        if ($lvbc) {
+            $listID = array($lvbc->id);
+
+            foreach ($allTaxonomy as $item) {
+                if (in_array($item->parent, $listID)) {
+                    $listID[] = $item->id;
+                }
+            }
+            
+            $data['lvbc'] = Document::whereIn('tax_id', $listID)->take(6)->get();
+        }
+
+        // Lấy tài liệu thuộc danh mục kỹ thuật - công nghệ
+
+        $ktcn = Taxonomy::where('slug', 'ky-thuat-cong-nghe')->first();
+
+        if ($ktcn) {
+            $listID = array($ktcn->id);
+
+            foreach ($allTaxonomy as $item) {
+                if (in_array($item->parent, $listID)) {
+                    $listID[] = $item->id;
+                }
+            }
+            
+            $data['ktcn'] = Document::whereIn('tax_id', $listID)->take(6)->get();
+        }
+
+        // Lấy tài liệu thuộc danh mục công nghệ thông tin
+
+        $cntt = Taxonomy::where('slug', 'cong-nghe-thong-tin')->first();
+
+        if ($cntt) {
+            $listID = array($cntt->id);
+
+            foreach ($allTaxonomy as $item) {
+                if (in_array($item->parent, $listID)) {
+                    $listID[] = $item->id;
+                }
+            }
+            
+            $data['cntt'] = Document::whereIn('tax_id', $listID)->take(6)->get();
+        }
+
+        return $data;
     }
 } 
