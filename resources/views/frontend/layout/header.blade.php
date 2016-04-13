@@ -33,6 +33,7 @@
 <script type="text/javascript" src="{{asset('common/js/daterangepicker.js')}}"></script>
 <link rel="stylesheet" type="text/css" href="{{asset('common/css/daterangepicker.css')}}" />
 <link rel="stylesheet" type="text/css" href="{{asset('common/font-awesome/4.2.0/css/font-awesome.min.css')}}" />
+<link rel="stylesheet" type="text/css" href="{{asset('common/css/styles.css')}}" />
 </head>
 <body class="{{$modalOpen}}" style="{{$style}}">
 <header>

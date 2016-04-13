@@ -1,0 +1,16 @@
+.site-pager {
+    font-size: 1.6rem;
+    font-weight: 300;
+    float: right;
+    text-align: center;
+}
+.site-pager li {
+    float: left;
+    padding: 10px 0px;
+    font-size: 1.6rem;
+    color: #000;
+    margin: 0 5px;
+    display: inline-block;
+    cursor: pointer;
+    list-style: none;
+}

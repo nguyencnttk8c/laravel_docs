@@ -106,7 +106,7 @@ class Functions {
 
             foreach ($data as $cat) {
                 if ($cat->parent == $id) {
-                    echo '<li><a href="#">'.$cat->tax_name.'</a>';
+                    echo '<li><a href="'.URL('/').'/danh-muc/'.$cat->slug.'">'.$cat->tax_name.'</a>';
                     self::makeMenu($data, $cat->id); 
                     echo '</li>';
                 }
@@ -214,5 +214,27 @@ class Functions {
         }
 
         return $data;
+    }
+
+    public static function appendToPaginate($unsets = array()){
+        $params = $_GET;
+
+        $appends = array();
+        if ($unsets) {
+            foreach($unsets as $item){
+                unset($params[$item]);
+            }
+        }
+
+        if ($params) {
+            foreach($params as $key=>$val){
+                if($val!=''){
+                    $appends[$key] = $val;
+                }
+
+            }
+        }
+
+        return $appends;
     }
 } 
