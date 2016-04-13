@@ -13,7 +13,6 @@
   <div class="col-sm-9">
      <select data-validate="{required:true}" class="col-sm-12" name="data[author]">
       <option value=""> -- Chọn tác giả --</option>
-
       @if($data['authors'])
         @foreach($data['authors'] as $id => $name)
           <option {{(isset($data['current']))?($id == $data['current']->author?'selected':NULL):''}} value="{{$id}}">{{$name}}</</option>

@@ -44,7 +44,7 @@
           {{$record->title}}
         </td>
 
-        <td>{{$record->category}}</td>
+         <td>{{(\App\Models\Taxonomy::find($record->category))?\App\Models\Taxonomy::find($record->category)->tax_name: ''}}</td>
 
         <td>{{str_limit(strip_tags($record->content),150)}}</td>
         

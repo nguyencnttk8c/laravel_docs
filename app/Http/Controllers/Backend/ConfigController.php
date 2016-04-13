@@ -4,6 +4,7 @@ use App\Http\Controllers\Controller;
 use App\Models\ConfigBackend\Config;
 use DB;
 use App\Helpes\Backend\MessageElements as MessageElements;
+use Illuminate\Support\Facades\Input;
 class ConfigController extends Controller
 {
 	protected function getIndex(){
@@ -15,8 +16,18 @@ class ConfigController extends Controller
 	}
 
 	public function postIndex(){
+		
 		if(isset(\Request::input()['config'])){
 			$requestForm = \Request::input()['config'];
+			if(isset(Input::file()['config'])){
+			$files = Input::file()['config'];
+				foreach($files as $name=>$file){
+					if ($file !== null) {
+						$requestForm[$name] = $file->getClientOriginalName();
+						$upload_success = $file->move('uploads/configs', $file->getClientOriginalName());
+					}	
+				}
+			}
 			$query = '';
 			$table = new \App\Models\ConfigBackend\Config;
 			$table = DB::getTablePrefix().$table->getTable();
@@ -68,30 +79,36 @@ class ConfigController extends Controller
 				<textarea class=\"content-editor\" name=\"config[".$config->name."]\"
 				type=\"text\" >".$config->value_vi."</textarea>
 			</div>
+
 		</div>";
 		return $html;
 		
 	}
 	
 	protected function _eFile($config){
-		$html = "<div class=\"form-group\">
-		<label class=\"col-sm-2 control-label no-padding-right\" for=\"form-field-1\">".$config->label."</label>
-			<div class=\"col-sm-9\">
-				<label class=\"ace-file-input\">
-				  <input type=\"file\" name=\"".$config->name."\" class=\"ace-input-file\">
-				  <span class=\"ace-file-container\" data-title=\"Lựa chọn\">
-				    <span class=\"ace-file-name\" data-title=\"Không có tập tin nào được chọn ...\">
-				      <i class=\" ace-icon fa fa-upload\">
-				      </i>
-				    </span>
-				  </span>
-				  <a class=\"remove\" href=\"#\">
-				    <i class=\" ace-icon fa fa-times\">
-				    </i>
-				  </a>
-				</label>
+		if($config->value_vi){
+			$img = "
+			<div class=\"form-group\">
+			<div class=\"col-sm-2\"></div>
+			<div  class=\"col-sm-1 control-label no-padding-right\"> 
+				<img style=\"float: left;
+						    width: 100px;
+						    padding: 3px;
+						    border: solid 1px #ccc;
+						    margin-left: 11px;\" 
+				src=\"".asset('uploads/configs/'.$config->value_vi)."\"/></div>
 			</div>
-		</div>";		
+			";
+		}else{
+			$img = '';
+		}
+		$html = "<div class=\"form-group\">
+		".$img."
+		<label class=\"col-sm-2 control-label no-padding-right\" for=\"form-field-1\">".$config->label."</label>
+		<div class=\"col-sm-9\">
+			<input type=\"file\"  name=\"config[".$config->name."]\" class=\"ace-input-file\" >
+		</div>	
+		</div>";	
 		return $html;
 
 	}	

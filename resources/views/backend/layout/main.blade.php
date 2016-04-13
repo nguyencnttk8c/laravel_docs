@@ -131,8 +131,6 @@
 							</li>
 							<li class="active">{{$data['title'] or 'Hệ thống quản trị nội dung website'}}</li>
 						</ul><!-- /.breadcrumb -->
-
-					
 					</div>
 					@yield('content')
 					<!-- /.page-content -->
@@ -202,8 +200,12 @@
 		<script src="{{asset('backend/js/bootstrap-tag.min.js')}}"></script>
 		<script src="{{asset('backend/js/ace-elements.min.js')}}"></script>
 		<script src="{{asset('backend/js/ace.min.js')}}"></script>
-		<script src="{{asset('backend/js/scripts.js')}}"></script>
 
+		<script src="{{asset('backend/js/jquery.flot.min.js')}}"></script>
+		<script src="{{asset('backend/js/jquery.flot.pie.min.js')}}"></script>
+		
+		<script src="{{asset('backend/js/jquery.flot.resize.min.js')}}"></script>
+		<script src="{{asset('backend/js/scripts.js')}}"></script>
 		<!-- inline scripts related to this page -->
 		<script type="text/javascript">
 			 @yield('javascripts')

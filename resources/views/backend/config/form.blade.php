@@ -9,8 +9,7 @@
 	</div>
     <div class="col-xs-12">
 		<!-- PAGE CONTENT BEGINS -->
-		{!!$data['messElemnt'] or ''!!}
-		<form class="form-horizontal" role="form" action="" method="POST">
+		<form class="form-horizontal" enctype="multipart/form-data" action="" method="POST" >
 			{!!$data['element'] or ''!!}
 			<input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
 			<div class="clearfix form-actions">
@@ -47,7 +46,7 @@
        toolbar: "fullscreen | undo redo | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | styleselect forecolor backcolor | link unlink anchor | image media | print preview code"
     });
     $('.ace-input-file').ace_file_input({
-		no_file:'No File ...',
+		no_file:'No File...',
 		btn_choose:'Choose',
 		btn_change:'Change',
 		droppable:false,
