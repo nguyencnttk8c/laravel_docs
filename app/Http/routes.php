@@ -20,6 +20,12 @@ Route::group(['middleware' => ['web']], function () {
     	route::post('config',['as'=>'Backend::config','uses'=>'Backend\ConfigController@postIndex']);
         route::controller('ajax','Backend\AjaxController');
 
+        route::controller('articles','Backend\ArticlesController',[
+            'getIndex' => 'Backend::articles',
+            'getEdit' => 'Backend::Backend::articlesEdit',
+            'getNew' => 'Backend::Backend::articlesNew',
+        ]);
+
         route::controller('transaction','Backend\TransactionController',[
             'getIndex' => 'Backend::transaction',
             'getEdit' => 'Backend::transactionEdit',
@@ -62,7 +68,7 @@ Route::group(['middleware' => ['web']], function () {
     });
     Route::controller('thong-tin-ca-nhan', 'Account\PersonalInformation');
     Route::get('upload-tai-lieu', 'Account\Upload@getUpload');
-    Route::group(['prefix' => '/account/'], function(){
+    Route::group(['prefix' => '/account/', 'middleware'=>['auth']], function(){
         Route::controller('thong-tin-ca-nhan', 'Account\PersonalInformation');
         Route::get('quan-ly-tai-lieu', 'Account\DocumentController@getIndex');
         Route::get('quan-ly-tai-chinh', 'Account\FinanceController@getIndex');

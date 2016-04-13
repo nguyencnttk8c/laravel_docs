@@ -61,13 +61,5 @@ class User extends Authenticatable
     public function setBirthDayAttribute($value) {
         $this->attributes['birth_day'] = \Carbon\Carbon::parse($value)->format('Y-m-d');
     }
-    /**
-     * Return birth day in the format
-     * @param $value
-     * @return string
-     */
-    public function getBirthDayAttribute($value) {
-        return \Carbon\Carbon::parse($value)->format('d-m-Y');
-    }
 
 }

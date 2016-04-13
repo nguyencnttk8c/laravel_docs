@@ -22,7 +22,7 @@ function deleteRecord(id,table){
 }
 
 var rulesData = [];
-$('.form-validate input,.form-validate select').each(function(e){
+$('.form-validate input,.form-validate select,.form-validate textarea').each(function(e){
 	var rulesValidate = $(this).data('validate');
 
 	var $this = this;

@@ -6,15 +6,7 @@ use App\User;
 class PersonalInformation extends Controller{
 
     public function  getIndex () {
-        $user = User::find(1);
-        //dd($user);
-       \Auth::login($user, true);
-        $user = '';
-        if (!\Auth::check()) {
-            return redirect('dang-nhap');
-        } else {
-            $user = \Auth::user();
-        }
+        $user = \Auth::user();
         return view('account.personal-info', ['user'=>$user]);
     }
 
@@ -25,10 +17,18 @@ class PersonalInformation extends Controller{
                 unset($data[$key]);
             }
         }
-        if (isset($data['gender'])) $data['gender'] = strtolower($data['gender']);
+        if (isset($data['gender'])) {
+            if ($data['gender'] == 'Nam') {
+                $data['gender'] = 'nam';
+            } else if ($data['gender'] == 'Nữ') {
+                $data['gender'] = 'nu';
+            }
+        }
+        if (isset($data['password'])) {
+            $data['password'] = bcrypt($data['password']);
+        }
         $id = \Auth::id();
-        $data['birth_day'] = \Carbon\Carbon::createFromFormat('d-m-Y', $data['birth_day']);
         $result = User::where('id', $id)->update($data);
         return redirect()->back();
     }
-} 
+}

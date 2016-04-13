@@ -19,7 +19,6 @@ class DocumentController extends ResoureController
 
 	}
 	
-	
 	public function dataProvider($id){
 		$keywords = '';
 		if($id){
