@@ -21,6 +21,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('common/css/daterangepicker.css')}}" />
     <link rel="stylesheet" type="text/css" href="{{asset('common/font-awesome/4.2.0/css/font-awesome.min.css')}}" />
     <link rel="stylesheet" type="text/css" href="{{asset('common/css/styles.css')}}" />
+    <link rel="stylesheet" type="text/css" href="http://static.store123doc.com:81/static_v2/web_v2/global/css/search.css"/>
 </head>
 <body>
     <header>

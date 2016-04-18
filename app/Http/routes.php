@@ -67,9 +67,8 @@ Route::group(['middleware' => ['web']], function () {
         Route::get('callbackgoogle', ['uses' => 'Frontend\AuthCustomerController@handleProviderCallbackGoogle']);
         Route::get('danh-muc/{slug}', 'Frontend\DocByTaxonomyController@getList');
 
-        Route::get('static', function(){
-            return view('frontend.layout.static');
-        });
+        Route::get('static/{slug}', 'Frontend\StaticController@getArticleList');
+        Route::get('static-detail/{slug}', 'Frontend\StaticController@getArticleDetail');
     });
     Route::controller('thong-tin-ca-nhan', 'Account\PersonalInformation');
     Route::get('upload-tai-lieu', 'Account\Upload@getUpload');

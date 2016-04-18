@@ -13,8 +13,8 @@
   <div class="col-sm-9">
     <select name="data[type]" class="col-sm-12" data-validate="{required:true}">
       <option value=""> Chọn kiểu danh mục</option>
-      <option {{($data['current']->type == 'document' || !$data['current']->type)?'selected':NULL}} value="document"> Danh mục tài liệu</option>
-      <option {{($data['current']->type == 'article')?'selected':NULL}} value="article"> Danh mục bài viết</option>
+      <option {{(!isset($data['current']->type) || $data['current']->type == 'document' || !$data['current']->type)?'selected':NULL}} value="document"> Danh mục tài liệu</option>
+      <option {{(isset($data['current']->type) && $data['current']->type == 'article')?'selected':NULL}} value="article"> Danh mục bài viết</option>
     </select>
   </div>  
 </div>
