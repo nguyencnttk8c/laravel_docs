@@ -3,6 +3,8 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Models\Taxonomy;
 use App\Models\Customer;
+use App\Models\Transaction;
+use App\Models\Articles;
 use App\Document;
 class AjaxController extends Controller
 {
@@ -22,7 +24,10 @@ class AjaxController extends Controller
 					break;
 				case 'articles':
 					$model = new Articles;
-					break;			
+					break;	
+				case 'transaction':
+					$model = new Transaction;
+					break;				
 			}
 			if($model && $id){
 				$model->find($id)->delete();

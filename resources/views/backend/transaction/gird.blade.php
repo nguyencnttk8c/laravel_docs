@@ -49,12 +49,8 @@
         
         <td>
           <div class="hidden-sm hidden-xs btn-group">
-            <a href="/backend/transaction/edit/{{$record->id}}">
-              <button class="btn btn-xs btn-info">
-                <i class="ace-icon fa fa-pencil bigger-120"></i>
-              </button>
-            </a>
-            <a href="javascript:void(0)" onclick="deleteRecord({{$record->id}},'document')" >
+            
+            <a href="javascript:void(0)" onclick="deleteRecord({{$record->id}},'transaction')" >
             <button class="btn btn-xs btn-danger">
               <i class="ace-icon fa fa-trash-o bigger-120"></i>
             </button>

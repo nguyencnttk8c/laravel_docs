@@ -9,6 +9,7 @@ class DashboardController extends Controller
 {
 	protected function getIndex(){
 		$data = [
+			'transactionsList' =>  Transaction::where('trading_status','!=',0)->take(5)->get(),
 			'articles' => Articles::where('status',1)->count(),
 			'documents' => Document::all()->count(),
 			'customers' => Customer::where('status',1)->where('role','!=','admin')->count(),
