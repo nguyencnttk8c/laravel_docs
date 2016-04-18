@@ -19,7 +19,7 @@
 	                            {{ $item['title'] }}
 	                        </a>
 	                        <a href="#" class="doc-author">
-	                            {{ (\App\Models\Customer::find($item['author'])) ? (\App\Models\Customer::find($item['author']))->name : '' }}
+	                            {{ (\App\Models\Customer::find($item['author'])) ? \App\Models\Customer::find($item['author'])->name : '' }}
 	                        </a>
 	                        <ul class="doc_tk_cnt">                                    
 	                            <li><i class="icon_doc"></i>{{ $item['total_page'] }}</li>

@@ -73,7 +73,7 @@
                 <div class="navbar-collapse collapse" id="navbar-main">
                     <ul class="nav navbar-nav">
                     	<li class="active"><a class="active" href="#">Trang chủ</a></li>
-                    	<li><a href="#">Tin tức</a></li>
+                    	<li><a href="/static/thong-bao">Tin tức</a></li>
                         <li><a href="#">Diễn đàn</a></li>
                         <li><a href="#">Câu hỏi thường gặp</a></li>
                     </ul>
