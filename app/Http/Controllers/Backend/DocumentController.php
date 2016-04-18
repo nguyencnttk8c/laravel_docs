@@ -70,12 +70,19 @@ class DocumentController extends ResoureController
 			$input = Input::all();
 			$file = array_get($input,'file');
 			$postForm = \Request::input()['data'];
+			
 			if($file){
 				$fileInfo = $this->uploadDoc($file);
 				$postForm['link_file'] = $fileInfo['filename'];
 				$postForm['format'] = $fileInfo['extension'];
 			}
-			
+			if(isset($postForm['title'])){
+				if(!isset($postForm['slug']) || isset($postForm['slug']) && !empty($postForm['slug'])){
+					$postForm['slug'] = str_slug(\Request::input()['data']['title']);
+				}else{
+					$postForm['slug'] = str_slug(\Request::input()['data']['slug']);
+				}
+			}
 			$params = [
 				'status'=>($id)?'update':'insert',
 				'datas'=>$postForm,

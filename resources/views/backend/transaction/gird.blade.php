@@ -11,16 +11,12 @@
         </label>
       </th>
       <th>ID</th>
-      <th>Tác giả</th>
-      <th>Tiêu đề</th>
-      <th>Danh mục</th>
-      <th>Định dạng</th>
-      <th>Giá</th>
-      <th>Hình ảnh</th>
-      <th>Link file</th>
-      <th>Số lượt xem</th>
-      <th>Số lượt tải</th>
-      <th><i class="ace-icon fa fa-clock-o bigger-110"></i>Ngày tạo</th>
+      <th>Mã giao dịch</th>
+      <th>Hình thức thanh toán</th>
+      <th>Khách hàng</th>
+      <th>Tình trạng</th>
+      <th>Số tiền giao dịch</th>
+      <th><i class="ace-icon fa fa-clock-o bigger-110"></i>Ngày giao dịch</th>
       <th>Thao tác</th>
       
     </tr>
@@ -40,27 +36,20 @@
           {{$record->id}}
         </td>
         <td>
-          {{(\App\Models\Customer::find($record->author))?\App\Models\Customer::find($record->author)->name:''}}
+         {{$record->trading_code}}
         </td>
 
-        <td>{{$record->title}}</td>
+        <td> Thanh toán bằng thẻ điện thoại</td>
 
-        <td>{{(\App\Models\Taxonomy::find($record->tax_id))?\App\Models\Taxonomy::find($record->tax_id)->tax_name: ''}}</td>
-        <td>{{$record->format}}</td>
-        <td>{{number_format($record->price)}}</td>
-         
-        <td class="hidden-480">
-          <span style="display:block;width:40px;height:20px;background:#fff;border:solid 1px #ccc"></span>
-        </td>
-       
-        <td><a href="{{$record->link_file}}">Tải xuống</a></td>
-        <td>{{($record->DocumentMeta)?$record->DocumentMeta->num_viewed: 0}}</td>
-        <td>{{($record->DocumentMeta)?$record->DocumentMeta->num_downloaded: 0}}</td>
-        <td>{{$record->created_at}}</td>
+        <td>{{(\App\Models\Customer::find($record->owner_id))?\App\Models\Customer::find($record->owner_id)->name:''}}</td>
+      
+        <td>Đang chờ</td>
+        <td>{{number_format($record->amount_money)}}</td>
+        <td>{{$record->trading_date}}</td>
         
         <td>
           <div class="hidden-sm hidden-xs btn-group">
-            <a href="/backend/document/edit/{{$record->id}}">
+            <a href="/backend/transaction/edit/{{$record->id}}">
               <button class="btn btn-xs btn-info">
                 <i class="ace-icon fa fa-pencil bigger-120"></i>
               </button>

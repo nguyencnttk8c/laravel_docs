@@ -3,6 +3,8 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Helpes\Backend\Functions;
 use App\Helpes\Backend\MessageElements as MessageElements;
+use DB;
+use App\Models\Customer;
 
 class TransactionController extends ResoureController
 {
@@ -16,13 +18,18 @@ class TransactionController extends ResoureController
 		 $this->_model = $model;
 
 	}
-	
-	
+
+	public function dataProvider($id){
+		return [
+			"authors" => Customer::where('status',1)->where('role','!=','admin')->lists('name','id'),
+		];
+	}
 
 	public function postEdit(\Request $request = null, $id = null){
 
 		if(isset(\Request::input()['data'])){
 			$postForm = \Request::input()['data'];
+			$postForm['trading_date'] = str_replace(['AM','PM'], '', $postForm['trading_date']);
 			$params = [
 				'status'=>($id)?'update':'insert',
 				'datas'=>$postForm,
@@ -32,23 +39,13 @@ class TransactionController extends ResoureController
 				$params['id'] = $id;
 			}
 			Functions::IUD($params);
-			$document = $this->_model->find($id);
 
-			if(isset(\Request::input()['keywords'])){
-				$keywords = explode(',',\Request::input()['keywords']);
-				if($keywords){
-					foreach($keywords as $key){
-						$key = trim($key);
-						$documentKeyword = $document->Document ?: new \App\DocKeywords;
-						$documentKeyword->key_word = $key;
-						$document->DocKeywords()->save($documentKeyword);
-					}
-				}
-			}
+			DB::update("UPDATE ".DB::getTablePrefix()."customer_finance SET balance = balance + ".$postForm['amount_money']." WHERE id =".$postForm['owner_id']);
+			
 			$messElemnt = MessageElements::_toHtml([
-				MessageElements::addSuccess('Cập tài liệu "'.$postForm['title'].'" thành công')
+				MessageElements::addSuccess('Cập nhật dữ liệu thành công')
 			]);
-			return \redirect('/backend/document/')->with('messElemnt',$messElemnt);
+			return \redirect('/backend/transaction/')->with('messElemnt',$messElemnt);
 		}
 		
 	}

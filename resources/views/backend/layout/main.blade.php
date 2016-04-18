@@ -14,7 +14,7 @@
 		<link rel="stylesheet" href="{{asset('backend/css/ace.min.css')}}" />
 		<link rel="stylesheet" href="{{asset('backend/css/datepicker.min.css')}}" />
 		<link rel="stylesheet" href="{{asset('backend/css/custom-style.css')}}" />
-
+		<link rel="stylesheet" href="{{asset('backend/css/bootstrap-datetimepicker.min.css')}}" />
 		<!--[if lte IE 9]>
 			<link rel="stylesheet" href="assets/css/ace-part2.min.css" class="ace-main-stylesheet" />
 		<![endif]-->
@@ -57,7 +57,7 @@
 				</button>
 
 				<div class="navbar-header pull-left">
-					<a href="index.html" class="navbar-brand">
+					<a href="/backend/dashboard" class="navbar-brand">
 						<small>
 						
 							Hệ thống quản trị website
@@ -87,13 +87,7 @@
 									</a>
 								</li>
 
-								<li>
-									<a href="profile.html">
-										<i class="ace-icon fa fa-user"></i>
-										Profile
-									</a>
-								</li>
-
+								
 								<li class="divider"></li>
 
 								<li>
@@ -193,8 +187,11 @@
 		<script type="text/javascript">
 			if('ontouchstart' in document.documentElement) document.write("<script src='{{asset('backend/js/jquery.mobile.custom.min.js')}}'>"+"<"+"/script>");
 		</script>
+		<script src="{{asset('backend/js/moment.min.js')}}"></script>
+
 		<script src="{{asset('backend/js/bootstrap.min.js')}}"></script>
 		<script src="{{asset('backend/js/bootstrap-datepicker.min.js')}}"></script>
+		<script src="{{asset('backend/js/bootstrap-datetimepicker.min.js')}}"></script>
 		<script src="{{asset('backend/js/jquery.validate.min.js')}}"></script>
 		<!-- ace scripts -->
 		<script src="{{asset('backend/js/bootstrap-tag.min.js')}}"></script>
