@@ -27,7 +27,7 @@ class ArticlesController extends ResoureController
 		if(isset(\Request::input()['data'])){
 			$postForm = \Request::input()['data'];
 			if(isset($postForm['title'])){
-				if(!isset($postForm['slug']) || isset($postForm['slug']) && !empty($postForm['slug'])){
+				if(!isset($postForm['slug']) || isset($postForm['slug']) && empty($postForm['slug'])){
 					$postForm['slug'] = str_slug(\Request::input()['data']['title']);
 				}else{
 					$postForm['slug'] = str_slug(\Request::input()['data']['slug']);

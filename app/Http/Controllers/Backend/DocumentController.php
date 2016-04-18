@@ -77,7 +77,7 @@ class DocumentController extends ResoureController
 				$postForm['format'] = $fileInfo['extension'];
 			}
 			if(isset($postForm['title'])){
-				if(!isset($postForm['slug']) || isset($postForm['slug']) && !empty($postForm['slug'])){
+				if(!isset($postForm['slug']) || isset($postForm['slug']) && empty($postForm['slug'])){
 					$postForm['slug'] = str_slug(\Request::input()['data']['title']);
 				}else{
 					$postForm['slug'] = str_slug(\Request::input()['data']['slug']);
