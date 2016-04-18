@@ -66,6 +66,10 @@ Route::group(['middleware' => ['web']], function () {
         Route::get('googlelogin', ['uses' => 'Frontend\AuthCustomerController@redirectToProviderGoogle']);
         Route::get('callbackgoogle', ['uses' => 'Frontend\AuthCustomerController@handleProviderCallbackGoogle']);
         Route::get('danh-muc/{slug}', 'Frontend\DocByTaxonomyController@getList');
+
+        Route::get('static', function(){
+            return view('frontend.layout.static');
+        });
     });
     Route::controller('thong-tin-ca-nhan', 'Account\PersonalInformation');
     Route::get('upload-tai-lieu', 'Account\Upload@getUpload');
