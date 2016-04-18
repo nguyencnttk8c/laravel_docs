@@ -58,53 +58,43 @@
 					Giao dịch gần đây
 				</h5>
 			</div>
-			<table id="simple-table" class="table table-striped table-bordered table-hover">
+			<table id="simple-table" class="table table-striped table-bordered table-hover" style="margin-bottom:0">
 			  <thead>
 				<tr>
 				  <th>ID</th>
 				  <th>Mã giao dịch</th>
-				  <th>Loại giao dịch</th>
+				  <th>Khách hàng</th>
+				  <th>Hình thức thanh toán</th>
 				  <th>Tình trạng</th>
 				  <th>Số tiền giao dịch</th>
 				  <th>Ngày giao dịch</th>
 				</tr>
 			  </thead>
 			  <tbody>	
-				<tr>
-				  <td>289</td>
-				  <td>#09824</td>
-				  <td>Chuyển khoản</td>
-				  <td>Đã chuyển</td>
-				  <td>500,000</td>
-				  <td>27/09/2016</td>
-				</tr>
-				<tr>
-				  <td>289</td>
-				  <td>#09824</td>
-				  <td>Chuyển khoản</td>
-				  <td>Đã chuyển</td>
-				  <td>500,000</td>
-				  <td>27/09/2016</td>
-				</tr>
-				<tr>
-				  <td>289</td>
-				  <td>#09824</td>
-				  <td>Chuyển khoản</td>
-				  <td>Đã chuyển</td>
-				  <td>500,000</td>
-				  <td>27/09/2016</td>
-				</tr>
-				<tr>
-				  <td>289</td>
-				  <td>#09824</td>
-				  <td>Chuyển khoản</td>
-				  <td>Đã chuyển</td>
-				  <td>500,000</td>
-				  <td>27/09/2016</td>
-				</tr>
+			  	@if($data['transactionsList'])
+     				@foreach($data['transactionsList'] as $record)
+						<tr>
+						  <td>
+					          {{$record->id}}
+					        </td>
+					        <td>
+					         {{$record->trading_code}}
+					        </td>
+
+					        <td> Thanh toán bằng thẻ điện thoại</td>
+
+					        <td>{{(\App\Models\Customer::find($record->owner_id))?\App\Models\Customer::find($record->owner_id)->name:''}}</td>
+					      
+					        <td>Đang chờ</td>
+					        <td>{{number_format($record->amount_money)}}</td>
+					        <td>{{$record->trading_date}}</td>
+						</tr>
+					@endforeach
+   				@endif
 				
 			  </tbody>
-			</table>									
+			</table>	
+			<a style="padding:5px 2px;display:block;text-decoration:underline" href="/backend/transaction">Xem tất cả giao dịch</a>								
 		</div><!-- /.widget-box -->						
 	</div>	
 @stop
