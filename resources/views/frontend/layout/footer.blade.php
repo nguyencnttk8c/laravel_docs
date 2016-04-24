@@ -9,6 +9,7 @@
                 <div>
                     Email: banthe247@gmail.com<br />
                     Hotline: 0913081236<br />
+                    Skype: <a href="skype:nganhvtc118?chat">Cổng thanh toán</a>
                 </div>
             </div>
             <div class="col-md-4">
