@@ -34,6 +34,13 @@
 <link rel="stylesheet" type="text/css" href="{{asset('common/css/daterangepicker.css')}}" />
 <link rel="stylesheet" type="text/css" href="{{asset('common/font-awesome/4.2.0/css/font-awesome.min.css')}}" />
 <link rel="stylesheet" type="text/css" href="{{asset('common/css/styles.css')}}" />
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
+    <script type="text/javascript" src="{{asset('frontend/js/script.js')}}"></script>
+
 </head>
 <body class="{{$modalOpen}}" style="{{$style}}">
 <header>

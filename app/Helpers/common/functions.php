@@ -47,8 +47,13 @@ class Functions {
                     });
 
                     // File upload success
-                    this.on('success', function(file, json) {
+                    self.on('success', function(file, json) {
+                        if (json == 'exist') {
 
+                        } else {
+                            $("#document_id").val(json.id);
+                            $("#document_title").val(json.title);
+                        }
                     });
 
                     // On removing file
@@ -61,7 +66,8 @@ class Functions {
                                 file : file.name
                             },
                             success: function(result){
-
+                                $("#document_id").val('');
+                                $("#document_title").val('');
                             }
                         });
                     });

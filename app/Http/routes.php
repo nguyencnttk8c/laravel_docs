@@ -71,13 +71,15 @@ Route::group(['middleware' => ['web']], function () {
         Route::get('static-detail/{slug}', 'Frontend\StaticController@getArticleDetail');
     });
     Route::controller('thong-tin-ca-nhan', 'Account\PersonalInformation');
-    Route::get('upload-tai-lieu', 'Account\Upload@getUpload');
+    Route::get('upload-tai-lieu', 'Account\UploadController@getUpload');
+    Route::post('upload-tai-lieu', 'Account\UploadController@upload_document');
     Route::group(['prefix' => '/account/', 'middleware'=>['auth']], function(){
         Route::controller('thong-tin-ca-nhan', 'Account\PersonalInformation');
         Route::get('quan-ly-tai-lieu', 'Account\DocumentController@getIndex');
         Route::get('quan-ly-tai-chinh', 'Account\FinanceController@getIndex');
         Route::get('thong-ke-doanh-thu', 'Account\InComeController@getIndex');
     });
-    Route::post('/dropzone/uploadFiles', 'Account\Upload@uploadFiles');
-    Route::post('/dropzone/deleteFiles', 'Account\Upload@deleteFiles');
+    Route::post('/dropzone/uploadFiles', 'Account\UploadController@uploadFiles');
+    Route::post('/dropzone/deleteFiles', 'Account\UploadController@deleteFiles');
+    Route::post('/find-taxonomy-by-parent', 'Account\UploadController@findTaxByParent');
 });
