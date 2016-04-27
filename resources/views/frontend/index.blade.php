@@ -50,9 +50,9 @@
 		                            {{ $item['title'] }}
 		                        </a>
 		                        <a href="#" class="doc-author">
-		                            {{ \App\Models\Customer::find($item['author'])->name }}
+		                            {{ (isset(\App\Models\Customer::find($item['author'])->name)) ? \App\Models\Customer::find($item['author'])->name : '' }}
 		                        </a>
-		                        <ul class="doc_tk_cnt">                                    
+		                        <ul class="doc_tk_cnt">
 		                            <li><i class="icon_doc"></i>{{ $item['total_page'] }}</li>
 		                            <li><i class="icon_view"></i>{{ \FuncFrontend::getDocMeta($item['id'], 'num_viewed') }}</li>
 		                            <li><i class="icon_down"></i>{{ \FuncFrontend::getDocMeta($item['id'], 'num_downloaded') }}</li>            
