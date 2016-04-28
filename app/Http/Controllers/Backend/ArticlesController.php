@@ -14,12 +14,19 @@ class ArticlesController extends ResoureController
 	protected $_titleNew = 'Thêm mới bài viết';
 
 	public function __construct(\App\Models\Articles $model){
-		 $this->_model = $model;
+		$this->_model = $model;
+		$this->_search =  \App\Helpes\Backend\Functions::showDataSetup([
+            'table'=> $model::where('status','!=',''),
+            'per_page'=> 10,
+            'url'=>'/backend/articles'
+            ]
+        );
 	}
 	
 	public function dataProvider($id){
 		return [
 			"categories" => \App\Models\Taxonomy::where('type','article')->lists('tax_name','id'),
+			'frmSearch' => true,
 		];
 	}
 

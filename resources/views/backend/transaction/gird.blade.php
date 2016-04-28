@@ -1,4 +1,52 @@
 @extends('backend.templates.gird')
+@section('search')
+<div class="form-group">
+  <div class="col-sm-2">
+     <label> Mã giao dịch </label>
+    <input placeholder="Nhập mã giao dịch ..." value="{{$_GET['trading_code'] or NULL}}" name="trading_code" type="text"  class="form-control">
+  </div>
+</div>
+<div class="form-group">
+  <div class="col-sm-2">
+     <label> Khách hàng </label>
+    <select style="width:100%;height: 34px;" name="owner_id">
+      <option value="">Chọn khách hàng</option>
+      @if($data['authors'])
+        @foreach($data['authors'] as $id => $name)
+          <option {{(isset($_GET['owner_id']))?($id == $_GET['owner_id']?'selected':NULL):''}} value="{{$id}}">{{$name}}</</option>
+        @endforeach
+      @endif
+    </select>
+  </div>
+</div>
+<div class="form-group">
+  <div class="col-sm-2">
+     <label> Hình thức thanh toán </label>
+    <select style="width:100%;height: 34px;" name="category">
+      <option value="">Chọn hình thức thanh toán</option>
+    </select>
+  </div>
+</div>
+<div class="form-group">
+  <div class="col-sm-2">
+     <label> Trạng thái </label>
+     <select style="width:100%;height: 34px;" name="status">
+      <option value="">Chọn trạng thái</option>
+    </select>
+  </div>
+</div>
+<div class="form-group">
+  <div class="col-sm-4">
+    <label style="display:block"> Ngày giao dịch </label>
+    <div class="range">
+    <label> Từ ngày </label>
+    <input placeholder="Ngày bắt đầu ..." value="{{$_GET['trading_date|from'] or NULL}}" name="trading_date|from" type="text"  class="form-control date-picker">
+    <label>  Đến ngày </label>
+    <input placeholder="Ngày kết thúc ..." value="{{$_GET['trading_date|to'] or NULL}}" name="trading_date|to" type="text"  class="form-control date-picker">
+    </div>
+  </div>
+</div>
+@stop
 @section('tables')
 <table id="simple-table" class="table table-striped table-bordered table-hover">
   <thead>
@@ -63,4 +111,7 @@
     
   </tbody>
 </table>									
+@stop
+@section('javascripts') 
+$('.date-picker').datetimepicker({format: 'YYYY-MM-DD'});
 @stop

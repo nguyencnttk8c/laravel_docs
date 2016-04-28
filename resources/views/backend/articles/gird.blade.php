@@ -1,4 +1,35 @@
 @extends('backend.templates.gird')
+@section('search')
+<div class="form-group">
+  <div class="col-sm-3">
+     <label> Tiêu đề </label>
+    <input placeholder="Nhập từ khóa ..." value="{{$_GET['title'] or NULL}}" name="title" type="text"  class="form-control">
+  </div>
+</div>
+<div class="form-group">
+  <div class="col-sm-3">
+     <label> Danh mục </label>
+    <select style="width:100%;height: 34px;" name="category">
+      <option value="">Chọn danh mục</option>
+       @if($data['categories'])
+          @foreach($data['categories'] as $id => $name)
+            <option {{(isset($_GET['category']))?($id == $_GET['category']?'selected':NULL):''}} value="{{$id}}">{{$name}}</</option>
+          @endforeach
+       @endif
+    </select>
+  </div>
+</div>
+<div class="form-group">
+  <div class="col-sm-2">
+     <label> Trạng thái </label>
+     <select style="width:100%;height: 34px;" name="status">
+      <option value="">Chọn trạng thái</option>
+      <option {{(isset($_GET['status']) && $_GET['status'] == 1)?'selected':''}} value="1">Hoạt động</option>
+      <option {{(isset($_GET['status']) && $_GET['status'] == -1)?'selected':''}} value="-1">Không hoạt động</option>
+    </select>
+  </div>
+</div>
+@stop
 @section('tables')
 <table id="simple-table" class="table table-striped table-bordered table-hover">
   <thead>
@@ -9,24 +40,19 @@
           <span class="lbl"></span>
         </label>
       </th>
-
       <th>ID</th>
       <th>Tiêu đề</th>
-
       <th>Danh mục</th>
       <th>Nội dung</th>
       <th>Hình ảnh</th>
-
       <th>
         <i class="ace-icon fa fa-clock-o bigger-110"></i>
         Ngày tạo
       </th>
       <th>Trạng thái</th>
       <th>Thao tác</th>
-      
     </tr>
   </thead>
-
   <tbody>
     @if($data['list'])
       @foreach($data['list'] as $record)

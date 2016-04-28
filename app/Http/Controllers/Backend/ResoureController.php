@@ -10,13 +10,21 @@ class ResoureController extends Controller
 	protected $_titleEdit;
 	protected $_titleNew;
 	protected $_model;
+	protected $_search;
 	
 	public function getIndex(){
 		$data = [
 			'title'=> $this->_titleIndex,
-			'list'=>$this->_model->orderBy('created_at','DESC')->paginate(10),
 			'url'=>$this->_urlAndFormView.'/new',
 		];
+		if(method_exists($this, "dataProvider")){
+			$data = array_merge($this->dataProvider(''),$data);
+		}
+		if(isset($data['frmSearch'])){
+			$data['list'] = $this->_search['results'];
+		}else{
+			$data['list'] = $this->_model->orderBy('created_at','DESC')->paginate(10);
+		}
 		return view('backend.'.$this->_urlAndFormView.'.gird',['data'=>$data]);
 	}
 	public function getNew(){

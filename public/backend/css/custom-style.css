@@ -18,3 +18,19 @@ label.error .fa-reply{
     transform: rotate(87deg);
     padding-top: 6px;
 }
+.range label {
+    float: left;
+    display: inline-block;
+    width: 15%;
+    font-size: 12px;
+    text-align: right;
+    padding-right: 5px;
+    margin-top: 7px;
+}
+.range input {
+    width: 35%;
+    float: left;
+}
+.range{
+    margin-left: -14px;
+}

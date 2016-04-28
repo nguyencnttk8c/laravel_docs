@@ -16,12 +16,19 @@ class TransactionController extends ResoureController
 
 	public function __construct(\App\Models\Transaction $model){
 		 $this->_model = $model;
+		 $this->_search =  \App\Helpes\Backend\Functions::showDataSetup([
+            'table'=> $model::where('id','!=',''),
+            'per_page'=> 10,
+            'url'=>'/backend/transaction'
+            ]
+        );
 
 	}
 
 	public function dataProvider($id){
 		return [
 			"authors" => Customer::where('status',1)->where('role','!=','admin')->lists('name','id'),
+			'frmSearch' => true,
 		];
 	}
 

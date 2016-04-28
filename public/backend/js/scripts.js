@@ -47,8 +47,10 @@ $('#navigate-submit').on('click',function(){
 $('#navigate-reset').on('click',function(){
 	$('#reset').click();
 })
+$('.remove-filters').on('click',function(){
+	return window.location = window.location.pathname;
+})
 $(document).ready(function(){
-
 	$('body').delegate('.tags .tag .close','click',function(){
 		alert(1);
 	})
