@@ -13,7 +13,13 @@
   <div class="col-sm-9">
     <input data-validate="{required:true,email:true}" name="data[email]" type="text" value="{{$data['current']->email or ''}}" class="form-control">
   </div>
-  
+</div>
+<div class="form-group">
+  <label class="col-sm-2 control-label no-padding-right" for="form-field-1-1"> Phone <b class='require'>*</b>
+  </label>
+  <div class="col-sm-9">
+    <input data-validate="{required:true,number:true,minlength:10,uniqueUserPhone: true}" name="data[phone]" type="text" value="{{$data['current']->phone or ''}}" class="form-control">
+  </div>
 </div>
 <div class="form-group">
   <label class="col-sm-2 control-label no-padding-right" for="form-field-1-1"> Ngày sinh <b class='require'>*</b>

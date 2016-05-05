@@ -1,9 +1,6 @@
 <?php
 namespace App\Helpes\Backend;
 class Functions{
-
-
-
     /**
      *
      * Append array param $_GET link to Paginate
@@ -168,7 +165,7 @@ class Functions{
                             $val = str_replace('&', '&amp;', $val);
                             $count++;
                             if($count==1){
-                                if($key == 'term_name' || $key == 'term_name_ar' || $key == 'title' || $key == 'en' || $key == 'title_ar'){
+                                if($key == 'tax_name' || $key == 'title' || $key == 'phone'  || $key == 'email' || $key == 'name'){
                                     $data = $table->where($key,'like','%'.$val.'%');//->orWhere(($key!='en')?$key.'_ar':'ar','like','%'.$val.'%');
                                 }else if($val == '!='){
                                     $data = $table->where($key,'!=',0);
@@ -176,7 +173,7 @@ class Functions{
                                     $data = $table->where($key,$val);
                                 }
                             }else{
-                                if($key == 'term_name' || $key == 'term_name_ar' || $key == 'title' || $key == 'en' || $key == 'title_ar'){
+                                if($key == 'tax_name' || $key == 'title' || $key == 'phone'  || $key == 'email' || $key == 'name'){
                                     $data->where($key,'like','%'.$val.'%');
                                 }else if($val == '!='){
                                     $data->where($key,'!=',0);
