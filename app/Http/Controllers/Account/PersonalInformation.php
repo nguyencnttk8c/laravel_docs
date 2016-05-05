@@ -7,28 +7,22 @@ class PersonalInformation extends Controller{
 
     public function  getIndex () {
         $user = \Auth::user();
-        return view('account.personal-info', ['user'=>$user]);
+        $user->bank_info = json_decode($user->bank_info);
+        $data = array();
+        $data['title'] = 'Cập nhật thông tin cá nhân';
+        return view('account.personal-info', compact('data', 'user'));
     }
 
     public function postIndex() {
-        $data = \Request::Input();
-        foreach ($data as $key=>$value) {
-            if ($value == '' || $key == '_token') {
-                unset($data[$key]);
-            }
+        extract($_POST);
+        if (isset($user['password']) && $user['password'] != '') {
+            $user['password'] = bcrypt($user['password']);
+        } else {
+            unset( $user['password']);
         }
-        if (isset($data['gender'])) {
-            if ($data['gender'] == 'Nam') {
-                $data['gender'] = 'nam';
-            } else if ($data['gender'] == 'Nữ') {
-                $data['gender'] = 'nu';
-            }
-        }
-        if (isset($data['password'])) {
-            $data['password'] = bcrypt($data['password']);
-        }
+        $user['bank_info'] = json_encode($user['bank_info']);
         $id = \Auth::id();
-        $result = User::where('id', $id)->update($data);
+        $result = User::where('id', $id)->update($user);
         return redirect()->back();
     }
 }

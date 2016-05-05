@@ -1,4 +1,4 @@
-<aside class="col-md-3 col-sx-4" id="sidebar-account">
+<aside class="col-md-3 col-ms-3 col-xs-3" id="sidebar-account">
 <!--    <h3 class="title">Chức năng</h3>-->
 
     <nav class="listcategory">

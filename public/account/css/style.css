@@ -125,7 +125,7 @@ div.account_balance .send_bal {
     line-height: 35px;
     margin-bottom: 5px;
 }
-#edit-user .edit-field {display: none}
+
 #show-name {
     font-size: 25px;
     font-weight: 400;
@@ -173,5 +173,60 @@ div.account_balance .send_bal {
 }
 .dropzone {
     border: 3px dashed rgba(0, 0, 0, 0.3) !important;
+}
+.update-info form {
+    padding: 0 15px;
+    margin: 20px auto;
+}
+.table-cell {
+    line-height: 35px;
+}
+.align-right {
+    text-align: right;
+}
+.align-left {
+    text-align: left;
+}
+.table>div>h2, .table>div>button {
+    display: inline-block;
+}
+.table>div>h2.subtitle {
+    color: #0F98CC;
+    text-transform: uppercase;
+    font-size: 25px;
+    font-weight: 500;
+}
+.table>div>button {
+    background-color: white;
+    color: black;
+    font-size: 15px;
+    font-weight: normal;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 0px 2px 2px 2px #e8e8e8;
+    -moz-box-shadow: 0px 2px 2px 2px #e8e8e8;
+    -webkit-box-shadow: 0px 2px 2px 2px #e8e8e8;
+}
+form#edit-user button[type="submit"] {
+    border-radius: 3px;
+    border: none;
+    font-size: 15px;
+    color: white;
+    background: #0F98CC;
+    padding: 10px;
+}
+form#edit-user button[type="submit"]:hover {
+    background: #27a9cc;
+}
+.table input.info, .table input.bank-info {
+    font-size: 14px;
+    color: #000000;
+    border: none;
+    width: 100%;
+}
+.table input.edit-field {
+    border: 1px solid #0F98CC;
+    border-radius: 3px;
+    padding: 5px;
 }
 

@@ -1,158 +1,140 @@
 @extends('frontend.layout.layout')
 @section('sidebar', view('account.layout.sidebar')->with('current', 'per'))
 @section('content')
-<section class="col-md-9" id="content-account">
-    <div class="row">
-        <div class="col-md-10">
-            <h1 class="title">Cập nhật thông tin cá nhân</h1>
+<section class="col-md-9 col-ms-9 col-xs-9 update-info" id="content-account">
+    <form id="edit-user" role="form" method="post" action="">
+        {!! csrf_field() !!}
+        <div class="table">
+            <div class="row">
+                <h2 class="subtitle pull-left">Thông tin cá nhân</h2>
+                <button class="pull-right edit" data-target=".info" type="button"><i class="fa fa-pencil" aria-hidden="true"></i> Chỉnh sửa</button>
+            </div>
+            <div class="clearfix"></div>
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="table-row">
+                        <div class="table-cell bold align-right col-md-4 col-sm-4 col-xs-6">
+                            ID
+                        </div>
+                        <div class="table-cell align-left col-md-8 col-sm-8 col-xs-6">
+                            <input class="info" type="text" name="user[id_card]" value="{{$user->id_card}}" readonly>
+                        </div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-cell bold align-right col-md-4 col-sm-4 col-xs-6">
+                            Tên hiển thị
+                        </div>
+                        <div class="table-cell align-left col-md-8 col-sm-8 col-xs-6">
+                            <input class="info" type="text" name="user[name]" value="{{$user->name}}" readonly>
+                        </div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-cell bold align-right col-md-4 col-sm-4 col-xs-6">
+                            Ngày sinh
+                        </div>
+                        <div class="table-cell align-left col-md-8 col-sm-8 col-xs-6">
+                            <input class="info" type="date" name="user[birth_day]" value="{{\Carbon\Carbon::parse($user->birth_day)->format('Y-m-d')}}" readonly>
+                        </div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-cell bold align-right col-md-4 col-sm-4 col-xs-6">
+                            Giới tính
+                        </div>
+                        <div class="table-cell align-left col-md-8 col-sm-8 col-xs-6">
+                            <input class="info" type="text" name="user[gender]" value="{{$user->gender}}" readonly>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="table-row">
+                        <div class="table-cell bold align-right col-md-4 col-sm-4 col-xs-6">
+                            Địa chỉ
+                        </div>
+                        <div class="table-cell align-left col-md-8 col-sm-8 col-xs-6">
+                            <input class="info" type="text" name="user[address]" value="{{$user->address}}" readonly>
+                        </div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-cell bold align-right col-md-4 col-sm-4 col-xs-6">
+                            Số điện thoại
+                        </div>
+                        <div class="table-cell align-left col-md-8 col-sm-8 col-xs-6">
+                            <input class="info"  type="text" name="user[phone]" value="{{$user->phone}}" readonly>
+                        </div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-cell bold align-right col-md-4 col-sm-4 col-xs-6">
+                            Email
+                        </div>
+                        <div class="table-cell align-left col-md-8 col-sm-8 col-xs-6">
+                            <input class="info" name="user[email]" type="email" value="{{$user->email}}" readonly>
+                        </div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-cell bold align-right col-md-4 col-sm-4 col-xs-6">
+                            Mật khẩu
+                        </div>
+                        <div class="table-cell align-left col-md-8 col-sm-8 col-xs-6">
+                            <input class="info" name="user[password]" type="password" value="" placeholder="********" readonly>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col-md-2">
-            <button id="edit-button">Sửa</button>
+        <div class="table">
+            <div class="row">
+                <h2 class="subtitle pull-left">Thông tin ngân hàng</h2>
+                <button class="pull-right edit" type="button" data-target=".bank-info"><i class="fa fa-pencil" aria-hidden="true"></i> Chỉnh sửa</button>
+            </div>
+            <div class="clearfix"></div>
+            @foreach ($user->bank_info as $key=>$bank)
+                <div class="row">
+                    <div class="table-row">
+                        <div class="table-cell bold align-right col-md-4 col-sm-4 col-xs-6">
+                            Số tài khoản
+                        </div>
+                        <div class="table-cell align-left col-md-8 col-sm-8 col-xs-6">
+                            <input class="bank-info" type="text" name="user[bank_info][{{$key}}][acc_id]" value="{{$bank->acc_id}}" readonly>
+                        </div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-cell bold align-right col-md-4 col-sm-4 col-xs-6">
+                            Chủ tài khoản
+                        </div>
+                        <div class="table-cell align-left col-md-8 col-sm-8 col-xs-6">
+                            <input class="bank-info" type="text" name="user[bank_info][{{$key}}][acc_name]" value="{{$bank->acc_name}}" readonly>
+                        </div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-cell bold align-right col-md-4 col-sm-4 col-xs-6">
+                            Tên ngân hàng
+                        </div>
+                        <div class="table-cell align-left col-md-8 col-sm-8 col-xs-6">
+                            <input class="bank-info" type="text" name="user[bank_info][{{$key}}][bank_name]" value="{{$bank->bank_name}}" readonly>
+                        </div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-cell bold align-right col-md-4 col-sm-8 col-xs-6">
+                            Chi nhánh
+                        </div>
+                        <div class="table-cell align-left col-md-8 col-sm-8 col-xs-6">
+                            <input class="bank-info" type="text" name="user[bank_info][{{$key}}][bank_brand]" value="{{$bank->bank_brand}}" readonly>
+                        </div>
+                    </div>
+                </div>
+                <hr class="clearfix">
+            @endforeach
         </div>
-    </div>
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <form id="edit-user" role="form" method="post" action="">
-                {!! csrf_field() !!}
-                <div class="edit-group display-name">
-                    <div class="row">
-                        <div class="col-md-12 title">
-                            <span class="text-uppercase">Tên hiển thị</span>
-                        </div>
-                    </div>
-                    <div class="row edit">
-                        <div class="col-md-12">
-                            <input type="text" class="form-control edit-field" id="name" name="name" required value="">
-                            <span class="show-field" id="show-name">{{$user->name}}</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="edit-group user-detail">
-                    <div class="row">
-                        <div class="col-md-12 title">
-                            <span class="text-uppercase">Thông tin</span>
-                        </div>
-                    </div>
-                    <div class="row edit">
-                        <div class="col-md-6 subtitle">
-                            <span>Ngày Sinh</span>
-                        </div>
-                        <div class="col-md-6">
-                            <input type="date" class="form-control edit-field" id="birth_day" name="birth_day" required value="">
-                            <span class="show-field" id="show-birth_day">{{$user->birth_day->format('d/m/Y')}}</span>
-                        </div>
-                    </div>
-                    <div class="row edit">
-                        <div class="col-md-6 subtitle">
-                            <span>Giới Tính</span>
-                        </div>
-                        <div class="col-md-6">
-                            <input type="text" class="form-control edit-field" id="gender" name="gender" required value="">
-                            <span class="show-field" id="show-gender">{{($user->gender == 'nam') ? 'Nam' : (($user->gender == 'nu') ? 'Nữ' : '')}}</span>
-                        </div>
-                    </div>
-                    <div class="row edit">
-                        <div class="col-md-6 subtitle">
-                            <span>Địa Chỉ</span>
-                        </div>
-                        <div class="col-md-6">
-                            <input type="text" class="form-control edit-field" id="address" name="address" value="">
-                            <span class="show-field" id="show-address">{{$user->address}}</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="edit-group edit-pass">
-                    <div class="row">
-                        <div class="col-md-12 title">
-                            <span class="text-uppercase">Mật khẩu</span>
-                        </div>
-                    </div>
-                    <div class="row edit">
-                        <div class="col-md-6 subtitle">
-                            <span>Mật khẩu</span>
-                        </div>
-                        <div class="col-md-6">
-                            <input type="password" class="form-control edit-field" id="password" name="password" value="">
-                            <span id="show-password" class="show-field">********</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="edit-group bankInfo">
-                    <div class="row">
-                        <div class="col-md-12 title">
-                            <span class="text-uppercase">Thông Tin Tài Khoản Rút Tiền</span>
-                        </div>
-                    </div>
-                    <div class="row edit">
-                        <div class="col-md-6 subtitle">
-                            <span>Tên tài khoản</span>
-                        </div>
-                        <div class="col-md-6">
-                            <input type="text" class="form-control edit-field" id="bank_account" name="bank_account" value="">
-                            <span class="show-field" id="show-bank_account">{{$user->bank_account}}</span>
-                        </div>
-                    </div>
-                    <div class="row edit">
-                        <div class="col-md-6 subtitle">
-                            <span>Số tài khoản</span>
-                        </div>
-                        <div class="col-md-6">
-                            <input type="text" class="form-control edit-field" id="bank_number" name="bank_number" value="">
-                            <span class="show-field" id="show-bank_number">{{$user->bank_number}}</span>
-                        </div>
-                    </div>
-                    <div class="row edit">
-                        <div class="col-md-6 subtitle">
-                            <span>Tên ngân hàng</span>
-                        </div>
-                        <div class="col-md-6">
-                            <input type="text" class="form-control edit-field" id="bank_name" name="bank_name" value="">
-                            <span class="show-field" id="show-bank_name">{{$user->bank_name}}</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="edit-group">
-                    <div class="row">
-                        <div class="col-md-12 title">
-                            <a class="text-uppercase" href="#">Điều khoản sự dụng</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="edit-group">
-                    <div class="row">
-                        <div class="col-md-12 title">
-                            <a class="text-uppercase" href="#">Chính sách bảo mật</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="edit-group">
-                    <div class="row">
-                        <div class="col-md-12 title">
-                            <a class="text-uppercase" href="#">Thông tin nhà phát triển</a>
-                        </div>
-                    </div>
-                </div>
-                <button type="submit" class="btn btn-default edit-field">Lưu</button>
-            </form>
+        <div class="row" style="text-align: center">
+            <button type="submit">Lưu thay đổi</button>
         </div>
-    </div>
+    </form>
 </section>
 <script type="text/javascript">
-    $("#edit-button").click(function(){
-        $(".show-field").each(function(){
-            var this_id = $(this).attr('id');
-            var this_text = $(this).text();
-            var edit_id = this_id.split('-')[1];
-            $(this).hide();
-            if (edit_id == 'birth_day') {
-                $("#"+edit_id).val("{{$user->birth_day->format('Y-m-d')}}").show();
-            } else {
-                $("#"+edit_id).val(this_text).show();
-            }
-
-            $("#password").val('').show();
-            $('button.edit-field').show();
+    $("button.edit").click(function(){
+        var target = $(this).data('target');
+        $(target).each(function(){
+            $(this).removeAttr('readonly').addClass('edit-field');
         });
     });
 </script>
