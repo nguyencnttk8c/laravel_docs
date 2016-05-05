@@ -19,7 +19,6 @@ Route::group(['middleware' => ['web']], function () {
     	route::get('config',['as'=>'Backend::config','uses'=>'Backend\ConfigController@getIndex']);
     	route::post('config',['as'=>'Backend::config','uses'=>'Backend\ConfigController@postIndex']);
         route::controller('ajax','Backend\AjaxController');
-
         route::controller('articles','Backend\ArticlesController',[
             'getIndex' => 'Backend::articles',
             'getEdit' => 'Backend::Backend::articlesEdit',

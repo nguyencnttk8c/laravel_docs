@@ -1,4 +1,24 @@
 @extends('backend.templates.gird')
+@section('search')
+<div class="form-group">
+  <div class="col-sm-3">
+     <label> Tên người dùng </label>
+    <input placeholder="Nhập tên người dùng ..." value="{{$_GET['name'] or NULL}}" name="name" type="text"  class="form-control">
+  </div>
+</div>
+<div class="form-group">
+  <div class="col-sm-3">
+     <label> Email </label>
+    <input placeholder="Nhập email ..." value="{{$_GET['email'] or NULL}}" name="email" type="text"  class="form-control">
+  </div>
+</div>
+<div class="form-group">
+  <div class="col-sm-2">
+     <label> Số điện thoại </label>
+    <input placeholder="Nhập số điện thoại ..." value="{{$_GET['phone'] or NULL}}" name="phone" type="text"  class="form-control">
+  </div>
+</div>
+@stop
 @section('tables')
 <table id="simple-table" class="table table-striped table-bordered table-hover">
   <thead>
@@ -14,6 +34,7 @@
       <th>Tên người dùng</th>
      
       <th>Email</th>
+      <th>Phone</th>
       <th>Ngày sinh</th>
       <th>Địa chỉ</th>
 
@@ -49,8 +70,9 @@
         </td>
 
         <td>{{$record->email}}</td>
-
+        <td>{{$record->phone}}</td>
         <td>{{$record->birth_day}}</td>
+        
           <td style="max-width:200px">{{str_limit($record->address)}}</td>
         <td class="hidden-480">
           <span style="display:block;width:40px;height:20px;background:#fff;border:solid 1px #ccc"></span>

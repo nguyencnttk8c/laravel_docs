@@ -38,4 +38,12 @@ class AjaxController extends Controller
 		}
 		
 	}
+
+	public function postCheckUserPhone(){
+		$infor = Customer::where('phone',\Request::input('phone'))->first();
+		if($infor){
+			return 1;
+		}
+		return 0;
+	}
 }

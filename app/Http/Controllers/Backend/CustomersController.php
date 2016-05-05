@@ -15,6 +15,19 @@ class CustomersController extends ResoureController
 
 	public function __construct(\App\Models\Customer $model){
 		 $this->_model = $model;
+		 $this->_search =  \App\Helpes\Backend\Functions::showDataSetup([
+            'table'=> $model::where('id','!=',''),
+            'per_page'=> 10,
+            'url'=>'/backend/customers'
+            ]
+        );
+
+	}
+
+	public function dataProvider($id){
+		return [
+			'frmSearch' => true,
+		];
 	}
 	
 	public function postEdit(\Request $request = null, $id = null){
