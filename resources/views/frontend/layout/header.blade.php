@@ -79,7 +79,7 @@
                  </div>
                 <div class="navbar-collapse collapse" id="navbar-main">
                     <ul class="nav navbar-nav">
-                    	<li class="active"><a class="active" href="#">Trang chủ</a></li>
+                    	<li class="active"><a class="active" href="/">Trang chủ</a></li>
                     	<li><a href="/static/thong-bao">Tin tức</a></li>
                         <li><a href="#">Diễn đàn</a></li>
                         <li><a href="#">Câu hỏi thường gặp</a></li>
@@ -97,7 +97,7 @@
         <div class="container">
             <div class="col-sm-6 pull-right" style="text-align:right;margin-right:8px;">
                 @if (\Auth::check())
-                <p>Xin chào <a href="/thong-tin-ca-nhan">{{\Auth::user()->name}}</a></p><a href="{{URL('/')}}/dang-xuat/">Đăng xuất</a>
+                <p>Xin chào <a href="/account/thong-tin-ca-nhan/">{{\Auth::user()->name}}</a></p><a href="{{URL('/')}}/dang-xuat/">Đăng xuất</a>
                 @else
                 Vui lòng 
                 <a href="/dang-nhap/" data-toggle="modal" data-target="#signin" class="link-title-info">

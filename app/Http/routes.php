@@ -69,7 +69,7 @@ Route::group(['middleware' => ['web']], function () {
         Route::get('static/{slug}', 'Frontend\StaticController@getArticleList');
         Route::get('static-detail/{slug}', 'Frontend\StaticController@getArticleDetail');
     });
-    Route::controller('thong-tin-ca-nhan', 'Account\PersonalInformation');
+    // Route::controller('thong-tin-ca-nhan', 'Account\PersonalInformation');
     Route::get('upload-tai-lieu', 'Account\UploadController@getUpload');
     Route::post('upload-tai-lieu', 'Account\UploadController@upload_document');
     Route::group(['prefix' => '/account/', 'middleware'=>['auth']], function(){

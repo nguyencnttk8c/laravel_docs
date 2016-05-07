@@ -60,13 +60,24 @@ class AuthCustomerController extends Controller
         $newCustomer->phone = $request->ctrlphonetxt;
         $newCustomer->role = 'user';   // set user's role is customer
         $newCustomer->status = 1; // set user's status is inactive
+        $newCustomer->birth_day = date('Y-m-d', strtotime($request->ctrlbirthday));
+        if ($request->ctrlgender == '1') {
+            $newCustomer->gender = 'nam';
+        } else {
+            $newCustomer->gender = 'nu';
+        }
+        $newCustomer->address = $request->ctrladdress;
+        
         $newCustomer->save();
 
         // Send activate email
 
         // Redirect to login page
-
-        return \Redirect::to('/');
+        // Auth::login($newCustomer, true);
+        $message = '<p>Bạn đã đăng ký thành công tài khoản tại Nhà sách online. Mời bạn vui lòng kiểm tra mail để kích hoạt tài khoản.';
+        return view('frontend.authentication.dang-ky', ['message' => $message]);
+        
+        // return \Redirect::to('/');
     }
 
     protected function getLogin() {
@@ -90,7 +101,7 @@ class AuthCustomerController extends Controller
 
     protected function getLogout() {
         Auth::logout();
-        return redirect()->back();
+        return redirect('/');
     }
 
     public function reInitCaptcha(){

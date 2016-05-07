@@ -2,8 +2,11 @@
 @section('sidebar', view('frontend.layout.sidebar'))
 @section('generalDoc', view('frontend.layout.generalDoc'))
 @section('content')
-
 <div class="col-md-9">
+@if (isset($message))
+	{!! $message !!}
+	<?php header('Refresh: 5;url='.URL('/')); ?>
+@else
    	<h2 class="page_titel">Đăng ký tài khoản</h2>
 
 	<div class="panel panel-default">
@@ -17,14 +20,14 @@
 	            	{!! $errors->first('ctrlhotentxt') !!}
 	            </div>
 	            <div class="form-group">
-	                <label class="control-label" for="ctrlphonetxt">Số điện thoại<span class="asterisk_input"></span></label>
-	                <input type="text" id="ctrlphonetxt" name="ctrlphonetxt" value="{{ old('ctrlphonetxt') }}" class="form-control" placeholder="Số điện thoại" maxlength="12" tabindex="2">
-	            	{!! $errors->first('ctrlphonetxt') !!}
-	            </div>
-	            <div class="form-group">
 	                <label class="control-label" for="ctrlemailtxt">Địa chỉ email<span class="asterisk_input"></span></label>
 	                <input type="email" id="ctrlemailtxt" name="ctrlemailtxt" class="form-control" placeholder="Địa chỉ email" value="{{ old('ctrlemailtxt') }}" autocorrect="off" spellcheck="false" autocapitalize="off" tabindex="3">
 	            	{!! $errors->first('ctrlemailtxt') !!}
+	            </div>
+	            <div class="form-group">
+	                <label class="control-label" for="ctrlphonetxt">Số điện thoại<span class="asterisk_input"></span></label>
+	                <input type="text" id="ctrlphonetxt" name="ctrlphonetxt" value="{{ old('ctrlphonetxt') }}" class="form-control" placeholder="Số điện thoại" maxlength="12" tabindex="2">
+	            	{!! $errors->first('ctrlphonetxt') !!}
 	            </div>
 	            <div class="form-group">
 	                <label class="control-label" for="ctrlpasstxt">Mật khẩu<span class="asterisk_input"></span></label>
@@ -35,6 +38,19 @@
 	                <label class="control-label" for="ctrlrepasstxt">Nhập lại mật khẩu<span class="asterisk_input"></span></label>
 	                <input type="password" id="ctrlrepasstxt" name="ctrlrepasstxt" class="form-control" placeholder="Mật khẩu" autocomplete="off" tabindex="5">
 	            	{!! $errors->first('ctrlrepasstxt') !!}
+	            </div>
+	            <div class="form-group">
+	                <label class="control-label" for="ctrlbirthday">Ngày sinh</label>
+	                <input type="date" id="ctrlbirthday" name="ctrlbirthday" class="form-control" value="{{ old('ctrlbirthday') }}" placeholder="Ngày sinh" autocomplete="off" tabindex="5">
+	            </div>
+				<div class="form-group">
+	                <label class="control-label">Giới tính</label>
+	                <input type="radio" id="ctrlgender" name="ctrlgender" class="form-control" value="1" checked="" autocomplete="off" tabindex="5">Nam&nbsp
+	                <input type="radio" id="ctrlgender" name="ctrlgender" class="form-control" value="0" autocomplete="off" tabindex="5">Nữ
+	            </div>
+	            <div class="form-group">
+	                <label class="control-label" for="ctrladdress">Địa chỉ</label>
+	                <input type="text" id="ctrladdress" name="ctrladdress" class="form-control" placeholder="Địa chỉ" value="{{ old('ctrladdress') }}" autocorrect="off" spellcheck="false" autocapitalize="off" tabindex="3">
 	            </div>
 	    	</div>
 		    <div class="form-inline">
@@ -67,6 +83,7 @@
 		    </div>
         </form>
 	</div>
+@endif
 </div>
 <script>
 	$('#GetNewCode').on('click', function(){
