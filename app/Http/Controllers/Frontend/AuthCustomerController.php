@@ -118,7 +118,7 @@ class AuthCustomerController extends Controller
         } catch (Exception $e) {
             return redirect('/dang-ky/');
         }
-
+		
         $authUser = $this->findOrCreateUser($user, 'FB');
 
         Auth::login($authUser, true);
@@ -129,8 +129,8 @@ class AuthCustomerController extends Controller
         if($redirect_to && $redirect_to != '' && !\Session::get('nologin')){
             return \Redirect::to($redirect_to);
         } else {
-            if (Auth::user()->role == 'admin')
-                return \Redirect::to('/backend/');
+            if (Auth::user()->role == '1')
+                return \Redirect::to('/backend/dashboard/');
             else
                 return redirect('/');
         }
@@ -155,8 +155,9 @@ class AuthCustomerController extends Controller
         } catch (Exception $e) {
             return redirect('/dang-nhap/');
         }
+		
         $authUser = $this->findOrCreateUser($user, 'GG+');
-
+		Auth::login($authUser, true);
         //redirect after login
         $redirect_to = \Session::get('redirect_to');
         \Session::set('redirect_to', ''); \Session::forget('redirect_to');
@@ -164,10 +165,36 @@ class AuthCustomerController extends Controller
             return \Redirect::to($redirect_to);
         } else {
             if (Auth::user()->role == 'admin')
-                return \Redirect::to('/backend/');
+                return \Redirect::to('/backend/dashboard/');
             else
                 return redirect('/');
         }
 
+    }
+	
+	private function findOrCreateUser($user, $register_type = 'Email')
+    {	
+		
+        $authUser = Customer::where('email', $user->email)->first();
+        $name = ($user->name) ? strtolower($user->name) : '';
+        $tmp = explode('@', $user->email);
+        $name_by_email = $tmp[0];
+        $user_name = ($user->name) ? $user->name : $name_by_email;
+		
+		if ($authUser){
+			return $authUser;
+		}
+		
+        $password_prepare = str_replace(' ', '_', $name);
+        $user_data = [
+            'name' => $user_name,
+            'email' => ($user->email) ? $user->email : '',
+            'password' => bcrypt($password_prepare),
+            'role' => 'user',
+            'status' => (isset($user->status)) ? $user->status : '1'
+        ];
+        // EmailNotifications::send_notification_email($user->email, $user_name);
+		
+        return Customer::create($user_data);
     }
 }
