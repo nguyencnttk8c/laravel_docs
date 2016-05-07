@@ -58,6 +58,11 @@ class User extends Authenticatable
      * @param $value
      */
 
+    public function Bank(){
+        return $this->hasMany('App\DocBank', 'user_id');
+    }
+
+
     public function setBirthDayAttribute($value) {
         $this->attributes['birth_day'] = \Carbon\Carbon::parse($value)->format('Y-m-d');
     }

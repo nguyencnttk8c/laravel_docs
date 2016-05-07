@@ -87,14 +87,53 @@
                 <button class="pull-right edit" type="button" data-target=".bank-info"><i class="fa fa-pencil" aria-hidden="true"></i> Chỉnh sửa</button>
             </div>
             <div class="clearfix"></div>
-            @foreach ($user->bank_info as $key=>$bank)
+            @if (isset($user_bank) && !empty($user_bank))
+                @foreach ($user_bank as $bank)
+                    <div class="row">
+                        <div class="table-row">
+                            <div class="table-cell bold align-right col-md-4 col-sm-4 col-xs-6">
+                                Số tài khoản
+                            </div>
+                            <div class="table-cell align-left col-md-8 col-sm-8 col-xs-6">
+                                <input class="bank-info" type="text" name="bank[{{$bank->id}}][bank_id]" value="{{$bank->bank_id}}" readonly>
+                            </div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell bold align-right col-md-4 col-sm-4 col-xs-6">
+                                Chủ tài khoản
+                            </div>
+                            <div class="table-cell align-left col-md-8 col-sm-8 col-xs-6">
+                                <input class="bank-info" type="text" name="bank[{{$bank->id}}][acc_name]" value="{{$bank->acc_name}}" readonly>
+                            </div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell bold align-right col-md-4 col-sm-4 col-xs-6">
+                                Tên ngân hàng
+                            </div>
+                            <div class="table-cell align-left col-md-8 col-sm-8 col-xs-6">
+                                <input class="bank-info" type="text" name="bank[{{$bank->id}}][bank_name]" value="{{$bank->bank_name}}" readonly>
+                            </div>
+                        </div>
+                        <div class="table-row">
+                            <div class="table-cell bold align-right col-md-4 col-sm-8 col-xs-6">
+                                Chi nhánh
+                            </div>
+                            <div class="table-cell align-left col-md-8 col-sm-8 col-xs-6">
+                                <input class="bank-info" type="text" name="bank[{{$bank->id}}][bank_brand]" value="{{$bank->bank_brand}}" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="clearfix">
+                @endforeach
+            @endif
+            <div class="add-new-bank" style="display: none">
                 <div class="row">
                     <div class="table-row">
                         <div class="table-cell bold align-right col-md-4 col-sm-4 col-xs-6">
                             Số tài khoản
                         </div>
                         <div class="table-cell align-left col-md-8 col-sm-8 col-xs-6">
-                            <input class="bank-info" type="text" name="user[bank_info][{{$key}}][acc_id]" value="{{$bank->acc_id}}" readonly>
+                            <input class="bank-info edit-field" type="text" name="bank[new][bank_id]" value="">
                         </div>
                     </div>
                     <div class="table-row">
@@ -102,7 +141,7 @@
                             Chủ tài khoản
                         </div>
                         <div class="table-cell align-left col-md-8 col-sm-8 col-xs-6">
-                            <input class="bank-info" type="text" name="user[bank_info][{{$key}}][acc_name]" value="{{$bank->acc_name}}" readonly>
+                            <input class="bank-info edit-field" type="text" name="bank[new][acc_name]" value="" >
                         </div>
                     </div>
                     <div class="table-row">
@@ -110,7 +149,7 @@
                             Tên ngân hàng
                         </div>
                         <div class="table-cell align-left col-md-8 col-sm-8 col-xs-6">
-                            <input class="bank-info" type="text" name="user[bank_info][{{$key}}][bank_name]" value="{{$bank->bank_name}}" readonly>
+                            <input class="bank-info edit-field" type="text" name="bank[new][bank_name]" value="">
                         </div>
                     </div>
                     <div class="table-row">
@@ -118,15 +157,18 @@
                             Chi nhánh
                         </div>
                         <div class="table-cell align-left col-md-8 col-sm-8 col-xs-6">
-                            <input class="bank-info" type="text" name="user[bank_info][{{$key}}][bank_brand]" value="{{$bank->bank_brand}}" readonly>
+                            <input class="bank-info edit-field" type="text" name="bank[new][bank_brand]" value="" >
                         </div>
                     </div>
                 </div>
-                <hr class="clearfix">
-            @endforeach
+            </div>
+
         </div>
         <div class="row" style="text-align: center">
-            <button type="submit">Lưu thay đổi</button>
+            <input type="button" class="add-bank" data-target=".add-new-bank" value="Thêm tài khoản ngân hàng">
+        </div>
+        <div class="row" style="text-align: center">
+            <button type="submit" style="display: none">Lưu thay đổi</button>
         </div>
     </form>
 </section>
@@ -136,6 +178,13 @@
         $(target).each(function(){
             $(this).removeAttr('readonly').addClass('edit-field');
         });
+        $("button[type='submit']").show();
+        $("input.add-bank").hide();
+    });
+    $("input.add-bank").click(function(){
+        $(".add-new-bank").fadeIn(300);
+        $(this).hide();
+        $("button[type='submit']").show();
     });
 </script>
 @endsection
