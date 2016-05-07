@@ -97,7 +97,7 @@
         <div class="container">
             <div class="col-sm-6 pull-right" style="text-align:right;margin-right:8px;">
                 @if (\Auth::check())
-                <p>Xin chào {{\Auth::user()->name}}</p><a href="{{URL('/')}}/dang-xuat/">Đăng xuất</a>
+                <p>Xin chào <a href="/thong-tin-ca-nhan">{{\Auth::user()->name}}</a></p><a href="{{URL('/')}}/dang-xuat/">Đăng xuất</a>
                 @else
                 Vui lòng 
                 <a href="/dang-nhap/" data-toggle="modal" data-target="#signin" class="link-title-info">
