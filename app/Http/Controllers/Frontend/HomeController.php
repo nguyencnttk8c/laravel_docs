@@ -22,6 +22,13 @@ class HomeController extends Controller {
 			$data['highestDownload'] = $highestDownload;
 		}
 
+		$hightestView = Document::join('doc_meta', 'document.id', '=', 'doc_meta.doc_id')
+									->orderBy('num_viewed', 'desc')->take(8)->get();
+
+		if (count($hightestView) > 0) {
+			$data['hightestView'] = $hightestView;
+		}
+		
 		return view('frontend.index', ['data' => $data]);
 	}
 } 

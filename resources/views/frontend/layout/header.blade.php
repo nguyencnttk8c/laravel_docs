@@ -43,70 +43,34 @@
 
 </head>
 <body class="{{$modalOpen}}" style="{{$style}}">
-<header>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-5 col-sm-4">
-				<div class="divlogo"><img src="{{ URL('/') }}/frontend/images/logo.jpg"/></div>
-			</div>
-			<div class="col-md-5 col-sm-4 col_thongbao">
-				<div class="listthongbao">
-					<ul class="list-group">
-						<li class="list-group-item">
-							<a>Hướng dẫn download tài liệu</a>
-						</li>
-						<li class="list-group-item">
-							<a>Hướng dẫn download tài liệu</a>
-						</li>
-						<li class="list-group-item">
-							<a>Hướng dẫn download tài liệu</a>
-						</li>
-						
-					</ul>
-				</div>
-			</div>
-            <div class="col-md-2">
-                <div><a class="naptien" href="#">Nạp tiền</a></div>
-                
-                <div><a class="tailen" href="/upload-tai-lieu">Tải lên</a></div>
-            </div>
-		</div>
-	</div>
-	<div class="navbar navbar-default theme_navigation">
-            <div class="container">
-                <div class="navbar-header">
-                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-                 </div>
-                <div class="navbar-collapse collapse" id="navbar-main">
-                    <ul class="nav navbar-nav">
-                    	<li class="active"><a class="active" href="/">Trang chủ</a></li>
-                    	<li><a href="/static/thong-bao">Tin tức</a></li>
-                        <li><a href="#">Diễn đàn</a></li>
-                        <li><a href="#">Câu hỏi thường gặp</a></li>
-                    </ul>
-                    <form class="navbar-form navbar-right" role="search">
-                        <div class="form-group">
-                          <input type="text" class="form-control" placeholder="Tìm kiếm">
-                        </div>
-                        <button type="submit" class="btn btn-default">Submit</button>
-                      </form>
-                </div>
-            </div>
-    </div>
-    <div class="navbar-login">
+	<div class="theme_navigation">
         <div class="container">
-            <div class="col-sm-6 pull-right" style="text-align:right;margin-right:8px;">
-                @if (\Auth::check())
-                <p>Xin chào <a href="/account/thong-tin-ca-nhan/">{{\Auth::user()->name}}</a></p><a href="{{URL('/')}}/dang-xuat/">Đăng xuất</a>
-                @else
-                Vui lòng 
-                <a href="/dang-nhap/" data-toggle="modal" data-target="#signin" class="link-title-info">
-                    <span style="color:#f00;"><i class="fa fa-sign-in"></i>Đăng nhập</span>
-                </a> để download hoặc 
-                <a href="/dang-ky/">đăng ký</a> tài khoản mới
-                @endif
+            <div id="navbar-main">
+                <div class="col-xs-4 block-1">
+                    <div class="element">
+                        <a href="/"><img class="hidden-xs hidden-sm" src="{{ asset('frontend/images/Logo.png') }}" alt=""></a>
+                        <img class="visible-xs visible-sm menu-button" src="{{ asset('frontend/images/mobile-menu-button.png') }}" alt="">
+                        <a class="search-button" href="#"><img class="visible-xs visible-sm" src="{{ asset('frontend/images/mobile-search-button.png') }}" alt=""></a>
+                    </div>
+                    <div class="element">
+                        <a href="#"><img class="hidden-xs hidden-sm" src="{{ asset('frontend/images/nap-tien.png') }}" alt=""></a>
+                        <a href="#"><img class="hidden-xs hidden-sm" src="{{ asset('frontend/images/upload-logo.png') }}" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-xs-4 block-2">
+                    <div class="searchBox hidden-xs hidden-sm">
+                        <input type="text" name="search" placeholder="Tìm kiếm ...">
+                        <a href="javascript:void(0)" id="searchButton">
+                            <i class="icon icon_search"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xs-4 block-3">
+                    <a class="button hidden-xs hidden-sm" href="/dang-nhap/">Đăng nhập</a>
+                    <a class="button hidden-xs hidden-sm" href="/dang-ky/">Đăng ký</a>
+                    <a class="notificationButton" href="#"><img class="hidden-xs hidden-sm" src="{{ asset('frontend/images/rank.png') }}" alt=""></a>
+                    <a class="notificationButton" href="#"><img class="hidden-xs hidden-sm" src="{{ asset('frontend/images/icon-thongbao.png') }}" alt=""></a>
+                </div>
             </div>
         </div>
     </div>
-</header>
-<div class="clear-fix"></div>

@@ -127,7 +127,7 @@ class Functions {
         
         if ($cats) {
     ?>
-            <div class="col-md-3 col-sx-4">
+            <div class="col-md-3 col-xs-12">
                 <div class="well">
                     <h3 class="titel">Danh mục tài liệu</h3>
                     <div class="listcategory" >

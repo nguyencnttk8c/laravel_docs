@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use App\Models\Customer;
+use App\Models\Customer, App\Models\SendMailTable;
 use Validator, Socialite;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
@@ -53,6 +53,7 @@ class AuthCustomerController extends Controller
         \Session::forget('error');
         // Add new customer into Customers table
 
+        $verify_code = \FuncFrontend::makeRandomString();
         $newCustomer = new Customer();
         $newCustomer->name = $request->ctrlhotentxt;
         $newCustomer->email = $request->ctrlemailtxt;
@@ -60,6 +61,7 @@ class AuthCustomerController extends Controller
         $newCustomer->phone = $request->ctrlphonetxt;
         $newCustomer->role = 'user';   // set user's role is customer
         $newCustomer->status = 1; // set user's status is inactive
+        $newCustomer->verify_code = $verify_code;
         $newCustomer->birth_day = date('Y-m-d', strtotime($request->ctrlbirthday));
         if ($request->ctrlgender == '1') {
             $newCustomer->gender = 'nam';
@@ -70,14 +72,22 @@ class AuthCustomerController extends Controller
         
         $newCustomer->save();
 
-        // Send activate email
+        // Activate email
 
-        // Redirect to login page
-        // Auth::login($newCustomer, true);
-        $message = '<p>Bạn đã đăng ký thành công tài khoản tại Nhà sách online. Mời bạn vui lòng kiểm tra mail để kích hoạt tài khoản.';
-        return view('frontend.authentication.dang-ky', ['message' => $message]);
+        $emailNotifications = new SendMailTable();
+        $emailNotifications->SendFrom = $request->ctrlemailtxt;
+        $emailNotifications->SendTo = 'hnv2016.dev@gmail.com';
+        $emailNotifications->Subject = 'Kích hoạt tài khoản tại Nhà sách online';
+        $emailNotifications->MailContent = '<p>Cảm ơn bạn đã đăng ký tài khoản tại trang web Nhà sách online</p><br/><p>Mời bạn vui lòng click vào link dưới đây để kích hoạt tài khoản <a href="'.URL('/').'/register-confirm-email/'.$verify_code.'/">Click vào đây</a></p><br><p>Hoặc bạn có thể copy và chạy trực tiếp đường link sau: '.URL('/').'/register-confirm-email/'.$verify_code.'/</p>';
+        $emailNotifications->CreateDate = date('Y-m-d');
+        $emailNotifications->Status = 'pending';
+        $emailNotifications->save();
+
+        // Return success message
         
-        // return \Redirect::to('/');
+        $message = '<p>Bạn đã đăng ký thành công tài khoản tại Nhà sách online. Một email chứa thông tin kích hoạt đã được gửi tới email của bạn. Mời bạn vui lòng kiểm tra mail để kích hoạt tài khoản. Xin cảm ơn!';
+        
+        return view('frontend.authentication.dang-ky', ['message' => $message]);
     }
 
     protected function getLogin() {

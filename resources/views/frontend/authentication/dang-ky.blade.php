@@ -1,8 +1,7 @@
 @extends('frontend.layout.layout')
-@section('sidebar', view('frontend.layout.sidebar'))
 @section('generalDoc', view('frontend.layout.generalDoc'))
 @section('content')
-<div class="col-md-9">
+<div class="col-md-12">
 @if (isset($message))
 	{!! $message !!}
 	<?php header('Refresh: 5;url='.URL('/')); ?>
