@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Account;
 use App\Http\Controllers\Controller;
 use App\User;
 use App\DocBank;
+use Validator;
+use Illuminate\Http\Request;
 class PersonalInformation extends Controller{
 
     public function  getIndex () {
@@ -12,6 +14,13 @@ class PersonalInformation extends Controller{
         $data = array();
         $data['title'] = 'Cập nhật thông tin cá nhân';
         $user_bank =  $user->Bank;
+        if (\Session::has('msg')) {
+            $data['msg'] = \Session::get('msg');
+            //dd( $data['msg']);
+            \Session::put('msg', '');
+            \Session::forget('msg');
+        }
+
         return view('account.personal-info', compact('data', 'user', 'user_bank'));
     }
 
@@ -40,7 +49,24 @@ class PersonalInformation extends Controller{
         }
         if (!empty($new_bank_data)) {
             $new_bank_data['user_id'] = $id;
-            DocBank::insert($new_bank_data);
+            $rules = [
+                'bank_id' => 'required|unique:bank',
+                'acc_name' => 'required',
+                'bank_name' => 'required',
+                'bank_brand' => 'required'
+            ];
+            $messages = [
+                'bank_id.unique' => 'Số khoản đã tồn tại, chọn tài khoản khác!',
+                'required' => 'Trường không được để trống!',
+            ];
+            $validator = Validator::make($new_bank_data, $rules,$messages);
+            if (!$validator->fails()) {
+                DocBank::insert($new_bank_data);
+            } else {
+                $msg = $validator->errors();
+                return \Redirect::back()->with('msg',$msg);
+            }
+
         }
         return redirect()->back();
     }

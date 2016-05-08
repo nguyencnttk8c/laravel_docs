@@ -14,14 +14,6 @@
                 <div class="col-md-6 col-sm-6 col-xs-12">
                     <div class="table-row">
                         <div class="table-cell bold align-right col-md-4 col-sm-4 col-xs-6">
-                            ID
-                        </div>
-                        <div class="table-cell align-left col-md-8 col-sm-8 col-xs-6">
-                            <input class="info" type="text" name="user[id_card]" value="{{$user->id_card}}" readonly>
-                        </div>
-                    </div>
-                    <div class="table-row">
-                        <div class="table-cell bold align-right col-md-4 col-sm-4 col-xs-6">
                             Tên hiển thị
                         </div>
                         <div class="table-cell align-left col-md-8 col-sm-8 col-xs-6">
@@ -42,6 +34,14 @@
                         </div>
                         <div class="table-cell align-left col-md-8 col-sm-8 col-xs-6">
                             <input class="info" type="text" name="user[gender]" value="{{$user->gender}}" readonly>
+                        </div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-cell bold align-right col-md-4 col-sm-4 col-xs-6">
+                            Mật khẩu
+                        </div>
+                        <div class="table-cell align-left col-md-8 col-sm-8 col-xs-6">
+                            <input class="info password" name="user[password]" type="password" value="" placeholder="********" readonly>
                         </div>
                     </div>
                 </div>
@@ -72,10 +72,11 @@
                     </div>
                     <div class="table-row">
                         <div class="table-cell bold align-right col-md-4 col-sm-4 col-xs-6">
-                            Mật khẩu
+                            Nhập lại
                         </div>
                         <div class="table-cell align-left col-md-8 col-sm-8 col-xs-6">
-                            <input class="info" name="user[password]" type="password" value="" placeholder="********" readonly>
+                            <input class="info retype_pass" name="retype_pass" type="password" value="" placeholder="" readonly>
+                            <p class="error retype_pass" style="display: none">Nhập lại mật khẩu không đúng</p>
                         </div>
                     </div>
                 </div>
@@ -126,49 +127,70 @@
                     <hr class="clearfix">
                 @endforeach
             @endif
-            <div class="add-new-bank" style="display: none">
+        </div>
+        <div class="table">
+            <div class="add-new-bank" style="display: {{!isset($data['msg']) ? 'none' : ''}}">
                 <div class="row">
-                    <div class="table-row">
-                        <div class="table-cell bold align-right col-md-4 col-sm-4 col-xs-6">
-                            Số tài khoản
-                        </div>
-                        <div class="table-cell align-left col-md-8 col-sm-8 col-xs-6">
-                            <input class="bank-info edit-field" type="text" name="bank[new][bank_id]" value="">
-                        </div>
+                <div class="table-row">
+                    <div class="table-cell bold align-right col-md-4 col-sm-4 col-xs-6">
+                        Số tài khoản
                     </div>
-                    <div class="table-row">
-                        <div class="table-cell bold align-right col-md-4 col-sm-4 col-xs-6">
-                            Chủ tài khoản
-                        </div>
-                        <div class="table-cell align-left col-md-8 col-sm-8 col-xs-6">
-                            <input class="bank-info edit-field" type="text" name="bank[new][acc_name]" value="" >
-                        </div>
+                    <div class="table-cell align-left col-md-8 col-sm-8 col-xs-6">
+                        <input class="bank-info edit-field" type="text" name="bank[new][bank_id]" value="">
+                        @if (isset($data['msg']) && $data['msg']->has('bank_id'))
+                            @foreach ($data['msg']->get('bank_id') as $msg)
+                                <p class="error">{{$msg}}</p>
+                            @endforeach
+                        @endif
                     </div>
-                    <div class="table-row">
-                        <div class="table-cell bold align-right col-md-4 col-sm-4 col-xs-6">
-                            Tên ngân hàng
-                        </div>
-                        <div class="table-cell align-left col-md-8 col-sm-8 col-xs-6">
-                            <input class="bank-info edit-field" type="text" name="bank[new][bank_name]" value="">
-                        </div>
+                </div>
+                <div class="table-row">
+                    <div class="table-cell bold align-right col-md-4 col-sm-4 col-xs-6">
+                        Chủ tài khoản
                     </div>
-                    <div class="table-row">
-                        <div class="table-cell bold align-right col-md-4 col-sm-8 col-xs-6">
-                            Chi nhánh
-                        </div>
-                        <div class="table-cell align-left col-md-8 col-sm-8 col-xs-6">
-                            <input class="bank-info edit-field" type="text" name="bank[new][bank_brand]" value="" >
-                        </div>
+                    <div class="table-cell align-left col-md-8 col-sm-8 col-xs-6">
+                        <input class="bank-info edit-field" type="text" name="bank[new][acc_name]" value="" >
+                        @if (isset($data['msg']) && $data['msg']->has('acc_name'))
+                            @foreach ($data['msg']->get('acc_name') as $msg)
+                                <p class="error">{{$msg}}</p>
+                            @endforeach
+                        @endif
+                    </div>
+                </div>
+                <div class="table-row">
+                    <div class="table-cell bold align-right col-md-4 col-sm-4 col-xs-6">
+                        Tên ngân hàng
+                    </div>
+                    <div class="table-cell align-left col-md-8 col-sm-8 col-xs-6">
+                        <input class="bank-info edit-field" type="text" name="bank[new][bank_name]" value="">
+                        @if (isset($data['msg']) && $data['msg']->has('bank_name'))
+                            @foreach ($data['msg']->get('bank_name') as $msg)
+                                <p class="error">{{$msg}}</p>
+                            @endforeach
+                        @endif
+                    </div>
+                </div>
+                <div class="table-row">
+                    <div class="table-cell bold align-right col-md-4 col-sm-8 col-xs-6">
+                        Chi nhánh
+                    </div>
+                    <div class="table-cell align-left col-md-8 col-sm-8 col-xs-6">
+                        <input class="bank-info edit-field" type="text" name="bank[new][bank_brand]" value="" >
+                        @if (isset($data['msg']) && $data['msg']->has('bank_brand'))
+                            @foreach ($data['msg']->get('bank_brand') as $msg)
+                                <p class="error">{{$msg}}</p>
+                            @endforeach
+                        @endif
                     </div>
                 </div>
             </div>
-
+            </div>
         </div>
-        <div class="row" style="text-align: center">
+        <div class="row" style="text-align: center; display: {{isset($data['msg']) ? 'none' : ''}}">
             <input type="button" class="add-bank" data-target=".add-new-bank" value="Thêm tài khoản ngân hàng">
         </div>
-        <div class="row" style="text-align: center">
-            <button type="submit" style="display: none">Lưu thay đổi</button>
+        <div class="row" style="text-align: center;">
+            <button type="submit" style="display: {{isset($data['msg']) ? '' : 'none'}}">Lưu thay đổi</button>
         </div>
     </form>
 </section>
@@ -185,6 +207,12 @@
         $(".add-new-bank").fadeIn(300);
         $(this).hide();
         $("button[type='submit']").show();
+    });
+    $("button[type='submit']").click(function(){
+        if ($('.retype_pass.edit-field').val() != $('.password.edit-field').val()) {
+            $('.error.retype_pass').show();
+            return false;
+        }
     });
 </script>
 @endsection
