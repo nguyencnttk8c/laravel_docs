@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Trang chủ</title>
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/style-mobile.css">
+
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<!-- top menu -->
+		<div class="topMenuBackground">
+	        <div class="container">
+	            <div id="topMenu">
+	                <div class="col-xs-4 block-1">
+	                    <div class="element">
+	                        <a href="/"><img class="hidden-xs hidden-sm" src="images/Logo.png" alt=""></a>
+	                    </div>
+	                    <div class="element">
+	                        <a href="#"><img class="hidden-xs hidden-sm" src="images/nap-tien.png" alt=""></a>
+	                        <a href="#"><img class="hidden-xs hidden-sm" src="images/upload-logo.png" alt=""></a>
+	                    </div>
+	                    <div class="element visible-xs visible-sm">
+	                        <img class="visible-xs visible-sm menu-button" src="images/mobile-menu-button.png" alt="">
+	                        <a class="search-button" href="#"><img class="visible-xs visible-sm" src="images/mobile-search-button.png" alt=""></a>
+	                    </div>
+	                </div>
+	                <div class="col-xs-4 block-2">
+	                    <div class="searchBox hidden-xs hidden-sm">
+	                        <input type="text" name="search" placeholder="Tìm kiếm ...">
+	                        <a href="javascript:void(0)" id="searchButton">
+	                            <i class="icon icon_search"></i>
+	                        </a>
+	                    </div>
+	                    <a class="visible-xs visible-sm" href="/"><img src="images/Logo.png" alt=""></a>
+	                </div>
+	                <div class="col-xs-4 block-3">
+	                    <a class="button hidden-xs hidden-sm" href="/dang-nhap/">Đăng nhập</a>
+	                    <a class="button hidden-xs hidden-sm" href="/dang-ky/">Đăng ký</a>
+	                    <a class="notificationButton" href="#"><img class="hidden-xs hidden-sm" src="images/rank.png" alt=""></a>
+	                    <a class="notificationButton" href="#"><img class="hidden-xs hidden-sm" src="images/icon-thongbao.png" alt=""></a>
+	                    <a class="nap-tien" href="#"><img class="visible-xs visible-sm" src="images/nap-tien.png" alt=""></a>
+	                    <a href="#"><img class="visible-xs visible-sm" src="images/mobile-user-button.png" alt=""></a>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+		<!-- top menu -->
+		
+		<!-- slider -->
+		<div class="slider"></div>
+		<!-- slider -->
+
+		<!-- Content -->
+		<div class="container mid_content" style="margin-top: 81px">
+			<div class="row">
+				<div class="col-md-3 col-xs-12 sidebar">
+				    <div class="well">
+				        <h3 class="title">Danh mục tài liệu</h3>
+				        <div class="listcategory">
+				            <ul class="listParentCate">
+				                <li class="dropdown">
+				                    <a href="#" class="dropdown-toggle" title="Giáo dục - Đào tạo" data-toggle="dropdown">Giáo dục - Đào tạo</a>
+				                    <ul class="dropdown-menu theme_nav_dropdown">
+				                        <li>
+				                            <a href="http://123doc.local/danh-muc/mam-non">Mầm non</a>
+				                            <ul class="dropdown-menu theme_nav_dropdown">
+				                                <li><a href="http://123doc.local/danh-muc/lop-3-12-thang-tuoi">Lớp 3 - 12 tháng tuổi</a></li>
+				                                <li><a href="http://123doc.local/danh-muc/lop-12-24-thang-tuoi">Lớp 12 - 24 tháng tuổi</a></li>
+				                            </ul>
+				                        </li>
+				                        <li>
+				                            <a href="http://123doc.local/danh-muc/tieu-hoc">Tiểu học</a>
+				                            <ul class="dropdown-menu theme_nav_dropdown">
+				                                <li><a href="http://123doc.local/danh-muc/lop-1">Lớp 1</a></li>
+				                                <li><a href="http://123doc.local/danh-muc/lop-2">Lớp 2</a></li>
+				                            </ul>
+				                        </li>
+				                        <li>
+				                            <a href="http://123doc.local/danh-muc/trung-hoc-co-so">Trung học cơ sở</a>
+				                            <ul class="dropdown-menu theme_nav_dropdown">
+				                                <li><a href="http://123doc.local/danh-muc/lop-6">Lớp 6</a></li>
+				                            </ul>
+				                        </li>
+				                    </ul>
+				                </li>
+				                <li class="dropdown">
+				                    <a href="#" class="dropdown-toggle" title="Kỹ năng mềm" data-toggle="dropdown">Kỹ năng mềm</a>
+				                    <ul class="dropdown-menu theme_nav_dropdown">
+				                        <li><a href="http://123doc.local/danh-muc/ky-nang-lanh-dao">Kỹ năng lãnh đạo</a></li>
+				                        <li><a href="http://123doc.local/danh-muc/ky-nang-quan-ly">Kỹ năng quản lý </a></li>
+				                        <li><a href="http://123doc.local/danh-muc/ky-nang-tu-duy-logic">Kỹ năng tư duy- logic</a></li>
+				                        <li><a href="http://123doc.local/danh-muc/ky-nang-thuyet-trinh">Kỹ năng thuyết trình</a></li>
+				                        <li><a href="http://123doc.local/danh-muc/ky-nang-giao-tiep">Kỹ năng giao tiếp</a></li>
+				                    </ul>
+				                </li>
+				                <li class="dropdown">
+				                    <a href="#" class="dropdown-toggle" title="Kinh doanh - Tiếp thị" data-toggle="dropdown">Kinh doanh - Tiếp thị</a>
+				                </li>
+				                <li class="dropdown">
+				                    <a href="#" class="dropdown-toggle" title="Kinh tế - Quản lý" data-toggle="dropdown">Kinh tế - Quản lý</a>
+				                </li>
+				                <li class="dropdown">
+				                    <a href="#" class="dropdown-toggle" title="Tài chính - Ngân hàng" data-toggle="dropdown">Tài chính - Ngân hàng</a>
+				                </li>
+				                <li class="dropdown">
+				                    <a href="#" class="dropdown-toggle" title="Biểu mẫu - Văn bản" data-toggle="dropdown">Biểu mẫu - Văn bản</a>
+				                </li>
+				                <li class="dropdown">
+				                    <a href="#" class="dropdown-toggle" title="Công nghệ thông tin" data-toggle="dropdown">Công nghệ thông tin</a>
+				                </li>
+				                <li class="dropdown">
+				                    <a href="#" class="dropdown-toggle" title="Kỹ thuật - Công nghệ" data-toggle="dropdown">Kỹ thuật - Công nghệ</a>
+				                </li>
+				                <li class="dropdown">
+				                    <a href="#" class="dropdown-toggle" title="Giới thiệu" data-toggle="dropdown">Giới thiệu</a>
+				                </li>
+				                <li class="dropdown">
+				                    <a href="#" class="dropdown-toggle" title="Dành cho người bán" data-toggle="dropdown">Dành cho người bán</a>
+				                </li>
+				                <li class="dropdown">
+				                    <a href="#" class="dropdown-toggle" title="Dành cho người mua" data-toggle="dropdown">Dành cho người mua</a>
+				                </li>
+				                <li class="dropdown">
+				                    <a href="#" class="dropdown-toggle" title="Câu chuyện thành công" data-toggle="dropdown">Câu chuyện thành công</a>
+				                </li>
+				                <li class="dropdown">
+				                    <a href="#" class="dropdown-toggle" title="Thông báo" data-toggle="dropdown">Thông báo</a>
+				                </li>
+				            </ul>
+				        </div>
+				    </div>
+				</div>
+				<div class="col-md-9 col-xs-12">
+				    <div class="listtailieu">
+				        <div class="site-title">
+				            <h3 class="title"><img src="images/dau-muc-tai-lieu.png" alt="">Tài liệu mới nhất</h3>
+				        </div>
+				        <div class="row">
+				            <ul class="products">
+				                <li class="col-sm-3 product">
+				                    <div class="doc-list">
+				                        <a class="doc-img" href="#">
+				                        <img src="images/medium_cad1364805486.jpg">
+				                        </a>
+				                        <a href="#" class="doc-title">
+				                        <i class="icon icon-doc-title type-doc"></i>
+				                        Khoa học 1
+				                        </a>
+				                        <a href="#" class="doc-author">
+				                        Hà Trọng Nguyên
+				                        </a>
+				                        <img src="images/review.png" alt="">
+				                        <ul class="doc_tk_cnt">
+				                            <li><i class="icon_doc"></i>8</li>
+				                            <li><i class="icon_view"></i>15</li>
+				                            <li><i class="icon_down"></i>23</li>
+				                        </ul>
+				                    </div>
+				                </li>
+				                <li class="col-sm-3 product">
+				                    <div class="doc-list">
+				                        <a class="doc-img" href="#">
+				                        <img src="images/medium_cad1364805486.jpg">
+				                        </a>
+				                        <a href="#" class="doc-title">
+				                        <i class="icon icon-doc-title type-doc"></i>
+				                        Khoa học 2
+				                        </a>
+				                        <a href="#" class="doc-author">
+				                        Hà Trọng Nguyên
+				                        </a>
+				                        <img src="images/review.png" alt="">
+				                        <ul class="doc_tk_cnt">
+				                            <li><i class="icon_doc"></i>8</li>
+				                            <li><i class="icon_view"></i>16</li>
+				                            <li><i class="icon_down"></i>323</li>
+				                        </ul>
+				                    </div>
+				                </li>
+				                <li class="col-sm-3 product">
+				                    <div class="doc-list">
+				                        <a class="doc-img" href="#">
+				                        <img src="images/medium_cad1364805486.jpg">
+				                        </a>
+				                        <a href="#" class="doc-title">
+				                        <i class="icon icon-doc-title type-doc"></i>
+				                        Khoa học 3
+				                        </a>
+				                        <a href="#" class="doc-author">
+				                        Hà Trọng Nguyên
+				                        </a>
+				                        <img src="images/review.png" alt="">
+				                        <ul class="doc_tk_cnt">
+				                            <li><i class="icon_doc"></i>8</li>
+				                            <li><i class="icon_view"></i>11</li>
+				                            <li><i class="icon_down"></i>23</li>
+				                        </ul>
+				                    </div>
+				                </li>
+				                <li class="col-sm-3 product">
+				                    <div class="doc-list">
+				                        <a class="doc-img" href="#">
+				                        <img src="images/medium_cad1364805486.jpg">
+				                        </a>
+				                        <a href="#" class="doc-title">
+				                        <i class="icon icon-doc-title type-doc"></i>
+				                        Khoa học 4
+				                        </a>
+				                        <a href="#" class="doc-author">
+				                        Hà Trọng Nguyên
+				                        </a>
+				                        <img src="images/review.png" alt="">
+				                        <ul class="doc_tk_cnt">
+				                            <li><i class="icon_doc"></i>8</li>
+				                            <li><i class="icon_view"></i>3</li>
+				                            <li><i class="icon_down"></i>2</li>
+				                        </ul>
+				                    </div>
+				                </li>
+				                <li class="col-sm-3 product">
+				                    <div class="doc-list">
+				                        <a class="doc-img" href="#">
+				                        <img src="images/medium_cad1364805486.jpg">
+				                        </a>
+				                        <a href="#" class="doc-title">
+				                        <i class="icon icon-doc-title type-doc"></i>
+				                        Khoa học 5
+				                        </a>
+				                        <a href="#" class="doc-author">
+				                        Hà Trọng Nguyên
+				                        </a>
+				                        <img src="images/review.png" alt="">
+				                        <ul class="doc_tk_cnt">
+				                            <li><i class="icon_doc"></i>8</li>
+				                            <li><i class="icon_view"></i>152</li>
+				                            <li><i class="icon_down"></i>233</li>
+				                        </ul>
+				                    </div>
+				                </li>
+				                <li class="col-sm-3 product">
+				                    <div class="doc-list">
+				                        <a class="doc-img" href="#">
+				                        <img src="images/medium_cad1364805486.jpg">
+				                        </a>
+				                        <a href="#" class="doc-title">
+				                        <i class="icon icon-doc-title type-doc"></i>
+				                        Khoa học 6
+				                        </a>
+				                        <a href="#" class="doc-author">
+				                        Hà Trọng Nguyên
+				                        </a>
+				                        <img src="images/review.png" alt="">
+				                        <ul class="doc_tk_cnt">
+				                            <li><i class="icon_doc"></i>8</li>
+				                            <li><i class="icon_view"></i>15243</li>
+				                            <li><i class="icon_down"></i>38</li>
+				                        </ul>
+				                    </div>
+				                </li>
+				                <li class="col-sm-3 product">
+				                    <div class="doc-list">
+				                        <a class="doc-img" href="#">
+				                        <img src="images/medium_cad1364805486.jpg">
+				                        </a>
+				                        <a href="#" class="doc-title">
+				                        <i class="icon icon-doc-title type-doc"></i>
+				                        Khoa học 7
+				                        </a>
+				                        <a href="#" class="doc-author">
+				                        Hà Trọng Nguyên
+				                        </a>
+				                        <img src="images/review.png" alt="">
+				                        <ul class="doc_tk_cnt">
+				                            <li><i class="icon_doc"></i>8</li>
+				                            <li><i class="icon_view"></i>15</li>
+				                            <li><i class="icon_down"></i>3</li>
+				                        </ul>
+				                    </div>
+				                </li>
+				                <li class="col-sm-3 product">
+				                    <div class="doc-list">
+				                        <a class="doc-img" href="#">
+				                        <img src="images/medium_cad1364805486.jpg">
+				                        </a>
+				                        <a href="#" class="doc-title">
+				                        <i class="icon icon-doc-title type-doc"></i>
+				                        Khoa học 8
+				                        </a>
+				                        <a href="#" class="doc-author">
+				                        Hà Trọng Nguyên
+				                        </a>
+				                        <img src="images/review.png" alt="">
+				                        <ul class="doc_tk_cnt">
+				                            <li><i class="icon_doc"></i>8</li>
+				                            <li><i class="icon_view"></i>15324</li>
+				                            <li><i class="icon_down"></i>3</li>
+				                        </ul>
+				                    </div>
+				                </li>
+				            </ul>
+				        </div>
+				    </div>
+				    <div class="listtailieu">
+				        <div class="site-title">
+				            <h3 class="title"><img src="images/dau-muc-tai-lieu.png" alt="">Tài liệu tải nhiều</h3>
+				        </div>
+				        <div class="row">
+				            <ul class="products">
+				                <li class="col-sm-3 product">
+				                    <div class="doc-list">
+				                        <a class="doc-img" href="#">
+				                        <img src="images/medium_cad1364805486.jpg">
+				                        </a>
+				                        <a href="#" class="doc-title">
+				                        <i class="icon icon-doc-title type-doc"></i>
+				                        Khoa học 19
+				                        </a>
+				                        <a href="#" class="doc-author">
+				                        Hà Trọng Nguyên
+				                        </a>
+				                        <img src="images/review.png" alt="">
+				                        <ul class="doc_tk_cnt">
+				                            <li><i class="icon_doc"></i>8</li>
+				                            <li><i class="icon_view"></i>15</li>
+				                            <li><i class="icon_down"></i>35737</li>
+				                        </ul>
+				                    </div>
+				                </li>
+				                <li class="col-sm-3 product">
+				                    <div class="doc-list">
+				                        <a class="doc-img" href="#">
+				                        <img src="images/medium_cad1364805486.jpg">
+				                        </a>
+				                        <a href="#" class="doc-title">
+				                        <i class="icon icon-doc-title type-doc"></i>
+				                        Khoa học 11
+				                        </a>
+				                        <a href="#" class="doc-author">
+				                        Hà Trọng Nguyên
+				                        </a>
+				                        <img src="images/review.png" alt="">
+				                        <ul class="doc_tk_cnt">
+				                            <li><i class="icon_doc"></i>8</li>
+				                            <li><i class="icon_view"></i>15</li>
+				                            <li><i class="icon_down"></i>23383</li>
+				                        </ul>
+				                    </div>
+				                </li>
+				                <li class="col-sm-3 product">
+				                    <div class="doc-list">
+				                        <a class="doc-img" href="#">
+				                        <img src="images/medium_cad1364805486.jpg">
+				                        </a>
+				                        <a href="#" class="doc-title">
+				                        <i class="icon icon-doc-title type-doc"></i>
+				                        Khoa học 34
+				                        </a>
+				                        <a href="#" class="doc-author">
+				                        Hà Trọng Nguyên
+				                        </a>
+				                        <img src="images/review.png" alt="">
+				                        <ul class="doc_tk_cnt">
+				                            <li><i class="icon_doc"></i>8</li>
+				                            <li><i class="icon_view"></i>157878</li>
+				                            <li><i class="icon_down"></i>6877</li>
+				                        </ul>
+				                    </div>
+				                </li>
+				                <li class="col-sm-3 product">
+				                    <div class="doc-list">
+				                        <a class="doc-img" href="#">
+				                        <img src="images/medium_cad1364805486.jpg">
+				                        </a>
+				                        <a href="#" class="doc-title">
+				                        <i class="icon icon-doc-title type-doc"></i>
+				                        Khoa học 31
+				                        </a>
+				                        <a href="#" class="doc-author">
+				                        Hà Trọng Nguyên
+				                        </a>
+				                        <img src="images/review.png" alt="">
+				                        <ul class="doc_tk_cnt">
+				                            <li><i class="icon_doc"></i>8</li>
+				                            <li><i class="icon_view"></i>156</li>
+				                            <li><i class="icon_down"></i>6678</li>
+				                        </ul>
+				                    </div>
+				                </li>
+				                <li class="col-sm-3 product">
+				                    <div class="doc-list">
+				                        <a class="doc-img" href="#">
+				                        <img src="images/medium_cad1364805486.jpg">
+				                        </a>
+				                        <a href="#" class="doc-title">
+				                        <i class="icon icon-doc-title type-doc"></i>
+				                        Khoa học 16
+				                        </a>
+				                        <a href="#" class="doc-author">
+				                        Hà Trọng Nguyên
+				                        </a>
+				                        <img src="images/review.png" alt="">
+				                        <ul class="doc_tk_cnt">
+				                            <li><i class="icon_doc"></i>8</li>
+				                            <li><i class="icon_view"></i>1532</li>
+				                            <li><i class="icon_down"></i>2332</li>
+				                        </ul>
+				                    </div>
+				                </li>
+				                <li class="col-sm-3 product">
+				                    <div class="doc-list">
+				                        <a class="doc-img" href="#">
+				                        <img src="images/medium_cad1364805486.jpg">
+				                        </a>
+				                        <a href="#" class="doc-title">
+				                        <i class="icon icon-doc-title type-doc"></i>
+				                        Khoa học 12
+				                        </a>
+				                        <a href="#" class="doc-author">
+				                        Hà Trọng Nguyên
+				                        </a>
+				                        <img src="images/review.png" alt="">
+				                        <ul class="doc_tk_cnt">
+				                            <li><i class="icon_doc"></i>8</li>
+				                            <li><i class="icon_view"></i>32</li>
+				                            <li><i class="icon_down"></i>783</li>
+				                        </ul>
+				                    </div>
+				                </li>
+				                <li class="col-sm-3 product">
+				                    <div class="doc-list">
+				                        <a class="doc-img" href="#">
+				                        <img src="images/medium_cad1364805486.jpg">
+				                        </a>
+				                        <a href="#" class="doc-title">
+				                        <i class="icon icon-doc-title type-doc"></i>
+				                        Khoa học 21
+				                        </a>
+				                        <a href="#" class="doc-author">
+				                        Hà Trọng Nguyên
+				                        </a>
+				                        <img src="images/review.png" alt="">
+				                        <ul class="doc_tk_cnt">
+				                            <li><i class="icon_doc"></i>8</li>
+				                            <li><i class="icon_view"></i>15232</li>
+				                            <li><i class="icon_down"></i>737</li>
+				                        </ul>
+				                    </div>
+				                </li>
+				                <li class="col-sm-3 product">
+				                    <div class="doc-list">
+				                        <a class="doc-img" href="#">
+				                        <img src="images/medium_cad1364805486.jpg">
+				                        </a>
+				                        <a href="#" class="doc-title">
+				                        <i class="icon icon-doc-title type-doc"></i>
+				                        Khoa học 32
+				                        </a>
+				                        <a href="#" class="doc-author">
+				                        Hà Trọng Nguyên
+				                        </a>
+				                        <img src="images/review.png" alt="">
+				                        <ul class="doc_tk_cnt">
+				                            <li><i class="icon_doc"></i>8</li>
+				                            <li><i class="icon_view"></i>7887</li>
+				                            <li><i class="icon_down"></i>687</li>
+				                        </ul>
+				                    </div>
+				                </li>
+				            </ul>
+				        </div>
+				    </div>
+				    <div class="listtailieu">
+				        <div class="site-title">
+				            <h3 class="title"><img src="images/dau-muc-tai-lieu.png" alt="">Tài liệu xem nhiều</h3>
+				        </div>
+				        <div class="row">
+				            <ul class="products">
+				                <li class="col-sm-3 product">
+				                    <div class="doc-list">
+				                        <a class="doc-img" href="#">
+				                        <img src="images/medium_cad1364805486.jpg">
+				                        </a>
+				                        <a href="#" class="doc-title">
+				                        <i class="icon icon-doc-title type-doc"></i>
+				                        Khoa học 34
+				                        </a>
+				                        <a href="#" class="doc-author">
+				                        Hà Trọng Nguyên
+				                        </a>
+				                        <img src="images/review.png" alt="">
+				                        <ul class="doc_tk_cnt">
+				                            <li><i class="icon_doc"></i>8</li>
+				                            <li><i class="icon_view"></i>157878</li>
+				                            <li><i class="icon_down"></i>6877</li>
+				                        </ul>
+				                    </div>
+				                </li>
+				                <li class="col-sm-3 product">
+				                    <div class="doc-list">
+				                        <a class="doc-img" href="#">
+				                        <img src="images/medium_cad1364805486.jpg">
+				                        </a>
+				                        <a href="#" class="doc-title">
+				                        <i class="icon icon-doc-title type-doc"></i>
+				                        Khoa học 26
+				                        </a>
+				                        <a href="#" class="doc-author">
+				                        Hà Trọng Nguyên
+				                        </a>
+				                        <img src="images/review.png" alt="">
+				                        <ul class="doc_tk_cnt">
+				                            <li><i class="icon_doc"></i>8</li>
+				                            <li><i class="icon_view"></i>153768</li>
+				                            <li><i class="icon_down"></i>678</li>
+				                        </ul>
+				                    </div>
+				                </li>
+				                <li class="col-sm-3 product">
+				                    <div class="doc-list">
+				                        <a class="doc-img" href="#">
+				                        <img src="images/medium_cad1364805486.jpg">
+				                        </a>
+				                        <a href="#" class="doc-title">
+				                        <i class="icon icon-doc-title type-doc"></i>
+				                        Khoa học 24
+				                        </a>
+				                        <a href="#" class="doc-author">
+				                        Hà Trọng Nguyên
+				                        </a>
+				                        <img src="images/review.png" alt="">
+				                        <ul class="doc_tk_cnt">
+				                            <li><i class="icon_doc"></i>8</li>
+				                            <li><i class="icon_view"></i>152332</li>
+				                            <li><i class="icon_down"></i>353</li>
+				                        </ul>
+				                    </div>
+				                </li>
+				                <li class="col-sm-3 product">
+				                    <div class="doc-list">
+				                        <a class="doc-img" href="#">
+				                        <img src="images/medium_cad1364805486.jpg">
+				                        </a>
+				                        <a href="#" class="doc-title">
+				                        <i class="icon icon-doc-title type-doc"></i>
+				                        Khoa học 27
+				                        </a>
+				                        <a href="#" class="doc-author">
+				                        Hà Trọng Nguyên
+				                        </a>
+				                        <img src="images/review.png" alt="">
+				                        <ul class="doc_tk_cnt">
+				                            <li><i class="icon_doc"></i>8</li>
+				                            <li><i class="icon_view"></i>15786</li>
+				                            <li><i class="icon_down"></i>686</li>
+				                        </ul>
+				                    </div>
+				                </li>
+				                <li class="col-sm-3 product">
+				                    <div class="doc-list">
+				                        <a class="doc-img" href="#">
+				                        <img src="images/medium_cad1364805486.jpg">
+				                        </a>
+				                        <a href="#" class="doc-title">
+				                        <i class="icon icon-doc-title type-doc"></i>
+				                        Khoa học 29
+				                        </a>
+				                        <a href="#" class="doc-author">
+				                        Hà Trọng Nguyên
+				                        </a>
+				                        <img src="images/review.png" alt="">
+				                        <ul class="doc_tk_cnt">
+				                            <li><i class="icon_doc"></i>8</li>
+				                            <li><i class="icon_view"></i>15687</li>
+				                            <li><i class="icon_down"></i>87</li>
+				                        </ul>
+				                    </div>
+				                </li>
+				                <li class="col-sm-3 product">
+				                    <div class="doc-list">
+				                        <a class="doc-img" href="#">
+				                        <img src="images/medium_cad1364805486.jpg">
+				                        </a>
+				                        <a href="#" class="doc-title">
+				                        <i class="icon icon-doc-title type-doc"></i>
+				                        Khoa học 28
+				                        </a>
+				                        <a href="#" class="doc-author">
+				                        Hà Trọng Nguyên
+				                        </a>
+				                        <img src="images/review.png" alt="">
+				                        <ul class="doc_tk_cnt">
+				                            <li><i class="icon_doc"></i>8</li>
+				                            <li><i class="icon_view"></i>15678</li>
+				                            <li><i class="icon_down"></i>67</li>
+				                        </ul>
+				                    </div>
+				                </li>
+				                <li class="col-sm-3 product">
+				                    <div class="doc-list">
+				                        <a class="doc-img" href="#">
+				                        <img src="images/medium_cad1364805486.jpg">
+				                        </a>
+				                        <a href="#" class="doc-title">
+				                        <i class="icon icon-doc-title type-doc"></i>
+				                        Khoa học 8
+				                        </a>
+				                        <a href="#" class="doc-author">
+				                        Hà Trọng Nguyên
+				                        </a>
+				                        <img src="images/review.png" alt="">
+				                        <ul class="doc_tk_cnt">
+				                            <li><i class="icon_doc"></i>8</li>
+				                            <li><i class="icon_view"></i>15324</li>
+				                            <li><i class="icon_down"></i>3</li>
+				                        </ul>
+				                    </div>
+				                </li>
+				                <li class="col-sm-3 product">
+				                    <div class="doc-list">
+				                        <a class="doc-img" href="#">
+				                        <img src="images/medium_cad1364805486.jpg">
+				                        </a>
+				                        <a href="#" class="doc-title">
+				                        <i class="icon icon-doc-title type-doc"></i>
+				                        Khoa học 6
+				                        </a>
+				                        <a href="#" class="doc-author">
+				                        Hà Trọng Nguyên
+				                        </a>
+				                        <img src="images/review.png" alt="">
+				                        <ul class="doc_tk_cnt">
+				                            <li><i class="icon_doc"></i>8</li>
+				                            <li><i class="icon_view"></i>15243</li>
+				                            <li><i class="icon_down"></i>38</li>
+				                        </ul>
+				                    </div>
+				                </li>
+				            </ul>
+				        </div>
+				    </div>
+				</div>
+			</div>
+			<div class="container">
+
+			</div>
+		</div>
+		<!-- Content -->
+
+		<!-- jQuery -->
+		<script src="//code.jquery.com/jquery.js"></script>
+		<!-- Bootstrap JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+	</body>
+</html>

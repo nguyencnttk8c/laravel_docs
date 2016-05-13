@@ -21,6 +21,7 @@
         {{$data['title']}}
     @endif
 </title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="{{ URL::asset('common/css/bootstrap.css') }}" type="text/css" rel="stylesheet">
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:700,500,400,300">
 <link href="{{ URL::asset('frontend/css/style.css') }}" type="text/css" rel="stylesheet">
