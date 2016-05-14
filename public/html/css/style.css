@@ -47,11 +47,11 @@ a, button, div, input, select, textarea {
     position: relative;
     margin-top: 4px;
     background: #FFF;
+    width: 100%;
 }
 #topMenu .block-2 .searchBox input {
     border-color: transparent;
     line-height: 25px;
-    min-width: 350px;
     height: 25px;
     float: left;
     padding-left: 5px;
@@ -89,9 +89,6 @@ a, button, div, input, select, textarea {
     right: 65px;
 }
 /* Sidebar */
-.mid_content .sidebar {
-	padding-left: 0;
-}
 .mid_content .sidebar .well h3.title {
 	background-color: #0e99cc;
 	color: #FFF;
@@ -273,4 +270,158 @@ div.listtailieu ul.products li.product div.doc-list .doc_tk_cnt li .icon_down {
     background-position: -32px -32px;
     width: 15px;
     height: 15px;
+}
+.showMore a {
+    text-align: right;
+    width: 100%;
+    display: block;
+    font-weight: bold;
+}
+.showMore a:hover {
+    text-decoration: none;
+}
+.commonLink ul {
+    padding: 15px 25px;
+    background-color: #f5f5f5;
+    border: 1px solid #e3e3e3;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+}
+.commonLink ul li {
+    list-style: none;
+    padding: 5px 0;
+}
+.commonLink ul li a:hover {
+    text-decoration: none;
+}
+.ads {
+    position: relative;
+}
+.ads img {
+    display: block;
+    margin: 0 auto;
+}
+/* Tài liệu chung */
+.generalDoc.container {
+    padding: 0;
+    margin-top: 30px;
+}
+.generalDoc div.col-md-3 h4.title-2 {
+    color: #fff;
+    font-size: 20px;
+    background-color: #0098DB;
+    padding: 15px 0px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    text-align: center;
+}
+div.total_doc_item_common {
+    padding: 10px 15px;
+}
+div.total_doc_item_common div.item_common {
+    margin: 10px 0px;
+}
+div.total_doc_item_common a {
+    color: #222;
+    display: block;
+    text-align: left;
+    font-size: 13px;
+}
+div.item_common .doc_tk_cnt {
+    margin: 5px 15px 0px;
+    padding: 0px;
+    display: block;
+    overflow: hidden;
+}
+div.item_common .doc_tk_cnt li {
+    float: left;
+    padding-right: 13px;
+    font-size: 11px;
+    color: #AAA;
+    list-style-type: none;
+}
+div.item_common .doc_tk_cnt li .icon_doc {
+    background-position: 0px -32px;
+    width: 14px;
+    height: 18px;
+}
+div.item_common .doc_tk_cnt li .icon_view {
+    background-position: -12px -32px;
+    width: 20px;
+    height: 15px;
+}
+div.item_common .doc_tk_cnt li .icon_down {
+    background-position: -32px -32px;
+    width: 15px;
+    height: 15px;
+}
+div.total_doc_item_common a .i_type_doc {
+    width: 16px;
+    height: 18px;
+}
+div.total_doc_item_common a .i_type_doc1 {
+    background-position: 0px -360px;
+}
+div.total_doc_item_common a .i_type_doc2 {
+    background-position: 0px -378px;
+}
+div.total_doc_item_common a .i_type_doc5 {
+    background-position: 0px -435px;
+}
+footer {
+    padding: 20px 0 50px;
+    margin-top: 20px;
+    background-color: #0e99cc;
+    color: #FFF;
+    font-weight: bolder;
+}
+footer div.col-md-3:nth-of-type(3) img {
+    margin-left: 25px;
+}
+.discuss {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+.live-chat {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+#scroll {
+    position:fixed;
+    right:10px;
+    bottom:100px;
+    cursor:pointer;
+    width:50px;
+    height:50px;
+    background-color:#3498db;
+    text-indent:-9999px;
+    display:none;
+    -webkit-border-radius:60px;
+    -moz-border-radius:60px;
+    border-radius:60px
+}
+#scroll span {
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin-left:-8px;
+    margin-top:-12px;
+    height:0;
+    width:0;
+    border:8px solid transparent;
+    border-bottom-color:#ffffff;
+}
+#scroll:hover {
+    background-color:#e74c3c;
+    opacity:1;filter:"alpha(opacity=100)";
+    -ms-filter:"alpha(opacity=100)";
+}
+.slider > .slick-list {
+    margin-top: 58px;
 }

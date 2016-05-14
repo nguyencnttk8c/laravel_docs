@@ -7,10 +7,13 @@
 		<title>Trang chủ</title>
 
 		<!-- Bootstrap CSS -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+  		<link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/style.css">
 		<link rel="stylesheet" href="css/style-mobile.css">
-
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 		<!--[if lt IE 9]>
@@ -59,11 +62,15 @@
 		<!-- top menu -->
 		
 		<!-- slider -->
-		<div class="slider"></div>
+		<div class="slider hidden-xs hidden-sm">
+			<div><img src="images/book-1.jpg" width="100%" alt=""></div>
+			<div><img src="images/book-2.jpg" width="100%" alt=""></div>
+			<div><img src="images/book-3.jpg" width="100%" alt=""></div>
+		</div>
 		<!-- slider -->
 
 		<!-- Content -->
-		<div class="container mid_content" style="margin-top: 81px">
+		<div class="container mid_content hidden-xs hidden-sm" style="margin-top: 50px">
 			<div class="row">
 				<div class="col-md-3 col-xs-12 sidebar">
 				    <div class="well">
@@ -141,6 +148,17 @@
 				            </ul>
 				        </div>
 				    </div>
+				    <div class="commonLink">
+				    	<ul>
+				    		<li><a href=""><img src="images/arrow.png" alt="">&nbsp&nbspGiới thiệu Hb.vn</a></li>
+				    		<li><a href=""><img src="images/arrow.png" alt="">&nbsp&nbspDành cho người bán</a></li>
+				    		<li><a href=""><img src="images/arrow.png" alt="">&nbsp&nbspDành cho người mua</a></li>
+				    		<li><a href=""><img src="images/arrow.png" alt="">&nbsp&nbspCâu hỏi thường gặp</a></li>
+				    	</ul>
+				    </div>
+				    <div class="ads">
+				    	<img src="images/ads.png" alt="">
+				    </div>
 				</div>
 				<div class="col-md-9 col-xs-12">
 				    <div class="listtailieu">
@@ -149,7 +167,7 @@
 				        </div>
 				        <div class="row">
 				            <ul class="products">
-				                <li class="col-sm-3 product">
+				                <li class="col-xs-12 col-sm-6 col-md-3 product">
 				                    <div class="doc-list">
 				                        <a class="doc-img" href="#">
 				                        <img src="images/medium_cad1364805486.jpg">
@@ -169,7 +187,7 @@
 				                        </ul>
 				                    </div>
 				                </li>
-				                <li class="col-sm-3 product">
+				                <li class="col-xs-12 col-sm-6 col-md-3 product">
 				                    <div class="doc-list">
 				                        <a class="doc-img" href="#">
 				                        <img src="images/medium_cad1364805486.jpg">
@@ -189,7 +207,7 @@
 				                        </ul>
 				                    </div>
 				                </li>
-				                <li class="col-sm-3 product">
+				                <li class="col-xs-12 col-sm-6 col-md-3 product">
 				                    <div class="doc-list">
 				                        <a class="doc-img" href="#">
 				                        <img src="images/medium_cad1364805486.jpg">
@@ -209,7 +227,7 @@
 				                        </ul>
 				                    </div>
 				                </li>
-				                <li class="col-sm-3 product">
+				                <li class="col-xs-12 col-sm-6 col-md-3 product">
 				                    <div class="doc-list">
 				                        <a class="doc-img" href="#">
 				                        <img src="images/medium_cad1364805486.jpg">
@@ -229,7 +247,7 @@
 				                        </ul>
 				                    </div>
 				                </li>
-				                <li class="col-sm-3 product">
+				                <li class="col-xs-12 col-sm-6 col-md-3 product">
 				                    <div class="doc-list">
 				                        <a class="doc-img" href="#">
 				                        <img src="images/medium_cad1364805486.jpg">
@@ -249,7 +267,7 @@
 				                        </ul>
 				                    </div>
 				                </li>
-				                <li class="col-sm-3 product">
+				                <li class="col-xs-12 col-sm-6 col-md-3 product">
 				                    <div class="doc-list">
 				                        <a class="doc-img" href="#">
 				                        <img src="images/medium_cad1364805486.jpg">
@@ -269,7 +287,7 @@
 				                        </ul>
 				                    </div>
 				                </li>
-				                <li class="col-sm-3 product">
+				                <li class="col-xs-12 col-sm-6 col-md-3 product">
 				                    <div class="doc-list">
 				                        <a class="doc-img" href="#">
 				                        <img src="images/medium_cad1364805486.jpg">
@@ -289,7 +307,7 @@
 				                        </ul>
 				                    </div>
 				                </li>
-				                <li class="col-sm-3 product">
+				                <li class="col-xs-12 col-sm-6 col-md-3 product">
 				                    <div class="doc-list">
 				                        <a class="doc-img" href="#">
 				                        <img src="images/medium_cad1364805486.jpg">
@@ -309,7 +327,10 @@
 				                        </ul>
 				                    </div>
 				                </li>
-				            </ul>
+				            </ul>				            
+				        </div>
+				        <div class="showMore">
+				        	<a href="#"><i class="fa fa-plus" aria-hidden="true"></i> Xem thêm</a>
 				        </div>
 				    </div>
 				    <div class="listtailieu">
@@ -318,7 +339,7 @@
 				        </div>
 				        <div class="row">
 				            <ul class="products">
-				                <li class="col-sm-3 product">
+				                <li class="col-xs-12 col-sm-6 col-md-3 product">
 				                    <div class="doc-list">
 				                        <a class="doc-img" href="#">
 				                        <img src="images/medium_cad1364805486.jpg">
@@ -338,7 +359,7 @@
 				                        </ul>
 				                    </div>
 				                </li>
-				                <li class="col-sm-3 product">
+				                <li class="col-xs-12 col-sm-6 col-md-3 product">
 				                    <div class="doc-list">
 				                        <a class="doc-img" href="#">
 				                        <img src="images/medium_cad1364805486.jpg">
@@ -358,7 +379,7 @@
 				                        </ul>
 				                    </div>
 				                </li>
-				                <li class="col-sm-3 product">
+				                <li class="col-xs-12 col-sm-6 col-md-3 product">
 				                    <div class="doc-list">
 				                        <a class="doc-img" href="#">
 				                        <img src="images/medium_cad1364805486.jpg">
@@ -378,7 +399,7 @@
 				                        </ul>
 				                    </div>
 				                </li>
-				                <li class="col-sm-3 product">
+				                <li class="col-xs-12 col-sm-6 col-md-3 product">
 				                    <div class="doc-list">
 				                        <a class="doc-img" href="#">
 				                        <img src="images/medium_cad1364805486.jpg">
@@ -398,7 +419,7 @@
 				                        </ul>
 				                    </div>
 				                </li>
-				                <li class="col-sm-3 product">
+				                <li class="col-xs-12 col-sm-6 col-md-3 product">
 				                    <div class="doc-list">
 				                        <a class="doc-img" href="#">
 				                        <img src="images/medium_cad1364805486.jpg">
@@ -418,7 +439,7 @@
 				                        </ul>
 				                    </div>
 				                </li>
-				                <li class="col-sm-3 product">
+				                <li class="col-xs-12 col-sm-6 col-md-3 product">
 				                    <div class="doc-list">
 				                        <a class="doc-img" href="#">
 				                        <img src="images/medium_cad1364805486.jpg">
@@ -438,7 +459,7 @@
 				                        </ul>
 				                    </div>
 				                </li>
-				                <li class="col-sm-3 product">
+				                <li class="col-xs-12 col-sm-6 col-md-3 product">
 				                    <div class="doc-list">
 				                        <a class="doc-img" href="#">
 				                        <img src="images/medium_cad1364805486.jpg">
@@ -458,7 +479,7 @@
 				                        </ul>
 				                    </div>
 				                </li>
-				                <li class="col-sm-3 product">
+				                <li class="col-xs-12 col-sm-6 col-md-3 product">
 				                    <div class="doc-list">
 				                        <a class="doc-img" href="#">
 				                        <img src="images/medium_cad1364805486.jpg">
@@ -479,6 +500,9 @@
 				                    </div>
 				                </li>
 				            </ul>
+				        </div>
+				        <div class="showMore">
+				        	<a href="#"><i class="fa fa-plus" aria-hidden="true"></i> Xem thêm</a>
 				        </div>
 				    </div>
 				    <div class="listtailieu">
@@ -507,7 +531,7 @@
 				                        </ul>
 				                    </div>
 				                </li>
-				                <li class="col-sm-3 product">
+				                <li class="col-xs-12 col-sm-6 col-md-3 product">
 				                    <div class="doc-list">
 				                        <a class="doc-img" href="#">
 				                        <img src="images/medium_cad1364805486.jpg">
@@ -527,7 +551,7 @@
 				                        </ul>
 				                    </div>
 				                </li>
-				                <li class="col-sm-3 product">
+				                <li class="col-xs-12 col-sm-6 col-md-3 product">
 				                    <div class="doc-list">
 				                        <a class="doc-img" href="#">
 				                        <img src="images/medium_cad1364805486.jpg">
@@ -547,7 +571,7 @@
 				                        </ul>
 				                    </div>
 				                </li>
-				                <li class="col-sm-3 product">
+				                <li class="col-xs-12 col-sm-6 col-md-3 product">
 				                    <div class="doc-list">
 				                        <a class="doc-img" href="#">
 				                        <img src="images/medium_cad1364805486.jpg">
@@ -567,7 +591,7 @@
 				                        </ul>
 				                    </div>
 				                </li>
-				                <li class="col-sm-3 product">
+				                <li class="col-xs-12 col-sm-6 col-md-3 product">
 				                    <div class="doc-list">
 				                        <a class="doc-img" href="#">
 				                        <img src="images/medium_cad1364805486.jpg">
@@ -587,7 +611,7 @@
 				                        </ul>
 				                    </div>
 				                </li>
-				                <li class="col-sm-3 product">
+				                <li class="col-xs-12 col-sm-6 col-md-3 product">
 				                    <div class="doc-list">
 				                        <a class="doc-img" href="#">
 				                        <img src="images/medium_cad1364805486.jpg">
@@ -607,7 +631,7 @@
 				                        </ul>
 				                    </div>
 				                </li>
-				                <li class="col-sm-3 product">
+				                <li class="col-xs-12 col-sm-6 col-md-3 product">
 				                    <div class="doc-list">
 				                        <a class="doc-img" href="#">
 				                        <img src="images/medium_cad1364805486.jpg">
@@ -627,7 +651,7 @@
 				                        </ul>
 				                    </div>
 				                </li>
-				                <li class="col-sm-3 product">
+				                <li class="col-xs-12 col-sm-6 col-md-3 product">
 				                    <div class="doc-list">
 				                        <a class="doc-img" href="#">
 				                        <img src="images/medium_cad1364805486.jpg">
@@ -649,19 +673,536 @@
 				                </li>
 				            </ul>
 				        </div>
+				        <div class="showMore">
+				        	<a href="#"><i class="fa fa-plus" aria-hidden="true"></i> Xem thêm</a>
+				        </div>
 				    </div>
 				</div>
 			</div>
-			<div class="container">
-
-			</div>
 		</div>
 		<!-- Content -->
+
+		<!-- General Document -->
+		<div class="generalDoc hidden-xs hidden-sm container">
+		    <div class="col-md-3 col-sm-6">
+		        <h4 class="title-2">
+		            Giáo dục - Đào tạo
+		        </h4>
+		        <div class="total_doc_item_common">
+		            <div class="item_common">
+		                <a href="#" target="_blank" title="Đề thi tốt nghiệp 2016">
+		                <i class="icon i_type_doc i_type_doc1"></i>
+		                Đề thi tốt nghiệp 2016   </a>
+		                <ul class="doc_tk_cnt">
+		                    <li>
+		                        <i class="icon_doc"></i>2
+		                    </li>
+		                    <li>
+		                        <i class="icon_view"></i>15
+		                    </li>
+		                    <li>
+		                        <i class="icon_down"></i>0
+		                    </li>
+		                </ul>
+		                <div class="clear"></div>
+		            </div>
+		            <div class="clear"></div>
+		            <div class="item_common">
+		                <a href="#" target="_blank" title="sadsa">
+		                <i class="icon i_type_doc i_type_doc2"></i>
+		                sadsa   </a>
+		                <ul class="doc_tk_cnt">
+		                    <li>
+		                        <i class="icon_doc"></i>3
+		                    </li>
+		                    <li>
+		                        <i class="icon_view"></i>12
+		                    </li>
+		                    <li>
+		                        <i class="icon_down"></i>24
+		                    </li>
+		                </ul>
+		                <div class="clear"></div>
+		            </div>
+		            <div class="clear"></div>
+		            <div class="item_common">
+		                <a href="#" target="_blank" title="sadsa">
+		                <i class="icon i_type_doc i_type_doc2"></i>
+		                sadsa   </a>
+		                <ul class="doc_tk_cnt">
+		                    <li>
+		                        <i class="icon_doc"></i>4
+		                    </li>
+		                    <li>
+		                        <i class="icon_view"></i>13
+		                    </li>
+		                    <li>
+		                        <i class="icon_down"></i>56
+		                    </li>
+		                </ul>
+		                <div class="clear"></div>
+		            </div>
+		            <div class="clear"></div>
+		            <div class="item_common">
+		                <a href="#" target="_blank" title="sadsa">
+		                <i class="icon i_type_doc i_type_doc1"></i>
+		                sadsa   </a>
+		                <ul class="doc_tk_cnt">
+		                    <li>
+		                        <i class="icon_doc"></i>5
+		                    </li>
+		                    <li>
+		                        <i class="icon_view"></i>15
+		                    </li>
+		                    <li>
+		                        <i class="icon_down"></i>44
+		                    </li>
+		                </ul>
+		                <div class="clear"></div>
+		            </div>
+		            <div class="clear"></div>
+		            <div class="item_common">
+		                <a href="#" target="_blank" title="Toán lớp 1">
+		                <i class="icon i_type_doc i_type_doc5"></i>
+		                Toán lớp 1   </a>
+		                <ul class="doc_tk_cnt">
+		                    <li>
+		                        <i class="icon_doc"></i>7
+		                    </li>
+		                    <li>
+		                        <i class="icon_view"></i>11
+		                    </li>
+		                    <li>
+		                        <i class="icon_down"></i>77
+		                    </li>
+		                </ul>
+		                <div class="clear"></div>
+		            </div>
+		            <div class="clear"></div>
+		            <div class="item_common">
+		                <a href="#" target="_blank" title="Ngữ văn">
+		                <i class="icon i_type_doc i_type_doc5"></i>
+		                Ngữ văn   </a>
+		                <ul class="doc_tk_cnt">
+		                    <li>
+		                        <i class="icon_doc"></i>5
+		                    </li>
+		                    <li>
+		                        <i class="icon_view"></i>12
+		                    </li>
+		                    <li>
+		                        <i class="icon_down"></i>88
+		                    </li>
+		                </ul>
+		                <div class="clear"></div>
+		            </div>
+		            <div class="clear"></div>
+		        </div>
+		    </div>
+		    <div class="col-md-3 col-sm-6">
+		        <h4 class="title-2">
+		            Khoa học - Kỹ thuật
+		        </h4>
+		        <div class="total_doc_item_common">
+		            <div class="item_common">
+		                <a href="#" target="_blank" title="Đề thi tốt nghiệp 2016">
+		                <i class="icon i_type_doc i_type_doc1"></i>
+		                Đề thi tốt nghiệp 2016   </a>
+		                <ul class="doc_tk_cnt">
+		                    <li>
+		                        <i class="icon_doc"></i>2
+		                    </li>
+		                    <li>
+		                        <i class="icon_view"></i>15
+		                    </li>
+		                    <li>
+		                        <i class="icon_down"></i>0
+		                    </li>
+		                </ul>
+		                <div class="clear"></div>
+		            </div>
+		            <div class="clear"></div>
+		            <div class="item_common">
+		                <a href="#" target="_blank" title="sadsa">
+		                <i class="icon i_type_doc i_type_doc2"></i>
+		                sadsa   </a>
+		                <ul class="doc_tk_cnt">
+		                    <li>
+		                        <i class="icon_doc"></i>3
+		                    </li>
+		                    <li>
+		                        <i class="icon_view"></i>12
+		                    </li>
+		                    <li>
+		                        <i class="icon_down"></i>24
+		                    </li>
+		                </ul>
+		                <div class="clear"></div>
+		            </div>
+		            <div class="clear"></div>
+		            <div class="item_common">
+		                <a href="#" target="_blank" title="sadsa">
+		                <i class="icon i_type_doc i_type_doc2"></i>
+		                sadsa   </a>
+		                <ul class="doc_tk_cnt">
+		                    <li>
+		                        <i class="icon_doc"></i>4
+		                    </li>
+		                    <li>
+		                        <i class="icon_view"></i>13
+		                    </li>
+		                    <li>
+		                        <i class="icon_down"></i>56
+		                    </li>
+		                </ul>
+		                <div class="clear"></div>
+		            </div>
+		            <div class="clear"></div>
+		            <div class="item_common">
+		                <a href="#" target="_blank" title="sadsa">
+		                <i class="icon i_type_doc i_type_doc1"></i>
+		                sadsa   </a>
+		                <ul class="doc_tk_cnt">
+		                    <li>
+		                        <i class="icon_doc"></i>5
+		                    </li>
+		                    <li>
+		                        <i class="icon_view"></i>15
+		                    </li>
+		                    <li>
+		                        <i class="icon_down"></i>44
+		                    </li>
+		                </ul>
+		                <div class="clear"></div>
+		            </div>
+		            <div class="clear"></div>
+		            <div class="item_common">
+		                <a href="#" target="_blank" title="Toán lớp 1">
+		                <i class="icon i_type_doc i_type_doc5"></i>
+		                Toán lớp 1   </a>
+		                <ul class="doc_tk_cnt">
+		                    <li>
+		                        <i class="icon_doc"></i>7
+		                    </li>
+		                    <li>
+		                        <i class="icon_view"></i>11
+		                    </li>
+		                    <li>
+		                        <i class="icon_down"></i>77
+		                    </li>
+		                </ul>
+		                <div class="clear"></div>
+		            </div>
+		            <div class="clear"></div>
+		            <div class="item_common">
+		                <a href="#" target="_blank" title="Ngữ văn">
+		                <i class="icon i_type_doc i_type_doc5"></i>
+		                Ngữ văn   </a>
+		                <ul class="doc_tk_cnt">
+		                    <li>
+		                        <i class="icon_doc"></i>5
+		                    </li>
+		                    <li>
+		                        <i class="icon_view"></i>12
+		                    </li>
+		                    <li>
+		                        <i class="icon_down"></i>88
+		                    </li>
+		                </ul>
+		                <div class="clear"></div>
+		            </div>
+		            <div class="clear"></div>
+		        </div>
+		    </div>
+		    <div class="col-md-3 col-sm-6">
+		        <h4 class="title-2">
+		            Luận văn - Báo cáo
+		        </h4>
+		        <div class="total_doc_item_common">
+		            <div class="item_common">
+		                <a href="#" target="_blank" title="Đề thi tốt nghiệp 2016">
+		                <i class="icon i_type_doc i_type_doc1"></i>
+		                Đề thi tốt nghiệp 2016   </a>
+		                <ul class="doc_tk_cnt">
+		                    <li>
+		                        <i class="icon_doc"></i>2
+		                    </li>
+		                    <li>
+		                        <i class="icon_view"></i>15
+		                    </li>
+		                    <li>
+		                        <i class="icon_down"></i>0
+		                    </li>
+		                </ul>
+		                <div class="clear"></div>
+		            </div>
+		            <div class="clear"></div>
+		            <div class="item_common">
+		                <a href="#" target="_blank" title="sadsa">
+		                <i class="icon i_type_doc i_type_doc2"></i>
+		                sadsa   </a>
+		                <ul class="doc_tk_cnt">
+		                    <li>
+		                        <i class="icon_doc"></i>3
+		                    </li>
+		                    <li>
+		                        <i class="icon_view"></i>12
+		                    </li>
+		                    <li>
+		                        <i class="icon_down"></i>24
+		                    </li>
+		                </ul>
+		                <div class="clear"></div>
+		            </div>
+		            <div class="clear"></div>
+		            <div class="item_common">
+		                <a href="#" target="_blank" title="sadsa">
+		                <i class="icon i_type_doc i_type_doc2"></i>
+		                sadsa   </a>
+		                <ul class="doc_tk_cnt">
+		                    <li>
+		                        <i class="icon_doc"></i>4
+		                    </li>
+		                    <li>
+		                        <i class="icon_view"></i>13
+		                    </li>
+		                    <li>
+		                        <i class="icon_down"></i>56
+		                    </li>
+		                </ul>
+		                <div class="clear"></div>
+		            </div>
+		            <div class="clear"></div>
+		            <div class="item_common">
+		                <a href="#" target="_blank" title="sadsa">
+		                <i class="icon i_type_doc i_type_doc1"></i>
+		                sadsa   </a>
+		                <ul class="doc_tk_cnt">
+		                    <li>
+		                        <i class="icon_doc"></i>5
+		                    </li>
+		                    <li>
+		                        <i class="icon_view"></i>15
+		                    </li>
+		                    <li>
+		                        <i class="icon_down"></i>44
+		                    </li>
+		                </ul>
+		                <div class="clear"></div>
+		            </div>
+		            <div class="clear"></div>
+		            <div class="item_common">
+		                <a href="#" target="_blank" title="Toán lớp 1">
+		                <i class="icon i_type_doc i_type_doc5"></i>
+		                Toán lớp 1   </a>
+		                <ul class="doc_tk_cnt">
+		                    <li>
+		                        <i class="icon_doc"></i>7
+		                    </li>
+		                    <li>
+		                        <i class="icon_view"></i>11
+		                    </li>
+		                    <li>
+		                        <i class="icon_down"></i>77
+		                    </li>
+		                </ul>
+		                <div class="clear"></div>
+		            </div>
+		            <div class="clear"></div>
+		            <div class="item_common">
+		                <a href="#" target="_blank" title="Ngữ văn">
+		                <i class="icon i_type_doc i_type_doc5"></i>
+		                Ngữ văn   </a>
+		                <ul class="doc_tk_cnt">
+		                    <li>
+		                        <i class="icon_doc"></i>5
+		                    </li>
+		                    <li>
+		                        <i class="icon_view"></i>12
+		                    </li>
+		                    <li>
+		                        <i class="icon_down"></i>88
+		                    </li>
+		                </ul>
+		                <div class="clear"></div>
+		            </div>
+		            <div class="clear"></div>
+		        </div>
+		    </div>
+		    <div class="col-md-3 col-sm-6">
+		        <h4 class="title-2">
+		            Công nghệ - thông tin
+		        </h4>
+		        <div class="total_doc_item_common">
+		            <div class="item_common">
+		                <a href="#" target="_blank" title="Đề thi tốt nghiệp 2016">
+		                <i class="icon i_type_doc i_type_doc1"></i>
+		                Đề thi tốt nghiệp 2016   </a>
+		                <ul class="doc_tk_cnt">
+		                    <li>
+		                        <i class="icon_doc"></i>2
+		                    </li>
+		                    <li>
+		                        <i class="icon_view"></i>15
+		                    </li>
+		                    <li>
+		                        <i class="icon_down"></i>0
+		                    </li>
+		                </ul>
+		                <div class="clear"></div>
+		            </div>
+		            <div class="clear"></div>
+		            <div class="item_common">
+		                <a href="#" target="_blank" title="sadsa">
+		                <i class="icon i_type_doc i_type_doc2"></i>
+		                sadsa   </a>
+		                <ul class="doc_tk_cnt">
+		                    <li>
+		                        <i class="icon_doc"></i>3
+		                    </li>
+		                    <li>
+		                        <i class="icon_view"></i>12
+		                    </li>
+		                    <li>
+		                        <i class="icon_down"></i>24
+		                    </li>
+		                </ul>
+		                <div class="clear"></div>
+		            </div>
+		            <div class="clear"></div>
+		            <div class="item_common">
+		                <a href="#" target="_blank" title="sadsa">
+		                <i class="icon i_type_doc i_type_doc2"></i>
+		                sadsa   </a>
+		                <ul class="doc_tk_cnt">
+		                    <li>
+		                        <i class="icon_doc"></i>4
+		                    </li>
+		                    <li>
+		                        <i class="icon_view"></i>13
+		                    </li>
+		                    <li>
+		                        <i class="icon_down"></i>56
+		                    </li>
+		                </ul>
+		                <div class="clear"></div>
+		            </div>
+		            <div class="clear"></div>
+		            <div class="item_common">
+		                <a href="#" target="_blank" title="sadsa">
+		                <i class="icon i_type_doc i_type_doc1"></i>
+		                sadsa   </a>
+		                <ul class="doc_tk_cnt">
+		                    <li>
+		                        <i class="icon_doc"></i>5
+		                    </li>
+		                    <li>
+		                        <i class="icon_view"></i>15
+		                    </li>
+		                    <li>
+		                        <i class="icon_down"></i>44
+		                    </li>
+		                </ul>
+		                <div class="clear"></div>
+		            </div>
+		            <div class="clear"></div>
+		            <div class="item_common">
+		                <a href="#" target="_blank" title="Toán lớp 1">
+		                <i class="icon i_type_doc i_type_doc5"></i>
+		                Toán lớp 1   </a>
+		                <ul class="doc_tk_cnt">
+		                    <li>
+		                        <i class="icon_doc"></i>7
+		                    </li>
+		                    <li>
+		                        <i class="icon_view"></i>11
+		                    </li>
+		                    <li>
+		                        <i class="icon_down"></i>77
+		                    </li>
+		                </ul>
+		                <div class="clear"></div>
+		            </div>
+		            <div class="clear"></div>
+		            <div class="item_common">
+		                <a href="#" target="_blank" title="Ngữ văn">
+		                <i class="icon i_type_doc i_type_doc5"></i>
+		                Ngữ văn   </a>
+		                <ul class="doc_tk_cnt">
+		                    <li>
+		                        <i class="icon_doc"></i>5
+		                    </li>
+		                    <li>
+		                        <i class="icon_view"></i>12
+		                    </li>
+		                    <li>
+		                        <i class="icon_down"></i>88
+		                    </li>
+		                </ul>
+		                <div class="clear"></div>
+		            </div>
+		            <div class="clear"></div>
+		        </div>
+		    </div>
+		</div>
+		<!-- General Document -->
+
+		<!-- Footer -->
+		<footer class="hidden-xs hidden-sm">
+			<div class="container">
+				<div class="col-md-5">
+					<h3 class="title">Thông tin liên hệ</h3>
+					<p><img src="images/address-icon.png" alt="">&nbsp&nbspĐịa chỉ: Số 31, Phan Đình Giót - Thanh Xuân - Hà Nội</p>
+					<p><img src="images/email-icon.png" alt="">&nbsp&nbspEmail: hotro@banthe247.com</p>
+					<p><img src="images/phone-icon.png" alt="">&nbsp&nbspĐiện thoại: (04)62.919.259</p>
+				</div>
+				<div class="col-md-4">
+					<h3 class="title">Hỗ trợ khách hàng</h3>
+					<p>Thứ 2 - Thứ 6: từ 8h30 - 21h00</p>
+					<p>Thứ 7: từ 8h30 - 17h00</p>
+					<p><img src="images/phone-icon.png" alt="">&nbsp&nbspHOTLINE 24/7: <span>0902 788 682</span></p>
+				</div>
+				<div class="col-md-3">
+					<h3 class="title">Kết nối với Hb.vn</h3>
+					<img src="images/social-icon.png" alt="">
+				</div>
+			</div>
+		</footer>
+		<div class="footer-mobile">
+			
+		</div>
+		<div class="discuss hidden-xs hidden-sm">
+			<img src="images/thao-luan.png" alt="">
+		</div>
+		<div class="live-chat hidden-xs hidden-sm">
+			<img src="images/live-chat.png" alt="">
+		</div>
+		<a href="javascript:void(0);" id="scroll" title="Scroll to Top" style="display: none;"><img src="images/back-to-top.png" alt=""><span></span></a>
+		<!-- Footer -->
 
 		<!-- jQuery -->
 		<script src="//code.jquery.com/jquery.js"></script>
 		<!-- Bootstrap JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+
+		<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+		<script type="text/javascript" src="js/scripts.js"></script>
+		<script type="text/javascript" src="slick/slick.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('.slider').slick({
+					dots: true,
+					infinite: true,
+					speed: 500,
+					fade: true,
+					cssEase: 'linear',
+					slidesToScroll: 1,
+					autoplay: true,
+					autoplaySpeed: 3000,
+					pauseOnHover: false
+				});
+			})
+		</script>
 	</body>
 </html>
