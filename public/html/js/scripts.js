@@ -12,5 +12,8 @@ $(document).ready(function(){
         return false; 
     }); 
 
-    
+    $('img.menu-button').click(function(){
+        $("html, body").animate({ scrollTop: 0 }, 300);
+        $('.menu_mob').slideToggle(300);
+    })
 });
